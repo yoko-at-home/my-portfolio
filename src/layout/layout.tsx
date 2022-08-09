@@ -8,9 +8,9 @@ type Body = {
 
 export const Layout: FC<Body> = (props) => {
   return (
-    <div className="grid min-h-screen grid-rows-[auto,1fr]">
+    <div className="flex min-h-screen flex-col">
       <HeaderPart />
-      <div>{props.children}</div>
+      <div className="grow">{props.children}</div>
       <FooterPart />
     </div>
   );
