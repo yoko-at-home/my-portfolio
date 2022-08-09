@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
-import { ViewButton } from "src/components/buttons";
 import { Button, useMediaQuery, useViewportSize } from "src/lib/mantine";
 
-const Home: NextPage = () => {
+const HomeOrig: NextPage = () => {
   const { width } = useViewportSize();
   const largerThanXs = useMediaQuery("xs");
   const largerThanSm = useMediaQuery("sm");
@@ -30,14 +29,9 @@ const Home: NextPage = () => {
       <Button onClick={handleClick} className="mt-4 block">
         Click me!
       </Button>
-      <ViewButton type={"dark"} onClilck={handleClick}>
-        View All
-      </ViewButton>
-      <ViewButton type={"light"} onClilck={undefined}>
-        Edit
-      </ViewButton>
+
     </div>
   );
 };
 
-export default Home;
+export default HomeOrig;
