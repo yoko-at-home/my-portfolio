@@ -1,9 +1,10 @@
 import { Button } from "@mantine/core";
+import Link from "next/link";
 import { Title } from "src/components/title";
 import { data } from "./data";
 export const BlogSec = () => {
   return (
-    <div className="pb-10">
+    <div className="pb-10 mx-4 sm:mx-auto">
       <Title>Blog</Title>
       {data.map((item) => {
         return (
@@ -17,8 +18,9 @@ export const BlogSec = () => {
         );
       })}
       <div className="flex justify-center">
-
-      <Button color="dark">View All</Button>
+        <Link href="/blog">
+        <Button color="dark">View All</Button>
+        </Link>
       </div>
     </div>
   );

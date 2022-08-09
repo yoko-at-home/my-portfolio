@@ -1,7 +1,9 @@
 import { Button, Image } from "@mantine/core";
+import Link from "next/link";
 import { Title } from "src/components/title";
 import { data } from "./data";
 export const PortfolioSec = () => {
+
   return (
     <div className="pb-10">
       <Title>Portfolio</Title>
@@ -24,7 +26,9 @@ export const PortfolioSec = () => {
             </ul>
       <div className="flex justify-center">
 
-      <Button color="dark">View All</Button>
+        <Link href="/portfolio">
+      <Button color="dark" >View All</Button>
+        </Link>
       </div>
     </div>
   );
