@@ -1,7 +1,8 @@
 import { NextPage } from "next";
+import { Layout } from "src/layout";
 
 const AboutPage: NextPage = () => {
-  return <div>About pageです</div>;
+  return <Layout>About pageです</Layout>;
 };
 
 export default AboutPage;

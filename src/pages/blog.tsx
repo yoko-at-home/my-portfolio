@@ -1,7 +1,8 @@
 import { NextPage } from "next";
+import { Layout } from "src/layout";
 
 const BlogPage: NextPage = () => {
-  return <div>Blog pageです</div>;
+  return <Layout>Blog pageです</Layout>;
 };
 
 export default BlogPage;

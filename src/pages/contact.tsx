@@ -1,7 +1,8 @@
 import { NextPage } from "next";
+import { Layout } from "src/layout";
 
 const ContactPage: NextPage = () => {
-  return <div>Contact pageです</div>;
+  return <Layout>Contact pageです</Layout>;
 };
 
 export default ContactPage;
