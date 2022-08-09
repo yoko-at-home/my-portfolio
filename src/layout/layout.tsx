@@ -10,7 +10,7 @@ export const Layout: FC<Body> = (props) => {
   return (
     <div className="flex min-h-screen flex-col text-[#25262B]">
       <HeaderPart />
-      <div className="grow">{props.children}</div>
+      <div className="flex flex-col grow justify-center">{props.children}</div>
       <FooterPart />
     </div>
   );

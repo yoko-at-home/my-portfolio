@@ -7,7 +7,7 @@ export const Blog = () => {
       <Title>Blog</Title>
       {data.map((item) => {
         return (
-          <li key={item.id} className=" list-none ">
+          <li key={item.id} className="list-none">
             <div className="text-[22px]">{item.title}</div>
             <div className="line-clamp-2 overflow-hidden text-ellipsis text-sm">
               {item.content}
