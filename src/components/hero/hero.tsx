@@ -11,9 +11,17 @@ export const Hero = () => {
         </div>
       </div>
       <div className="flex h-[17px] justify-start">
-        <img className="mr-2" src="/assets/svgs/twitter.svg" alt="twitter icon" />
-        <img className="mr-2" src="/assets/svgs/facebook.svg" alt="facebook icon" />
-        <img className="" src="/assets/svgs/feed.svg" alt="feed icon" />
+        <img
+          className="mr-2"
+          src="/assets/svgs/twitter.svg"
+          alt="twitter icon"
+        />
+        <img
+          className="mr-2"
+          src="/assets/svgs/facebook.svg"
+          alt="facebook icon"
+        />
+        <img className="" src="/assets/svgs/rss.svg" alt="rss icon" />
       </div>
     </div>
   );

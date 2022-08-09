@@ -26,7 +26,7 @@ export const GitHubSec = () => {
                   <div className="mb-3 flex">
                     <Image
                       className="h-6 w-6"
-                      src="/assets/svgs/star.svg"
+                      src="/assets/svgs/fork.svg"
                       alt="star icon"
                     />{" "}
                     18
