@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
-import { Blog } from "src/components/blog";
+import { BlogSec } from "src/components/blog";
 import { Hero } from "src/components/hero";
+import { PortfolioSec } from "src/components/portfolio";
 import { Layout } from "src/layout";
 
 const Home: NextPage = () => {
@@ -8,7 +9,8 @@ const Home: NextPage = () => {
     <Layout>
       <Hero />
       <div className="mx-4 sm:mx-auto">
-        <Blog />
+        <BlogSec />
+        <PortfolioSec/>
       </div>
     </Layout>
   );

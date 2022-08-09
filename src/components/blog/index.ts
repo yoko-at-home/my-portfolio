@@ -1,1 +1,1 @@
-export { Blog } from "./blog";
+export { BlogSec } from "./blog";
