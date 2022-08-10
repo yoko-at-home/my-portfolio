@@ -14,22 +14,18 @@ export const GitHubSec = () => {
                 <div className="overflow-hidden text-ellipsis text-sm line-clamp-2">
                   {item.content}
                 </div>
-                <div className="flex justify-start">
-                  <div className="mb-3 mr-3 flex">
+                <div className="flex justify-start my-3">
+                  <div className=" mr-3 flex">
                     <Image
-                      className="h-6 w-6"
                       src="/assets/svgs/star.svg"
                       alt="star icon"
                     />{" "}
-                    117
                   </div>
-                  <div className="mb-3 flex">
+                  <div className="flex">
                     <Image
-                      className="h-6 w-6"
                       src="/assets/svgs/fork.svg"
                       alt="star icon"
                     />{" "}
-                    18
                   </div>
                 </div>
                 <Progress
