@@ -13,8 +13,10 @@ const Home: NextPage = () => {
       <div className="mx-4 sm:mx-auto">
         <BlogSec />
         <PortfolioSec />
-        <GitHubSec />
-        <TwitterSec />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <GitHubSec />
+          <TwitterSec />
+        </div>
       </div>
     </Layout>
   );
