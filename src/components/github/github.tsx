@@ -46,7 +46,7 @@ export const GitHubSec = () => {
           );
         })}
       </ul>
-      <div className="mt-6 flex justify-center">
+      <div className="mt-6 flex justify-center  py-10">
         <a
           href="https://github.com/yoko-at-home/my-portfolio"
           target="_blank"

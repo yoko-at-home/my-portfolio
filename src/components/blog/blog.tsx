@@ -17,7 +17,7 @@ export const BlogSec = () => {
           </li>
         );
       })}
-      <div className="flex justify-center">
+      <div className="flex justify-center py-10">
         <Link href="/blog">
         <Button color="dark">View All</Button>
         </Link>

@@ -24,8 +24,7 @@ export const PortfolioSec = () => {
         );
       })}
             </ul>
-      <div className="flex justify-center">
-
+      <div className="flex justify-center  py-10">
         <Link href="/portfolio">
       <Button color="dark" >View All</Button>
         </Link>
