@@ -1,9 +1,39 @@
 import { Button } from "@mantine/core";
+import { useRouter } from "next/router";
 
 export const ContactForm = () => {
+  const router = useRouter();
+  const handleRegisterUser = async (event: any) => {
+    event.preventDefault();
+    const res = await fetch("/api/send", {
+      body: JSON.stringify({
+        subject: "Thank you for contacting!",
+        to: "yoko_iwasakijp@yahoo.co.jp",
+        text:
+          "以下の内容でお問い合わせを受け付けました。\n\n" +
+          "お名前: " +
+          event.target.name.value +
+          " 様\n" +
+          "メールアドレス: " +
+          event.target.email.value +
+          "\n\nお問い合わせ内容:\n" +
+          event.target.message.value,
+        email: event.target.email.value,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+    const result = await res.json();
+    router.push({
+      pathname: "/success",
+      query: result,
+    });
+  };
   return (
     <div className="container mx-auto py-20 px-3 md:px-20">
-    <form>
+    <form onSubmit={handleRegisterUser}>
       <dl>
         <dd className="mt-2"><label htmlFor="email">Email</label></dd>
         <dt>
