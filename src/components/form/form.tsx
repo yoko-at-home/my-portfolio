@@ -1,5 +1,7 @@
 import { Button } from "@mantine/core";
 import { useRouter } from "next/router";
+import { Title } from "src/components/title";
+
 
 export const ContactForm = () => {
   const router = useRouter();
@@ -33,6 +35,8 @@ export const ContactForm = () => {
   };
   return (
     <div className="container mx-auto py-20 px-3 md:px-20">
+          <Title>Contact</Title>
+
     <form onSubmit={handleRegisterUser}>
       <dl>
         <dd className="mt-2"><label htmlFor="email">Email</label></dd>
