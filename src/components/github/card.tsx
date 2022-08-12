@@ -1,4 +1,4 @@
-import { Image, Progress } from "@mantine/core";
+import { Image, Progress, Text } from "@mantine/core";
 import { FC } from "react";
 
 type CardProps = {
@@ -16,9 +16,9 @@ export const CardPortion: FC<CardProps> = (props) => {
     <li key={props.id} className="flex list-none flex-col">
       <div className="mx-auto max-w-sm">
         <div className="text-[22px] font-semibold">{props.title}</div>
-        <div className="overflow-hidden text-ellipsis text-sm line-clamp-2">
+        <Text className="overflow-hidden text-ellipsis text-sm line-clamp-2">
           {props.content}
-        </div>
+        </Text>
         <div className="my-3 flex justify-start">
           <div className=" mr-3 flex">
             <Image src="/assets/svgs/star.svg" alt="star icon" />{" "}

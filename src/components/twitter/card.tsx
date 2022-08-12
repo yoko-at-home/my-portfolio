@@ -1,4 +1,4 @@
-import { Card, Image, Text } from "@mantine/core";
+import { Card, Avatar, Text } from "@mantine/core";
 import { FC } from "react";
 
 type CardProps = {
@@ -16,10 +16,10 @@ export const CardPortion: FC<CardProps> = (props) => {
     <li key={props.id} className="mb-2 list-none">
       <Card withBorder>
         <div className="flex">
-          <Image
+          <Avatar
             src={props.thumbnail}
             alt={props.title}
-            className="mr-3 mt-2 h-[38px] w-[38px]"
+            className="mr-3 mt-2"
           />
           <div className="w-full flex-row justify-between">
             <Text weight={500}>
