@@ -8,9 +8,6 @@ export const pagesPath = {
   "contact": {
     $url: (url?: { hash?: string }) => ({ pathname: '/contact' as const, hash: url?.hash })
   },
-  "index_copy": {
-    $url: (url?: { hash?: string }) => ({ pathname: '/index copy' as const, hash: url?.hash })
-  },
   "portfolio": {
     $url: (url?: { hash?: string }) => ({ pathname: '/portfolio' as const, hash: url?.hash })
   },
