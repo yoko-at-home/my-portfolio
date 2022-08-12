@@ -7,7 +7,9 @@ const BlogId = () => {
   const router = useRouter();
   const blogPagePath = router.asPath;
   const blogPageId = blogPagePath.substring(6);
-  let pageData = data.filter((data) => data.id === blogPageId);
+  console.log(typeof blogPageId);
+
+  let pageData = data.filter((data) => data.id === parseInt(blogPageId));
   return (
     <div>
       <Layout>
