@@ -1,6 +1,6 @@
 export const data = [
   {
-    id: "1",
+    id: 1,
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "IT KINGDOM",
     content:
@@ -8,7 +8,7 @@ export const data = [
     date: "2021.10 - 2021.12",
   },
   {
-    id: "2",
+    id: 2,
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "IT KINGDOM 1",
     content:
@@ -16,7 +16,7 @@ export const data = [
     date: "2021.10 - 2021.12",
   },
   {
-    id: "3",
+    id: 3,
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "IT KINGDOM 2",
     content:
@@ -24,7 +24,7 @@ export const data = [
     date: "2021.10 - 2021.12",
   },
   {
-    id: "4",
+    id: 4,
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "IT KINGDOM 3",
     content:
@@ -32,7 +32,7 @@ export const data = [
     date: "2021.10 - 2021.12",
   },
   {
-    id: "5",
+    id: 5,
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "IT KINGDOM 4",
     content:
@@ -40,7 +40,7 @@ export const data = [
     date: "2021.10 - 2021.12",
   },
   {
-    id: "6",
+    id: 6,
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "IT KINGDOM 5",
     content:

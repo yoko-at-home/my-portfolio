@@ -3,7 +3,7 @@ import { Title } from "src/components/title";
 import { data } from "./data";
 
 export const BlogSec = () => {
-  let filteredForMobile = data.filter((data) => data.id < "4");
+  let filteredForMobile = data.filter((data) => data.id <= 4);
 
   return (
     <div className="mx-4 pb-10 sm:mx-auto">

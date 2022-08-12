@@ -3,7 +3,7 @@ import { CardPortion } from "src/components/github/card";
 import { Title } from "src/components/title";
 import { data } from "./data";
 export const GitHubSec = () => {
-  let filteredForMobile = data.filter((data) => data.id < "4");
+  let filteredForMobile = data.filter((data) => data.id < 4);
   return (
     <div className="pb-10">
       <Title>GitHub</Title>

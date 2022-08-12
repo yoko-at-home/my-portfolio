@@ -1,6 +1,6 @@
 export const data = [
   {
-    id: "1",
+    id: 1,
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "lightsound/nexst-tailwind",
     content: "Next.js starter template.",
@@ -9,7 +9,7 @@ export const data = [
     other: "33.7%",
   },
   {
-    id: "2",
+    id: 2,
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "lightsound/nexst-tailwind 1",
     content: "Next.js starter template.",
@@ -18,7 +18,7 @@ export const data = [
     other: "33.7%",
   },
   {
-    id: "3",
+    id: 3,
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "lightsound/nexst-tailwind 2",
     content: "Next.js starter template.",
@@ -27,7 +27,7 @@ export const data = [
     other: "33.7%",
   },
   {
-    id: "4",
+    id: 4,
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "lightsound/nexst-tailwind 2",
     content: "Next.js starter template.",
@@ -36,7 +36,7 @@ export const data = [
     other: "33.7%",
   },
   {
-    id: "5",
+    id: 5,
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "lightsound/nexst-tailwind 2",
     content: "Next.js starter template.",
@@ -45,7 +45,7 @@ export const data = [
     other: "33.7%",
   },
   {
-    id: "6",
+    id: 6,
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "lightsound/nexst-tailwind 2",
     content: "Next.js starter template.",

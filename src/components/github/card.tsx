@@ -2,7 +2,7 @@ import { Image, Progress, Text } from "@mantine/core";
 import { FC } from "react";
 
 type CardProps = {
-  id?: string;
+  id?: number;
   thumbnail: string;
   title: string;
   content: string;

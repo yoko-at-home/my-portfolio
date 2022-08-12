@@ -3,7 +3,13 @@ import { data } from "src/components/blog/data";
 import { Title } from "src/components/title";
 import { NextPage } from "next";
 import { Layout } from "src/layout";
+import { Pagination } from "@mantine/core";
+import { usePagination } from "@mantine/hooks";
+
 const BlogPage: NextPage = () => {
+  const pagination = usePagination({ total: 10, initialPage: 1 });
+  console.log(pagination);
+
   return (
     <Layout>
       <div className="mx-4 pb-10 sm:mx-auto">
@@ -19,6 +25,9 @@ const BlogPage: NextPage = () => {
             ></CardPortion>
           );
         })}
+      </div>
+      <div className="mb-16 flex justify-center">
+        <Pagination total={data.indexOf.length} color="dark" withEdges />
       </div>
     </Layout>
   );

@@ -3,7 +3,7 @@ import { Title } from "src/components/title";
 import { data } from "./data";
 
 export const PortfolioSec = () => {
-  let filteredForMobile = data.filter((data) => data.id < "4");
+  let filteredForMobile = data.filter((data) => data.id < 4);
   return (
     <div className="pb-10">
       <Title>Portfolio</Title>
