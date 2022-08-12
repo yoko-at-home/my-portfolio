@@ -9,7 +9,7 @@ type Body = {
 };
 
 export const Layout: FC<Body> = (props) => {
-  const { inView, ref } = useInView({ threshold: 0 });
+  const { inView } = useInView({ threshold: 0 });
   return (
     <div className="flex min-h-screen flex-col text-[#25262B]">
       <HeaderPart inView={inView} />

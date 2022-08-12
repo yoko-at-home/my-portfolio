@@ -40,7 +40,7 @@ export const data = [
     date: "2021.10 - 2021.12",
   },
   {
-    id: "5",
+    id: "6",
     thumbnail: "/assets/img/Thumbnail.webp",
     title: "IT KINGDOM 3",
     content:

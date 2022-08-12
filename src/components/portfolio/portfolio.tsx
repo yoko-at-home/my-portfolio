@@ -1,5 +1,6 @@
-import { Button, Card, Image, Text } from "@mantine/core";
+import { Button } from "@mantine/core";
 import Link from "next/link";
+import { CardPortion } from "src/components/portfolio/card";
 import { Title } from "src/components/title";
 import { data } from "./data";
 export const PortfolioSec = () => {
@@ -9,23 +10,13 @@ export const PortfolioSec = () => {
       <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
         {data.map((item) => {
           return (
-            <li
+            <CardPortion
               key={item.id}
-              className="mx-auto flex max-w-sm list-none flex-col"
-            >
-              <Card>
-                <a href="">
-                  <Image src={item.thumbnail} alt={item.title} />
-                </a>
-                <Text weight={500} size="lg">
-                  {item.title}
-                </Text>
-                <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
-                  {item.content}
-                </div>
-                <Text size="sm">{item.date}</Text>
-              </Card>
-            </li>
+              thumbnail={item.thumbnail}
+              title={item.title}
+              content={item.content}
+              date={item.date}
+            />
           );
         })}
       </ul>

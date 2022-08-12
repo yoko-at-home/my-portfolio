@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Title } from "src/components/title";
 import { data } from "./data";
 export const BlogSec = () => {
+
   return (
     <div className="mx-4 pb-10 sm:mx-auto">
       <Title>Blog</Title>
