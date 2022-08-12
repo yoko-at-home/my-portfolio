@@ -1,9 +1,7 @@
 import { Button, Card, Text } from "@mantine/core";
 import { Layout } from "src/layout";
 import { useRouter } from "next/router";
-
 import { data } from "src/components/blog/data";
-import Link from "next/link";
 
 const BlogId = () => {
   const router = useRouter();
@@ -27,9 +25,9 @@ const BlogId = () => {
           );
         })}
         <div className="flex justify-center pb-10">
-          <Link href="/blog">
-            <Button color="dark">Return</Button>
-          </Link>
+          <Button color="dark" onClick={() => router.back()}>
+            Return
+          </Button>
         </div>
       </Layout>
     </div>
