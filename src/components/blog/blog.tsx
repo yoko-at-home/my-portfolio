@@ -10,15 +10,17 @@ export const BlogSec = () => {
       {data.map((item) => {
         return (
           <li key={item.id} className="list-none">
-            <Card>
-              <Text size="lg">{item.title}</Text>
-              <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
-                {item.content}
-              </div>
-              <Text size="sm" color="dimmed">
-                {item.date}
-              </Text>
-            </Card>
+            <Link href={`/blog/${item.id}`}>
+              <Card>
+                <Text size="lg">{item.title}</Text>
+                <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
+                  {item.content}
+                </div>
+                <Text size="sm" color="dimmed">
+                  {item.date}
+                </Text>
+              </Card>
+            </Link>
           </li>
         );
       })}
