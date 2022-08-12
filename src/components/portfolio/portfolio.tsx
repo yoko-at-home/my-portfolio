@@ -1,5 +1,3 @@
-import { Button } from "@mantine/core";
-import Link from "next/link";
 import { CardPortion } from "src/components/portfolio/card";
 import { Title } from "src/components/title";
 import { data } from "./data";
@@ -34,11 +32,6 @@ export const PortfolioSec = () => {
           );
         })}
       </ul>
-      <div className="flex justify-center  py-10">
-        <Link href="/portfolio">
-          <Button color="dark">View All</Button>
-        </Link>
-      </div>
     </div>
   );
 };
