@@ -1,28 +1,23 @@
-import { Card, Text } from "@mantine/core";
-import Link from "next/link";
+import { CardPortion } from "src/components/blog/card";
 import { Title } from "src/components/title";
 import { data } from "./data";
 export const BlogSec = () => {
-  return (
-    <div className="mx-4 pb-10 sm:mx-auto">
-      <Title>Blog</Title>
-      {data.map((item) => {
-        return (
-          <li key={item.id} className="list-none">
-            <Link href={`/blog/${item.id}`}>
-              <Card>
-                <Text size="lg">{item.title}</Text>
-                <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
-                  {item.content}
-                </div>
-                <Text size="sm" color="dimmed">
-                  {item.date}
-                </Text>
-              </Card>
-            </Link>
-          </li>
-        );
-      })}
-    </div>
-  );
+  let filteredForMobile = data.filter((data) => data.id < "4");
+
+    return (
+      <div className="mx-4 pb-10 sm:mx-auto">
+        <Title>Blog</Title>
+        {filteredForMobile.map((item) => {
+          return (
+            <CardPortion
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              content={item.content}
+              date={item.date}
+            ></CardPortion>
+          );
+        })}
+      </div>
+    );
 };
