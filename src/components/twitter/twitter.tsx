@@ -3,7 +3,7 @@ import { Title } from "src/components/title";
 import { data } from "./data";
 import { CardPortion } from "src/components/twitter/card";
 export const TwitterSec = () => {
-  let filteredForMobile = data.filter((data) => data.id > "3");
+  let filteredForMobile = data.filter((data) => data.id < "4");
   return (
     <div className="pb-10">
       <Title>Twitter</Title>
