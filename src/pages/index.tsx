@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Hero />
-      <div className="mx-4 sm:mx-auto">
+      <div className="lg:px-42 mx-4 sm:mx-auto">
         <BlogSec />
         <PortfolioSec />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

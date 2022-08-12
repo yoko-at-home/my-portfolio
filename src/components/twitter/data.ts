@@ -2,27 +2,30 @@ export const data = [
   {
     id: "1",
     thumbnail: "/assets/img/Ellipse 2.png",
-    title: "IT KINGDOM",
+    title: "しまぶーIT大学",
     content:
-      "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
+      "📣 新サービス「Noway Form」をリリースしました！Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogle FormsでやっていたことがNotionだけで完結します✌✨試しに使っていただけると幸いです😊",
+    href: "https://www.noway-form.com/ja",
     date: "2021.10 - 2021.12",
     account: "yokoiwasaki6",
   },
   {
     id: "2",
     thumbnail: "/assets/img/Ellipse 2.png",
-    title: "IT KINGDOM 1",
+    title: "しまぶーIT大学 1",
     content:
-      "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
+      "📣 新サービス「Noway Form」をリリースしました！Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogle FormsでやっていたことがNotionだけで完結します✌✨試しに使っていただけると幸いです😊",
+    href: "https://www.noway-form.com/ja",
     date: "2021.10 - 2021.12",
     account: "yokoiwasaki6",
   },
   {
     id: "3",
     thumbnail: "/assets/img/Ellipse 2.png",
-    title: "IT KINGDOM 2",
+    title: "しまぶーIT大学 2",
     content:
-      "当サロンのLPページ。React、Next.js、TypeScriptなどのモダンな技術を用いて作られています。初心者にちょうど良い難易度の制作物です。",
+      "📣 新サービス「Noway Form」をリリースしました！Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogle FormsでやっていたことがNotionだけで完結します✌✨試しに使っていただけると幸いです😊",
+    href: "https://www.noway-form.com/ja",
     date: "2021.10 - 2021.12",
     account: "yokoiwasaki6",
   },
