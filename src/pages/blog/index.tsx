@@ -6,6 +6,8 @@ import { Layout } from "src/layout";
 import { Pagination } from "@mantine/core";
 import { usePagination } from "@mantine/hooks";
 
+const reversedData = data.reverse();
+
 const BlogPage: NextPage = () => {
   const pagination = usePagination({ total: 10, initialPage: 1 });
   console.log(pagination);
@@ -14,7 +16,7 @@ const BlogPage: NextPage = () => {
     <Layout>
       <div className="mx-4 pb-10 sm:mx-auto">
         <Title>Blog</Title>
-        {data.map((item) => {
+        {reversedData.map((item) => {
           return (
             <CardPortion
               key={item.id}
