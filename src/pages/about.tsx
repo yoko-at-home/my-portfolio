@@ -6,7 +6,7 @@ import { Text } from "@mantine/core";
 const AboutPage: NextPage = () => {
   return (
     <Layout>
-      <div className="mx-auto max-w-md px-3">
+      <div className="mx-auto px-3 lg:px-24">
         <Title>About</Title>
         <Text size="lg" weight={700}>
           Lightsound Shimabu
