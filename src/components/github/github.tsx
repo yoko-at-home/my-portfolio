@@ -1,6 +1,7 @@
 import { Button } from "@mantine/core";
 import { CardPortion } from "src/components/github/card";
 import { Title } from "src/components/title";
+import { metaData } from "src/metadata";
 import { data } from "./data";
 export const GitHubSec = () => {
   let filteredForMobile = data.filter((data) => data.id < 4);
@@ -40,11 +41,7 @@ export const GitHubSec = () => {
         </div>
       </ul>
       <div className="mt-6 flex justify-center  py-10">
-        <a
-          href="https://github.com/yoko-at-home/my-portfolio"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={metaData.github} target="_blank" rel="noreferrer">
           <Button color="dark">View on GitHub</Button>
         </a>
       </div>
