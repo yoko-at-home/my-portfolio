@@ -13,19 +13,21 @@ const BlogId = () => {
   return (
     <div>
       <Layout>
-        {pageData.map((item) => {
-          return (
-            <Card key={item.id}>
-              <Text size="lg">{item.title}</Text>
-              <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
-                {item.content}
-              </div>
-              <Text size="sm" color="dimmed">
-                {item.date}
-              </Text>
-            </Card>
-          );
-        })}
+        <div className="mx-auto">
+          {pageData.map((item) => {
+            return (
+              <Card key={item.id}>
+                <Text size="lg">{item.title}</Text>
+                <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
+                  {item.content}
+                </div>
+                <Text size="sm" color="dimmed">
+                  {item.date}
+                </Text>
+              </Card>
+            );
+          })}
+        </div>
         <div className="flex justify-center pb-10">
           <Button color="dark" onClick={() => router.back()}>
             Return
