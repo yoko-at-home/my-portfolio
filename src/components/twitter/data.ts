@@ -32,7 +32,7 @@ export const data = [
   {
     id: "4",
     thumbnail: "/assets/img/Ellipse 2.png",
-    title: "しまぶーIT大学 2",
+    title: "しまぶーIT大学 3",
     content:
       "📣 新サービス「Noway Form」をリリースしました！Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogle FormsでやっていたことがNotionだけで完結します✌✨試しに使っていただけると幸いです😊",
     href: "https://www.noway-form.com/ja",
@@ -42,7 +42,7 @@ export const data = [
   {
     id: "5",
     thumbnail: "/assets/img/Ellipse 2.png",
-    title: "しまぶーIT大学 2",
+    title: "しまぶーIT大学 4",
     content:
       "📣 新サービス「Noway Form」をリリースしました！Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogle FormsでやっていたことがNotionだけで完結します✌✨試しに使っていただけると幸いです😊",
     href: "https://www.noway-form.com/ja",
@@ -52,7 +52,7 @@ export const data = [
   {
     id: "6",
     thumbnail: "/assets/img/Ellipse 2.png",
-    title: "しまぶーIT大学 2",
+    title: "しまぶーIT大学 5",
     content:
       "📣 新サービス「Noway Form」をリリースしました！Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogle FormsでやっていたことがNotionだけで完結します✌✨試しに使っていただけると幸いです😊",
     href: "https://www.noway-form.com/ja",

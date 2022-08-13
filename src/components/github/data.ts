@@ -29,7 +29,7 @@ export const data = [
   {
     id: 4,
     thumbnail: "/assets/img/Thumbnail.webp",
-    title: "lightsound/nexst-tailwind 2",
+    title: "lightsound/nexst-tailwind 3",
     content: "Next.js starter template.",
     typescript: "65.5%",
     javascript: "33.7%",
@@ -38,7 +38,7 @@ export const data = [
   {
     id: 5,
     thumbnail: "/assets/img/Thumbnail.webp",
-    title: "lightsound/nexst-tailwind 2",
+    title: "lightsound/nexst-tailwind 4",
     content: "Next.js starter template.",
     typescript: "65.5%",
     javascript: "33.7%",
@@ -47,7 +47,7 @@ export const data = [
   {
     id: 6,
     thumbnail: "/assets/img/Thumbnail.webp",
-    title: "lightsound/nexst-tailwind 2",
+    title: "lightsound/nexst-tailwind 5",
     content: "Next.js starter template.",
     typescript: "65.5%",
     javascript: "33.7%",
