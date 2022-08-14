@@ -15,7 +15,7 @@ export const Navigation = () => {
       {items.map(({ href, label }) => {
         return (
           <Link key={href} href={href}>
-            <a className="mr-2 whitespace-nowrap text-[18px] font-bold text-black">
+            <a className="mr-2 whitespace-nowrap text-lg font-semibold text-black">
               {label}
             </a>
           </Link>
@@ -36,7 +36,7 @@ export const NavMobile = () => {
         title={title}
       />
       <div
-        className={`duration-0 fixed top-0  right-0 z-10 h-full w-full transform overflow-auto bg-[#E64980] p-6 ${
+        className={`duration-0 fixed top-0  right-0 z-10 h-full w-full transform overflow-auto bg-[#E64980] px-6 pt-6 ${
           opened ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -46,11 +46,11 @@ export const NavMobile = () => {
           title={title}
           color="#fff"
         />
-        <div className="flex flex-col">
+        <div className="mt-6 flex flex-col">
           {items.map(({ href, label }) => {
             return (
               <Link key={href} href={href}>
-                <a className="whitespace-nowrap text-[18px] font-bold leading-9">
+                <a className="whitespace-nowrap text-2xl font-semibold leading-relaxed">
                   {label}
                 </a>
               </Link>
