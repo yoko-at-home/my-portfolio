@@ -3,7 +3,7 @@ import { data } from "src/components/blog/data";
 import { Title } from "src/components/title";
 import { NextPage } from "next";
 import { Layout } from "src/layout";
-import { Pagination } from "@mantine/core";
+import { Image, Pagination } from "@mantine/core";
 import { usePagination } from "@mantine/hooks";
 
 const reversedData = data.reverse();
@@ -27,6 +27,14 @@ const BlogPage: NextPage = () => {
             ></CardPortion>
           );
         })}
+        <div className="my-16 flex justify-center">
+          <Image
+            src="/assets/svgs/Loader.svg"
+            alt="loader"
+            width={30}
+            height={30}
+          />
+        </div>
       </div>
       <div className="mb-16 flex justify-center">
         <Pagination total={data.indexOf.length} color="dark" withEdges />
