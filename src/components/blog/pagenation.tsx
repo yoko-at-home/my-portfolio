@@ -20,7 +20,7 @@ export const PagenationComponent: FC<pagenationProps> = (props) => {
     <div>
       {range(1, Math.ceil(totalCount / totalCount)).map((number, index) => {
         return (
-          <Link href={`/news/page/${number}`} key={index}>
+          <Link href={`/blog/page/${number}`} key={index}>
             <a>
               <Pagination
                 total={Math.ceil(totalCount / PER_PAGE)}
