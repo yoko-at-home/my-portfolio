@@ -3,16 +3,16 @@ import { data } from "src/components/blog/data";
 import { Title } from "src/components/title";
 import { NextPage } from "next";
 import { Layout } from "src/layout";
-import { Image, Pagination } from "@mantine/core";
-import { usePagination } from "@mantine/hooks";
+import { Image } from "@mantine/core";
 import { useState } from "react";
+import { PagenationComponent } from "src/components/blog";
 
 const reversedData = data.reverse();
-
+const firstTenArticle = reversedData.filter(
+  (reversedData) => reversedData.id <= 10
+);
 const BlogPage: NextPage = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const pagination = usePagination({ total: 10, initialPage: 1 });
-  console.log(pagination);
 
   return (
     <Layout>
@@ -29,7 +29,7 @@ const BlogPage: NextPage = () => {
           </div>
         ) : (
           <>
-            {reversedData.map((item) => {
+            {firstTenArticle.map((item) => {
               return (
                 <CardPortion
                   key={item.id}
@@ -44,7 +44,7 @@ const BlogPage: NextPage = () => {
         )}
       </div>
       <div className="mb-16 flex justify-center">
-        <Pagination total={data.indexOf.length} color="dark" withEdges />
+        <PagenationComponent />
       </div>
     </Layout>
   );
