@@ -14,8 +14,6 @@ export const TwitterSec = () => {
               <CardPortion
                 key={item.id}
                 thumbnail={item.thumbnail}
-                title={item.title}
-                account={item.account}
                 content={item.content}
                 href={item.href}
                 date={item.date}
@@ -29,8 +27,6 @@ export const TwitterSec = () => {
               <CardPortion
                 key={item.id}
                 thumbnail={item.thumbnail}
-                title={item.title}
-                account={item.account}
                 content={item.content}
                 href={item.href}
                 date={item.date}

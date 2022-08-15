@@ -5,7 +5,6 @@ import { metaData } from "src/metadata";
 type CardProps = {
   id?: string;
   thumbnail: string;
-  title: string;
   content: string;
   href: string;
   date: string;
