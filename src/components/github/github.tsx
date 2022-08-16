@@ -8,7 +8,7 @@ export const GitHubSec = () => {
   return (
     <div className="pb-10">
       <Title>GitHub</Title>
-      <ul className="grid grid-cols-1 gap-6">
+      <ul className="flex w-5/6 flex-col">
         <div className="sm:hidden">
           {filteredForMobile.map((item) => {
             return (

@@ -20,7 +20,7 @@ export const PortfolioSec = () => {
           );
         })}
       </ul>
-      <ul className="hidden grid-cols-1 gap-3 md:grid md:grid-cols-2 md:px-3 lg:grid-cols-3">
+      <ul className="hidden grid-cols-1 gap-3 md:grid md:grid-cols-2 lg:grid-cols-3">
         {data.map((item) => {
           return (
             <CardPortion

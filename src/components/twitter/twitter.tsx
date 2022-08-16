@@ -7,7 +7,7 @@ export const TwitterSec = () => {
   return (
     <div className="pb-10">
       <Title>Twitter</Title>
-      <ul className="gridgrid-cols-1 mx-auto grid max-w-md">
+      <ul className="gridgrid-cols-1 grid max-w-md">
         <div className="sm:hidden">
           {filteredForMobile.map((item) => {
             return (

@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Hero />
-      <div className="lg:px-42 mx-4 sm:mx-auto">
+      <div className="mx-auto max-w-7xl px-4">
         <BlogSec />
         <div className="flex justify-center pb-10">
           <Link href="/blog">

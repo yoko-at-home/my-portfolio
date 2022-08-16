@@ -14,7 +14,7 @@ type CardProps = {
 export const CardPortion: FC<CardProps> = (props) => {
   return (
     <li key={props.id} className="flex list-none flex-col">
-      <div className="mx-auto max-w-sm">
+      <div className="min-w-full">
         <div className="text-[22px] font-semibold">{props.title}</div>
         <Text className="overflow-hidden text-ellipsis text-sm line-clamp-2">
           {props.content}

@@ -13,7 +13,9 @@ export const Layout: FC<Body> = (props) => {
   return (
     <div className="flex min-h-screen flex-col text-[#25262B]">
       <HeaderPart inView={inView} />
-      <div className="flex grow flex-col justify-start">{props.children}</div>
+      <div className="mx-auto flex grow flex-col justify-start">
+        {props.children}
+      </div>
       <FooterPart />
     </div>
   );
