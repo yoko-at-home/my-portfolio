@@ -5,7 +5,7 @@ import { CardPortion } from "src/components/twitter/card";
 export const TwitterSec = () => {
   let filteredForMobile = data.filter((data) => data.id < "4");
   return (
-    <div className="pb-10">
+    <div className="mx-auto px-4 pb-10">
       <Title>Twitter</Title>
       <ul className="gridgrid-cols-1 grid max-w-md">
         <div className="sm:hidden">
