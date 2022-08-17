@@ -7,7 +7,7 @@ import { metaData } from "src/metadata";
 const AboutPage: NextPage = () => {
   return (
     <Layout>
-      <div className="mx-auto px-3 lg:px-24">
+      <div className="mx-auto">
         <Title>About</Title>
         <Text size="lg" weight={700}>
           Lightsound Shimabu

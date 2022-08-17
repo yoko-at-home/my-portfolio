@@ -16,7 +16,7 @@ const BlogPage: NextPage = () => {
 
   return (
     <Layout>
-      <div className="mx-4 pb-10 sm:mx-auto">
+      <div className="pb-10">
         <Title>Blog</Title>
         {isLoading ? (
           <div className="my-16 flex min-h-fit justify-center">
