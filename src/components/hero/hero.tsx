@@ -2,7 +2,7 @@
 export const Hero = () => {
   return (
     <div className=" w-screen bg-[#E64980] text-white">
-      <div className="mx-auto flex h-[248px] max-w-7xl items-center justify-between p-4 sm:flex-row">
+      <div className="flex h-[248px] max-w-7xl flex-col justify-around p-4 sm:mx-auto sm:flex-row sm:items-center sm:justify-between md:pr-20 lg:pr-36">
         <div className="flex flex-col">
           <div className="text-[28px] font-bold leading-7">
             Shimabu IT University
