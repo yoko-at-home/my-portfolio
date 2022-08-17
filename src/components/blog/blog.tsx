@@ -1,9 +1,12 @@
+import { useRouter } from "next/router";
 import { CardPortion } from "src/components/blog/card";
 import { Title } from "src/components/title";
 import { data } from "./data";
 
 export const BlogSec = () => {
   let filteredForMobile = data.filter((data) => data.id <= 4);
+  const router = useRouter();
+  const root = router.asPath === "/";
 
   return (
     <div className="pb-10 sm:mx-auto">

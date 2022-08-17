@@ -1,9 +1,15 @@
+import { useRouter } from "next/router";
 import { CardPortion } from "src/components/portfolio/card";
 import { Title } from "src/components/title";
 import { data } from "./data";
 
 export const PortfolioSec = () => {
   let filteredForMobile = data.filter((data) => data.id < 4);
+  console.log(filteredForMobile);
+
+  const router = useRouter();
+  const root = router.asPath === "/";
+
   return (
     <div className="mx-auto max-w-7xl px-4 pb-10">
       <Title>Portfolio</Title>
