@@ -6,7 +6,7 @@ export const BlogSec = () => {
   let filteredForMobile = data.filter((data) => data.id <= 4);
 
   return (
-    <div className="mx-4 pb-10 sm:mx-auto">
+    <div className="pb-10 sm:mx-auto">
       <Title>Blog</Title>
       {filteredForMobile.map((item) => {
         return (

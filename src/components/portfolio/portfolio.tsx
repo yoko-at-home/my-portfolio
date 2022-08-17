@@ -5,7 +5,7 @@ import { data } from "./data";
 export const PortfolioSec = () => {
   let filteredForMobile = data.filter((data) => data.id < 4);
   return (
-    <div className="pb-10">
+    <div className="mx-auto max-w-7xl px-4 pb-10">
       <Title>Portfolio</Title>
       <ul className="grid grid-cols-1 gap-3 md:hidden">
         {filteredForMobile.map((item) => {
@@ -20,7 +20,7 @@ export const PortfolioSec = () => {
           );
         })}
       </ul>
-      <ul className="hidden grid-cols-1 gap-3 md:grid md:grid-cols-2 md:px-3 lg:grid-cols-3">
+      <ul className="hidden grid-cols-1 gap-3 md:grid md:grid-cols-2 lg:grid-cols-3">
         {data.map((item) => {
           return (
             <CardPortion

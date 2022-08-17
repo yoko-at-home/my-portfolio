@@ -13,11 +13,9 @@ export const HeaderPart = ({ inView }: Props) => {
   return (
     <div className="sticky top-0 z-50 items-center">
       <div
-        className={
-          inView
-            ? "flex justify-around py-5 leading-6"
-            : "top-[0] flex justify-around bg-slate-50/60 py-5 leading-6"
-        }
+        className={`lg:px-46 flex justify-between py-5 px-4 leading-6 ${
+          inView ? `` : "top-[0] flex bg-slate-50/60"
+        }`}
       >
         <NavMobile />
         <Text size="lg" weight={700}>

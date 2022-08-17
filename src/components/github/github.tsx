@@ -6,9 +6,9 @@ import { data } from "./data";
 export const GitHubSec = () => {
   let filteredForMobile = data.filter((data) => data.id < 4);
   return (
-    <div className="pb-10">
+    <div className="px-4 pb-10">
       <Title>GitHub</Title>
-      <ul className="grid grid-cols-1 gap-6">
+      <ul className="flex flex-col">
         <div className="sm:hidden">
           {filteredForMobile.map((item) => {
             return (
