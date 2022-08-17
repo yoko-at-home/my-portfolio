@@ -5,7 +5,7 @@ import { data } from "./data";
 export const PortfolioSec = () => {
   let filteredForMobile = data.filter((data) => data.id < 4);
   return (
-    <div className="pb-10">
+    <div className="mx-auto max-w-7xl px-4 pb-10">
       <Title>Portfolio</Title>
       <ul className="grid grid-cols-1 gap-3 md:hidden">
         {filteredForMobile.map((item) => {
