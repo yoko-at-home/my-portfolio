@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import { BlogSec } from "src/components/blog";
-import { GitHubSec } from "src/components/github";
+import { Blogs } from "src/components/blog";
+import { GitHubReps } from "src/components/github";
 import { Hero } from "src/components/hero";
-import { PortfolioSec } from "src/components/portfolio";
+import { Portfolios } from "src/components/portfolio";
 import { TwitterSec } from "src/components/twitter";
 import { Layout } from "src/layout";
 import { Button } from "@mantine/core";
@@ -13,20 +13,20 @@ const Home: NextPage = () => {
     <Layout>
       <Hero />
       <div className="mx-auto max-w-7xl px-4">
-        <BlogSec />
+        <Blogs />
         <div className="flex justify-center pb-10">
           <Link href="/blog">
             <Button color="dark">View All</Button>
           </Link>
         </div>
-        <PortfolioSec />
+        <Portfolios />
         <div className="flex justify-center pb-10">
           <Link href="/portfolio">
             <Button color="dark">View All</Button>
           </Link>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <GitHubSec />
+          <GitHubReps />
           <TwitterSec />
         </div>
       </div>
