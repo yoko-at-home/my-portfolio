@@ -11,28 +11,15 @@ export const Portfolios = () => {
   if (width === undefined) {
     return <div />;
   }
-  const isMobile = width < 600;
+  const isMobile = width < 576;
   const numberToShow = root ? (isMobile ? 3 : 6) : data.length;
   let filteredData = data.slice(0, numberToShow);
 
   return (
     <div className="mx-auto max-w-7xl px-4 pb-10">
       <Title>Portfolio</Title>
-      <ul className="grid grid-cols-1 gap-3 md:hidden">
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {filteredData.map((item) => {
-          return (
-            <CardPortion
-              key={item.id}
-              thumbnail={item.thumbnail}
-              title={item.title}
-              content={item.content}
-              date={item.date}
-            />
-          );
-        })}
-      </ul>
-      <ul className="hidden grid-cols-1 gap-3 md:grid md:grid-cols-2 lg:grid-cols-3">
-        {data.map((item) => {
           return (
             <CardPortion
               key={item.id}

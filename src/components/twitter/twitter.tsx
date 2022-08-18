@@ -11,7 +11,7 @@ export const TwitterSec = () => {
   if (width === undefined) {
     return <div />;
   }
-  const isMobile = width < 600;
+  const isMobile = width < 576;
   const numberToShow = root ? (isMobile ? 3 : 6) : data.length;
   let filteredData = data.slice(0, numberToShow);
   return (
