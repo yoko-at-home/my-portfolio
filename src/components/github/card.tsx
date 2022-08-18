@@ -1,4 +1,4 @@
-import { Image, Progress, Text } from "@mantine/core";
+import { Image, Text } from "@mantine/core";
 import { FC } from "react";
 
 type CardProps = {
@@ -27,14 +27,11 @@ export const CardPortion: FC<CardProps> = (props) => {
             <Image src="/assets/svgs/fork.svg" alt="star icon" />{" "}
           </div>
         </div>
-        <Progress
-          size="xl"
-          sections={[
-            { value: 65, color: "blue" },
-            { value: 30, color: "lime" },
-            { value: 5, color: "gray" },
-          ]}
-        />
+        <div className="mb-2 flex">
+          <span className="h-2 w-[65.5%] rounded-l bg-[#3178C6]"></span>
+          <span className="h-2 w-[24.5%] bg-[#F1E05A]"></span>
+          <span className="h-2 w-[10%] rounded-r bg-[#EDEDED]"></span>
+        </div>
         <div className="flex justify-between text-sm">
           <div>TypeScript {props.typescript}</div>
           <div>JavaScript {props.javascript}</div>
