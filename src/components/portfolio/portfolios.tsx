@@ -1,20 +1,25 @@
 import { useRouter } from "next/router";
 import { CardPortion } from "src/components/portfolio/card";
 import { Title } from "src/components/title";
+import { useViewportSize } from "src/lib/mantine";
 import { data } from "./data";
 
 export const Portfolios = () => {
-  let filteredForMobile = data.filter((data) => data.id < 4);
-  console.log(filteredForMobile);
-
   const router = useRouter();
   const root = router.asPath === "/";
+  const { width } = useViewportSize();
+  if (width === undefined) {
+    return <div />;
+  }
+  const isMobile = width < 600;
+  const numberToShow = root ? (isMobile ? 3 : 6) : data.length;
+  let filteredData = data.slice(0, numberToShow);
 
   return (
     <div className="mx-auto max-w-7xl px-4 pb-10">
       <Title>Portfolio</Title>
       <ul className="grid grid-cols-1 gap-3 md:hidden">
-        {filteredForMobile.map((item) => {
+        {filteredData.map((item) => {
           return (
             <CardPortion
               key={item.id}

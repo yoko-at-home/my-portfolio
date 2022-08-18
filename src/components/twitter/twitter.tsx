@@ -2,14 +2,24 @@ import { Button } from "@mantine/core";
 import { Title } from "src/components/title";
 import { data } from "./data";
 import { CardPortion } from "src/components/twitter/card";
+import { useRouter } from "next/router";
+import { useViewportSize } from "src/lib/mantine";
 export const TwitterSec = () => {
-  let filteredForMobile = data.filter((data) => data.id < "4");
+  const router = useRouter();
+  const root = router.asPath === "/";
+  const { width } = useViewportSize();
+  if (width === undefined) {
+    return <div />;
+  }
+  const isMobile = width < 600;
+  const numberToShow = root ? (isMobile ? 3 : 6) : data.length;
+  let filteredData = data.slice(0, numberToShow);
   return (
     <div className="mx-auto px-4 pb-10">
       <Title>Twitter</Title>
       <ul className="gridgrid-cols-1 grid max-w-md">
         <div className="sm:hidden">
-          {filteredForMobile.map((item) => {
+          {filteredData.map((item) => {
             return (
               <CardPortion
                 key={item.id}
