@@ -3,7 +3,7 @@ import { CardPortion } from "src/components/github/card";
 import { Title } from "src/components/title";
 import { metaData } from "src/metadata";
 import { data } from "./data";
-export const GitHubSec = () => {
+export const GitHubReps = () => {
   let filteredForMobile = data.filter((data) => data.id < 4);
   return (
     <div className="px-4 pb-10">

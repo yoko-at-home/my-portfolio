@@ -1,1 +1,1 @@
-export { GitHubSec } from "./github";
+export { GitHubReps } from "./github";

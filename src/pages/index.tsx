@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { Blogs } from "src/components/blog";
-import { GitHubSec } from "src/components/github";
+import { GitHubReps } from "src/components/github";
 import { Hero } from "src/components/hero";
 import { Portfolios } from "src/components/portfolio";
 import { TwitterSec } from "src/components/twitter";
@@ -26,7 +26,7 @@ const Home: NextPage = () => {
           </Link>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <GitHubSec />
+          <GitHubReps />
           <TwitterSec />
         </div>
       </div>
