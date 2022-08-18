@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { BlogSec } from "src/components/blog";
+import { Blogs } from "src/components/blog";
 import { GitHubSec } from "src/components/github";
 import { Hero } from "src/components/hero";
 import { PortfolioSec } from "src/components/portfolio";
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     <Layout>
       <Hero />
       <div className="mx-auto max-w-7xl px-4">
-        <BlogSec />
+        <Blogs />
         <div className="flex justify-center pb-10">
           <Link href="/blog">
             <Button color="dark">View All</Button>

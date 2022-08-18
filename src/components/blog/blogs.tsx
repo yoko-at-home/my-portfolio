@@ -3,7 +3,7 @@ import { CardPortion } from "src/components/blog/card";
 import { Title } from "src/components/title";
 import { data } from "./data";
 
-export const BlogSec = () => {
+export const Blogs = () => {
   let filteredForMobile = data.filter((data) => data.id <= 4);
   const router = useRouter();
   const root = router.asPath === "/";

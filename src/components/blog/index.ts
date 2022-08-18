@@ -1,2 +1,2 @@
-export { BlogSec } from "./blog";
+export { Blogs } from "./blogs";
 export { PagenationComponent } from "./pagenation";
