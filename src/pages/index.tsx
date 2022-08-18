@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { Blogs } from "src/components/blog";
 import { GitHubSec } from "src/components/github";
 import { Hero } from "src/components/hero";
-import { PortfolioSec } from "src/components/portfolio";
+import { Portfolios } from "src/components/portfolio";
 import { TwitterSec } from "src/components/twitter";
 import { Layout } from "src/layout";
 import { Button } from "@mantine/core";
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
             <Button color="dark">View All</Button>
           </Link>
         </div>
-        <PortfolioSec />
+        <Portfolios />
         <div className="flex justify-center pb-10">
           <Link href="/portfolio">
             <Button color="dark">View All</Button>

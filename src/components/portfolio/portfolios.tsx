@@ -3,7 +3,7 @@ import { CardPortion } from "src/components/portfolio/card";
 import { Title } from "src/components/title";
 import { data } from "./data";
 
-export const PortfolioSec = () => {
+export const Portfolios = () => {
   let filteredForMobile = data.filter((data) => data.id < 4);
   console.log(filteredForMobile);
 

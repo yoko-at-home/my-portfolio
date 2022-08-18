@@ -1,1 +1,1 @@
-export { PortfolioSec } from "./portfolio";
+export { Portfolios } from "./portfolios";
