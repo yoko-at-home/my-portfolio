@@ -17,6 +17,9 @@ export const pagesPath = {
     $url: (url?: { hash?: string }) => ({ pathname: '/contact' as const, hash: url?.hash })
   },
   "portfolio": {
+    _id: (id: string | number) => ({
+      $url: (url?: { hash?: string }) => ({ pathname: '/portfolio/[id]' as const, query: { id }, hash: url?.hash })
+    }),
     $url: (url?: { hash?: string }) => ({ pathname: '/portfolio' as const, hash: url?.hash })
   },
   "success": {

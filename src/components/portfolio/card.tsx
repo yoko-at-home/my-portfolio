@@ -13,7 +13,7 @@ type CardProps = {
 export const CardPortion: FC<CardProps> = (props) => {
   return (
     <li key={props.id} className="mx-auto flex max-w-lg list-none flex-col">
-      <Link href="/portfolio">
+      <Link href={`/portfolio/${props.id}`}>
         <a>
           <Image src={props.thumbnail} alt={props.title} />
           <Text weight={500} size="lg">
