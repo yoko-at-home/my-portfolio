@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import { Button } from "@mantine/core";
 import { NextPage } from "next";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { Layout } from "src/layout";
 import { metaData } from "src/metadata";
@@ -9,11 +9,9 @@ const PortfolioContent: NextPage = () => {
   const router = useRouter();
   return (
     <Layout>
-      <img
-        src="https://source.unsplash.com/random?q=60"
-        alt="画像"
-        className="aspect-video w-full object-cover"
-      />
+      <div className="relative aspect-video w-full object-cover">
+        <Image src="/assets/img/Thumbnail.webp" alt="画像" layout="fill" />
+      </div>
       <div className="my-4 text-xl font-bold text-gray-900">
         {metaData.name}
       </div>
