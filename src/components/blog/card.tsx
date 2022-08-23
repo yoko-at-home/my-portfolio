@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FC } from "react";
 
 type CardProps = {
-  id: string;
+  id?: string;
   title: string;
   content: string;
   date: string;
