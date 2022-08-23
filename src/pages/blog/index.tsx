@@ -1,47 +1,42 @@
-import { CardPortion } from "src/components/blog/card";
-import { data } from "src/components/blog/data";
-import { Title } from "src/components/title";
-import { NextPage } from "next";
+import { MicroCMSListResponse } from "microcms-js-sdk";
+import type { GetStaticProps, NextPage } from "next";
 import { Layout } from "src/layout";
-import { Image } from "@mantine/core";
-import { useState } from "react";
+import { client } from "src/lib/client";
+import { CardPortion } from "src/components/blog/card";
+import { Title } from "@mantine/core";
 import { PagenationComponent } from "src/components/blog";
 
-const reversedData = data.reverse();
-const firstTenArticle = reversedData.filter(
-  (reversedData) => reversedData.id <= 10
-);
-const BlogPage: NextPage = () => {
-  const [isLoading, setIsLoading] = useState(false);
+export type Blog = {
+  title: string;
+  body: string;
+  content: string;
+  eyecatch: string;
+  [key: string]: string;
+  url: string;
+};
 
+type Props = MicroCMSListResponse<Blog>;
+
+const Blog: NextPage<Props> = (props) => {
   return (
     <Layout>
-      <div className="pb-10">
-        <Title>Blog</Title>
-        {isLoading ? (
-          <div className="my-16 flex min-h-fit justify-center">
-            <Image
-              src="/assets/svgs/Loader.svg"
-              alt="loader"
-              width={30}
-              height={30}
-            />
-          </div>
-        ) : (
-          <>
-            {firstTenArticle.map((item) => {
+      <div className="flex min-h-[85vh] min-w-[100vh] flex-col justify-between">
+        <div>
+          <Title>Blog</Title>
+          <ul className="my-16 flex min-h-fit flex-col justify-center">
+            {props.contents.map((content) => {
               return (
                 <CardPortion
-                  key={item.id}
-                  id={item.id}
-                  title={item.title}
-                  content={item.content}
-                  date={item.date}
-                ></CardPortion>
+                  id={content.id}
+                  key={content.id}
+                  title={content.title}
+                  content={content.body}
+                  date={content.createdAt}
+                />
               );
             })}
-          </>
-        )}
+          </ul>
+        </div>
       </div>
       <div className="mb-16 flex justify-center">
         <PagenationComponent />
@@ -50,4 +45,11 @@ const BlogPage: NextPage = () => {
   );
 };
 
-export default BlogPage;
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const data = await client.getList<Blog>({ endpoint: "blog" });
+  return {
+    props: data,
+  };
+};
+
+export default Blog;

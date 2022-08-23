@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FC } from "react";
 
 type CardProps = {
-  id: number;
+  id: string;
   title: string;
   content: string;
   date: string;
@@ -11,7 +11,10 @@ type CardProps = {
 
 export const CardPortion: FC<CardProps> = (props) => {
   return (
-    <li key={props.id} className="list-none">
+    <li
+      key={props.id}
+      className="mb-3 list-none hover:bg-gray-100 hover:text-green-600"
+    >
       <Link href={`/blog/${props.id}`}>
         <a>
           <Text size="lg">{props.title}</Text>
