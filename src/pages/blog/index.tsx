@@ -10,9 +10,9 @@ export type Blog = {
   title: string;
   body: string;
   content: string;
-  eyecatch: string;
-  [key: string]: string;
-  url: string;
+  eyecatch: {
+    url: string;
+  };
 };
 
 type Props = MicroCMSListResponse<Blog>;
