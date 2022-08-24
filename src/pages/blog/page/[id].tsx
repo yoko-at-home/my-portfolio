@@ -2,7 +2,7 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Button } from "@mantine/core";
 import { Layout } from "src/layout";
 import { useRouter } from "next/router";
-import { PagenationComponent } from "src/components/blog";
+import { Pagenation } from "src/components/pagination";
 import { CardPortion } from "src/components/blog/card";
 import Link from "next/link";
 import { Blog } from "src/types/types";
