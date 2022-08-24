@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from "next";
 import { Layout } from "src/layout";
 import { client } from "src/lib/client";
-import { CardPortion } from "src/components/blog/card";
+import { CardPortion } from "src/components/blog/";
 import { Title } from "src/components/title";
-import { PagenationComponent } from "src/components/blog";
+import { PagenationComponent } from "src/components/pagination";
 import { Blog, BlogProps } from "src/types/types";
 
 const Blog: NextPage<BlogProps> = (props) => {
