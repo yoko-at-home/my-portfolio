@@ -1,14 +1,9 @@
-import { Button, Pagination } from "@mantine/core";
+// import { Pagination } from "@mantine/core";
 import Link from "next/link";
 import { FC } from "react";
-import { data } from "src/components/blog/data";
+import { Blog } from "src/types/types";
 
-type pagenationProps = {
-  totalCount?: number;
-};
-
-export const PagenationComponent: FC<pagenationProps> = (props) => {
-  const totalCount = data.length;
+export const PagenationComponent: FC<Blog> = (props) => {
   const PER_PAGE = 10;
   const range = (start: number, end: number) => {
     return [...Array(end - start + 1)].map((_, i) => {
@@ -18,20 +13,25 @@ export const PagenationComponent: FC<pagenationProps> = (props) => {
 
   return (
     <div>
-      {range(1, Math.ceil(totalCount / totalCount)).map((number, index) => {
-        return (
-          <Link href={`/blog/page/${number}`} key={index}>
-            <a>
-              <Pagination
-                total={Math.ceil(totalCount / PER_PAGE)}
-                boundaries={1}
-                initialPage={1}
-                color={"dark"}
-              />
-            </a>
-          </Link>
-        );
-      })}
+      {range(1, Math.ceil(props.totalCount! / PER_PAGE)).map(
+        (number, index) => {
+          return (
+            <Link href={`/blog/page/${number}`} key={index}>
+              {/* <a>
+                <Pagination
+                  total={Math.ceil(props.totalCount! / PER_PAGE)}
+                  boundaries={1}
+                  initialPage={1}
+                  color={"dark"}
+                />
+              </a> */}
+              <a className="mr-3 rounded bg-gray-500 p-3 text-gray-300  sm:px-4">
+                {number}
+              </a>
+            </Link>
+          );
+        }
+      )}
     </div>
   );
 };
