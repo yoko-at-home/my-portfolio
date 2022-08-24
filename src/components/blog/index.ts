@@ -1,1 +1,1 @@
-export { PagenationComponent } from "./pagenation";
+export { CardPortion } from "./card";
