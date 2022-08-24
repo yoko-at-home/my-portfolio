@@ -10,8 +10,21 @@ import Link from "next/link";
 import { client } from "src/lib/client";
 import { Blog, BlogProps } from "src/types/types";
 import { CardPortion } from "src/components/blog/card";
+import { useRouter } from "next/router";
+import { useViewportSize } from "src/lib/mantine";
 
 const Home: NextPage<BlogProps> = (props) => {
+  const router = useRouter();
+  const root = router.asPath === "/";
+  const { width } = useViewportSize();
+  if (width === undefined) {
+    return <div />;
+  }
+  const isMobile = width < 576;
+
+  const numberToShow = root ? (isMobile ? 4 : 6) : props.contents.length;
+  let filteredData = props.contents.slice(0, numberToShow);
+
   return (
     <Layout>
       <Hero />
@@ -19,7 +32,7 @@ const Home: NextPage<BlogProps> = (props) => {
         <div>
           <Title>Blog</Title>
           <ul className="my-16 flex min-h-fit flex-col justify-center">
-            {props.contents.map((content) => {
+            {filteredData.map((content) => {
               return (
                 <CardPortion
                   id={content.id}
