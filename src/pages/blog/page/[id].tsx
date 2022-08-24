@@ -1,32 +1,31 @@
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Button } from "@mantine/core";
 import { Layout } from "src/layout";
 import { useRouter } from "next/router";
-import { data } from "src/components/blog/data";
 import { PagenationComponent } from "src/components/blog";
-import { FC } from "react";
 import { CardPortion } from "src/components/blog/card";
 import Link from "next/link";
+import { Blog } from "src/types/types";
+import { client } from "src/lib/client";
 
 const PER_PAGE = 10;
 
-const BlogId: FC = () => {
+const BlogId: NextPage<Blog> = ({ blog, totalCount }) => {
   const router = useRouter();
-  let totalCount = data.length;
-
   return (
     <div>
       <Layout>
         <div className="mx-auto">
-          {data.map((item) => {
+          {blog.map((content: any) => {
             return (
-              <Link href={`/blog/${item.id}`} passHref key={item.id}>
+              <Link href={`/blog/${content.id}`} passHref key={content.id}>
                 <CardPortion
-                  key={item.id}
-                  id={item.id}
-                  title={item.title}
-                  content={item.content}
-                  date={item.date}
-                ></CardPortion>
+                  id={content.id}
+                  key={content.id}
+                  title={content.title}
+                  createdAt={content.createdAt}
+                  lead={content.lead}
+                />
               </Link>
             );
           })}
@@ -37,38 +36,42 @@ const BlogId: FC = () => {
           </Button>
         </div>
         <div className="flex justify-center pb-10">
-          <PagenationComponent totalCount={Math.ceil(totalCount / PER_PAGE)} />
+          <PagenationComponent totalCount={totalCount} />
         </div>
       </Layout>
     </div>
   );
 };
 
-export default BlogId;
-
 // 動的なページを作成
-export const getStaticPaths = () => {
-  const totalCount = data.length / 10;
-  const range = (start: any, end: any) => {
-    return [...Array(end - start + 1)].map((_, i) => {
-      return start + i;
-    });
-  };
+export const getStaticPaths: GetStaticPaths = async () => {
+  const repos = await client.get({ endpoint: "blog" });
 
-  const paths = range(1, Math.ceil(totalCount / PER_PAGE)).map((repo) => {
-    return `/blog/page/${repo}`;
-  });
+  const pageNumbers = [];
+
+  const range = (start: number, end: number) =>
+    [...Array(end - start + 1)].map((_, i) => start + i);
+
+  const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map(
+    (repo) => `/blog/page/${repo}`
+  );
 
   return { paths, fallback: false };
 };
 
-export async function getStaticProps(context: any) {
-  console.log(data);
+// データを取得
+
+export const getStaticProps: GetStaticProps = async (context: any) => {
+  const id = context.params.id;
+  const data = await client.getList<Blog>({
+    endpoint: "blog",
+    queries: { offset: (id - 1) * 10, limit: 10 },
+  });
   return {
-    // Passed to the page component as props
     props: {
-      blog: data,
-      totalCount: data.length,
+      blog: data.contents,
+      totalCount: data.totalCount,
     },
   };
-}
+};
+export default BlogId;
