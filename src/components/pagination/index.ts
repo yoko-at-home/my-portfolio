@@ -1,0 +1,1 @@
+export { PagenationComponent } from "./pagination";
