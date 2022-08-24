@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FC } from "react";
 import { Blog } from "src/types/types";
 
-export const PagenationComponent: FC<Blog> = (props) => {
+export const Pagenation: FC<Blog> = (props) => {
   const PER_PAGE = 10;
   const range = (start: number, end: number) => {
     return [...Array(end - start + 1)].map((_, i) => {
