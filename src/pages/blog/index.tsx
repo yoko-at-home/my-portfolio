@@ -1,37 +1,42 @@
-import { MicroCMSListResponse } from "microcms-js-sdk";
 import type { GetStaticProps, NextPage } from "next";
 import { Layout } from "src/layout";
 import { client } from "src/lib/client";
 import { CardPortion } from "src/components/blog/card";
-import { Title } from "@mantine/core";
+import { Title } from "src/components/title";
 import { PagenationComponent } from "src/components/blog";
+import { Blog, BlogProps } from "src/types/types";
+import { useRouter } from "next/router";
+import { useViewportSize } from "src/lib/mantine";
 
-export type Blog = {
-  title: string;
-  body: string;
-  content: string;
-  eyecatch: {
-    url: string;
-  };
-};
+const Blog: NextPage<BlogProps> = (props) => {
+  const router = useRouter();
+  const root = router.asPath === "/";
+  const { width } = useViewportSize();
+  if (width === undefined) {
+    return <div />;
+  }
+  const isMobile = width < 576;
 
-type Props = MicroCMSListResponse<Blog>;
+  const numberToShow = root ? (isMobile ? 4 : 6) : props.contents.length;
+  let filteredData = props.contents.slice(0, numberToShow);
+  console.log(filteredData);
 
-const Blog: NextPage<Props> = (props) => {
   return (
     <Layout>
-      <div className="flex min-h-[85vh] min-w-[100vh] flex-col justify-between">
-        <div>
+      <div className="flex min-h-[85vh] max-w-[100vw] flex-col justify-between">
+        <div className="py-10 sm:mx-auto">
           <Title>Blog</Title>
           <ul className="my-16 flex min-h-fit flex-col justify-center">
-            {props.contents.map((content) => {
+            {filteredData.map((content) => {
+              console.log(`CONTENT: ${content.id}`);
+
               return (
                 <CardPortion
                   id={content.id}
                   key={content.id}
                   title={content.title}
-                  content={content.body}
-                  date={content.createdAt}
+                  createdAt={content.createdAt}
+                  lead={content.lead}
                 />
               );
             })}
@@ -45,7 +50,7 @@ const Blog: NextPage<Props> = (props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<BlogProps> = async () => {
   const data = await client.getList<Blog>({ endpoint: "blog" });
   return {
     props: data,

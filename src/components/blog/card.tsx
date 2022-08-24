@@ -1,29 +1,20 @@
-import { Text } from "@mantine/core";
 import Link from "next/link";
 import { FC } from "react";
+import { Blog } from "src/types/types";
+import dayjs from "dayjs";
 
-type CardProps = {
-  id?: string;
-  title: string;
-  content: string;
-  date: string;
-};
-
-export const CardPortion: FC<CardProps> = (props) => {
+export const CardPortion: FC<Blog> = (props) => {
   return (
-    <li
-      key={props.id}
-      className="mb-3 list-none hover:bg-gray-100 hover:text-green-600"
-    >
+    <li key={props.id} className="mb-5 list-none hover:bg-gray-100">
       <Link href={`/blog/${props.id}`}>
         <a>
-          <Text size="lg">{props.title}</Text>
+          <div className="text-lg font-semibold">{props.title}</div>
           <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
-            {props.content}
+            {props.lead}
           </div>
-          <Text size="sm" color="dimmed">
-            {props.date}
-          </Text>
+          <div className="pt-2 text-xs">
+            {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
+          </div>
         </a>
       </Link>
     </li>

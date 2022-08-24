@@ -7,18 +7,18 @@ import { useRouter } from "next/router";
 import { Title } from "src/components/title";
 import { Layout } from "src/layout";
 import { client } from "src/lib/client";
-import { Blog } from "src/pages/blog";
+import { Blog } from "src/types/types";
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
 const BlogId: NextPage<Props> = (props) => {
   const router = useRouter();
-  const imageUrl = props.eyecatch.url;
+  const imageUrl = props.eyecatch?.url;
 
   return (
     <Layout>
       <div className="relative aspect-video w-full object-cover">
-        <Image src={imageUrl} alt="画像" layout="fill" />
+        <Image src={`${imageUrl}`} alt="画像" layout="fill" />
       </div>
 
       <div>
@@ -29,7 +29,7 @@ const BlogId: NextPage<Props> = (props) => {
         </time>
         <article
           className="prose-sm mt-8"
-          dangerouslySetInnerHTML={{ __html: props.content }}
+          dangerouslySetInnerHTML={{ __html: props.content! }}
         />
       </div>
       <div className="flex justify-center pb-10">
