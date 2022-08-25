@@ -18,25 +18,26 @@ export type Blog = {
   offset?: number;
   totalCount?: number;
 };
+
 export type BlogPaginationProps = [
   blog: {
-    title?: string;
-    lead?: string;
-    content?: string;
-    createdAt?: string;
-    eyecatch?: {
-      url?: string;
-      height?: number;
-      width?: number;
+    id: string;
+    createdAt: Date;
+    title: string;
+    content: HTMLAnchorElement;
+    eyecatch: {
+      url: string;
+      height: number;
+      width: number;
     };
-    id?: string;
-    publishedAt?: Date;
-    revisedAt?: Date;
-    updatedAt?: Date;
-    limit?: number;
-    offset?: number;
-    totalCount?: number;
+    category: {
+      id: string;
+      createdAt: Date;
+      name: string;
+    };
+    lead: string;
   }
 ];
 
 export type BlogProps = MicroCMSListResponse<Blog>;
+export type PropsPagination = MicroCMSListResponse<BlogPaginationProps>;

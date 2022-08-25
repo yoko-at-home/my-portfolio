@@ -4,7 +4,7 @@ import { FC } from "react";
 import { Blog } from "src/types/types";
 
 export const Pagenation: FC<Blog> = (props) => {
-  const PER_PAGE = 10;
+  const PER_PAGE = 5;
   const range = (start: number, end: number) => {
     return [...Array(end - start + 1)].map((_, i) => {
       return start + i;
