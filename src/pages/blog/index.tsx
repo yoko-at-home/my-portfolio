@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import { Layout } from "src/layout";
-import { client } from "src/lib/client";
+import { client } from "src/pages/api/client";
 import { CardPortion } from "src/components/blog/";
 import { Title } from "src/components/title";
 import { Pagenation } from "src/components/pagination";

@@ -7,7 +7,7 @@ import { Layout } from "src/layout";
 import { Button } from "@mantine/core";
 import { Title } from "src/components/title";
 import Link from "next/link";
-import { client } from "src/lib/client";
+import { client } from "src/pages/api/client";
 import { Blog, BlogProps } from "src/types/types";
 import { CardPortion } from "src/components/blog/card";
 import { useRouter } from "next/router";

@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
 import { Title } from "src/components/title";
 import { Layout } from "src/layout";
-import { client } from "src/lib/client";
+import { client } from "src/pages/api/client";
 import { Blog } from "src/types/types";
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;

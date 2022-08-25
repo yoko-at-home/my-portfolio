@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { Pagenation } from "src/components/pagination";
 import Link from "next/link";
 import { Blog, BlogProps } from "src/types/types";
-import { client } from "src/lib/client";
+import { client } from "src/pages/api/client";
 import { ParsedUrlQuery } from "querystring";
 import dayjs from "dayjs";
 
