@@ -3,10 +3,10 @@ import { Button } from "@mantine/core";
 import { Layout } from "src/layout";
 import { useRouter } from "next/router";
 import { Pagenation } from "src/components/pagination";
-import { CardPortion } from "src/components/blog/card";
 import Link from "next/link";
 import { Blog } from "src/types/types";
 import { client } from "src/lib/client";
+import dayjs from "dayjs";
 
 const PER_PAGE = 10;
 
@@ -18,15 +18,19 @@ const BlogId: NextPage<Blog> = ({ blog, totalCount }) => {
         <div className="mx-auto">
           {blog.map((content: any) => {
             return (
-              <Link href={`/blog/${content.id}`} passHref key={content.id}>
-                <CardPortion
-                  id={content.id}
-                  key={content.id}
-                  title={content.title}
-                  createdAt={content.createdAt}
-                  lead={content.lead}
-                />
-              </Link>
+              <li className="mb-5 list-none hover:bg-gray-100" key={content.id}>
+                <Link href={`/blog/${content.id}`} passHref>
+                  <a>
+                    <div className="text-lg font-semibold">{content.title}</div>
+                    <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
+                      {content.lead}
+                    </div>
+                    <div className="pt-2 text-xs">
+                      {dayjs(content.publishedAt).format("YYYY年MM月DD日")}
+                    </div>
+                  </a>
+                </Link>
+              </li>
             );
           })}
         </div>
