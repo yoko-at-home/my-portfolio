@@ -29,7 +29,7 @@ export const ContactForm: FC = () => {
         body: JSON.stringify(values),
       });
       form.reset();
-      setSendMessage("Thank you✨ We'll be in touch soon!");
+      setSendMessage("Thank you! We'll be in touch.");
     } catch (error) {
       console.error("Fetch error: ", error);
       alert(JSON.stringify(error));
