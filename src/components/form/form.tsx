@@ -1,112 +1,89 @@
-import { Button } from "@mantine/core";
-import { useState } from "react";
+import { FC, FormEvent, useState } from "react";
 import { Title } from "src/components/title";
+import { useForm } from "@mantine/form";
+import { Button, Group, Textarea, TextInput } from "@mantine/core";
 
-export const ContactForm = () => {
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
-  const [disabled, setDisabled] = useState<boolean>(false);
+export const ContactForm: FC = () => {
+  const [sendMessage, setSendMessage] = useState<string>("Need help?");
+  const form = useForm({
+    initialValues: {
+      email: "",
+      name: "",
+      message: "",
+    },
 
-  const handleSend = async () => {
-    const data = {
-      name,
-      email,
-      message,
-    };
+    validate: {
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
+    },
+  });
 
-    const response = await fetch("/api/contact", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(data),
-    });
-
-    if (response.status != 200) {
-      alert("error");
-    } else {
-      resetValue();
+  const onSubmit = async (values: typeof form.values) => {
+    try {
+      // microCMSに送信
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      form.reset();
+      setSendMessage("Thank you✨ We'll be in touch soon!");
+    } catch (error) {
+      console.error("Fetch error: ", error);
+      alert(JSON.stringify(error));
     }
-    setDisabled(false);
-  };
-
-  const resetValue = () => {
-    setName("");
-    setEmail("");
-    setMessage("");
   };
 
   return (
     <div className="container mx-auto w-screen py-20 px-3 md:max-w-5xl">
       <Title>Contact</Title>
-      <form onSubmit={handleSend}>
-        <dl>
-          <dd className="mt-2">
-            <label htmlFor="email">Email</label>
-          </dd>
-          <dt>
-            <input
-              className="w-full rounded border-2 border-gray-200 py-1 px-2 leading-[155%]"
-              id="email"
-              v-model="postData.email"
-              name="email"
-              type="text"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              required
-            />
-          </dt>
-        </dl>
-        <dl>
-          <dd className="mt-2">
-            <label htmlFor="name">Name</label>
-          </dd>
-          <dt>
-            <input
-              id="name"
-              className="w-full rounded border-2 border-gray-200 py-1 px-2 leading-[155%]"
-              v-model="postData.name"
-              name="name"
-              type="text"
-              placeholder="Taro Yamada"
-              value={name}
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-              required
-            />
-          </dt>
-        </dl>
-        <dl>
-          <dd className="mt-2">
-            <label htmlFor="message">Your message</label>
-          </dd>
-          <dt>
-            <textarea
-              id="message"
-              className="w-full rounded border-2 border-gray-200 py-1 px-2 leading-[155%]"
-              v-model="postData.message"
-              name="message"
-              placeholder="I want to order your goods "
-              rows={3}
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              required
-            />
-          </dt>
-        </dl>
-        <div className="mt-10 flex justify-center">
-          <Button color="dark" type="submit" radius="xl">
-            Send message
-          </Button>
-        </div>
-      </form>
+      <div className="mx-auto max-w-2xl">
+        <div className="mb-3 font-bold">{sendMessage}</div>
+        <form onSubmit={form.onSubmit((values) => onSubmit(values))}>
+          <TextInput
+            required
+            label="Email"
+            placeholder="your@email.com"
+            {...form.getInputProps("email")}
+            className="mb-3"
+          />
+
+          <TextInput
+            required
+            label="Name"
+            placeholder="Taro Yamada"
+            {...form.getInputProps("name")}
+            className="mb-3"
+          />
+
+          <Textarea
+            required
+            label="Your message"
+            placeholder="I want to order your goods"
+            {...form.getInputProps("message")}
+            className="mb-3"
+          />
+
+          <Group position="center" mt="md">
+            <Button
+              type="submit"
+              radius="xl"
+              color={"dark"}
+              sx={(theme) => ({
+                color: theme.colorScheme === "dark" ? "black" : "white",
+                backgroundColor:
+                  theme.colorScheme === "dark"
+                    ? theme.colors.dark[2]
+                    : theme.colors.gray[7],
+              })}
+            >
+              Send message
+            </Button>
+          </Group>
+        </form>
+      </div>
     </div>
   );
 };
