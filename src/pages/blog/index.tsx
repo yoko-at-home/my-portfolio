@@ -3,7 +3,6 @@ import { Layout } from "src/layout";
 import { clientBlog } from "src/pages/api/clientBlog";
 import { CardPortion } from "src/components/blog/";
 import { Title } from "src/components/title";
-import { Pagenation } from "src/components/pagination";
 import { Blog, BlogProps } from "src/types/types";
 
 const Blog: NextPage<BlogProps> = (props) => {
@@ -27,9 +26,7 @@ const Blog: NextPage<BlogProps> = (props) => {
           </ul>
         </div>
       </div>
-      <div className="mb-16 flex justify-center">
-        <Pagenation totalCount={props.totalCount} />
-      </div>
+      <div className="mb-16 flex justify-center"></div>
     </Layout>
   );
 };
