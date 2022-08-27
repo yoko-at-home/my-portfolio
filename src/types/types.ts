@@ -36,8 +36,17 @@ export type BlogPaginationProps = [
       name: string;
     };
     lead: string;
+    limit?: number;
+    offset?: number;
+    totalCount?: number;
   }
 ];
 
 export type BlogProps = MicroCMSListResponse<Blog>;
-export type PropsPagination = MicroCMSListResponse<BlogPaginationProps>;
+export type PropsPagination = MicroCMSListResponse<BlogPaginationProps>[];
+
+export type ContactFormInput = {
+  email: string;
+  name: string;
+  message: string;
+};
