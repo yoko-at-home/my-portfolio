@@ -7,11 +7,11 @@ import { Layout } from "src/layout";
 import { Button } from "@mantine/core";
 import { Title } from "src/components/title";
 import Link from "next/link";
-import { client } from "src/pages/api/client";
 import { Blog, BlogProps } from "src/types/types";
 import { CardPortion } from "src/components/blog/card";
 import { useRouter } from "next/router";
 import { useViewportSize } from "src/lib/mantine";
+import { clientBlog } from "src/pages/api/clientBlog";
 
 const Home: NextPage<BlogProps> = (props) => {
   const router = useRouter();
@@ -66,7 +66,7 @@ const Home: NextPage<BlogProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
-  const data = await client.getList<Blog>({ endpoint: "blog" });
+  const data = await clientBlog.getList<Blog>({ endpoint: "blog" });
   return {
     props: data,
   };

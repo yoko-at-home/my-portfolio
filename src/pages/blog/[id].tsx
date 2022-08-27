@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
 import { Title } from "src/components/title";
 import { Layout } from "src/layout";
-import { client } from "src/pages/api/client";
+import { clientBlog } from "src/pages/api/clientBlog";
 import { Blog } from "src/types/types";
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
@@ -47,7 +47,10 @@ const BlogId: NextPage<Props> = (props) => {
 };
 
 export const getStaticPaths: GetStaticPaths<PropsPath> = async () => {
-  const data = await client.getList<Blog>({ endpoint: "blog" });
+  const data = await clientBlog.getList<Blog>({
+    endpoint: "blog",
+    queries: { limit: 100, offset: 0 },
+  });
   const ids = data.contents.map((content) => `/blog/${content.id}`);
   return {
     paths: ids,
@@ -62,9 +65,10 @@ export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
     return { notFound: true };
   }
 
-  const data = await client.getListDetail<Blog>({
+  const data = await clientBlog.getListDetail<Blog>({
     endpoint: "blog",
     contentId: ctx.params.id,
+    queries: { limit: 20, offset: 0 },
   });
 
   return {
