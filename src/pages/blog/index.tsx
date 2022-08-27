@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import { Layout } from "src/layout";
-import { client } from "src/pages/api/client";
+import { clientBlog } from "src/pages/api/clientBlog";
 import { CardPortion } from "src/components/blog/";
 import { Title } from "src/components/title";
 import { Pagenation } from "src/components/pagination";
@@ -35,7 +35,7 @@ const Blog: NextPage<BlogProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
-  const data = await client.getList<Blog>({ endpoint: "blog" });
+  const data = await clientBlog.getList<Blog>({ endpoint: "blog" });
   return {
     props: data,
   };

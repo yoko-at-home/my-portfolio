@@ -9,9 +9,7 @@ import { Layout } from "src/layout";
 import { useRouter } from "next/router";
 import { Pagenation } from "src/components/pagination";
 import Link from "next/link";
-import { Blog, BlogProps } from "src/types/types";
-import { client } from "src/pages/api/client";
-import { ParsedUrlQuery } from "querystring";
+import { clientBlog } from "src/pages/api/clientBlog";
 import dayjs from "dayjs";
 
 const PER_PAGE = 5;
@@ -61,7 +59,7 @@ const BlogId: NextPage<BlogProps> = (props) => {
 
 // 動的なページを作成
 export const getStaticPaths: GetStaticPaths = async () => {
-  const repos = await client.get({ endpoint: "blog" });
+  const repos = await clientBlog.get({ endpoint: "blog" });
   console.log(repos);
 
   const pageNumbers = [];
@@ -84,7 +82,7 @@ export const getStaticProps: GetStaticProps<
   PreviewData
 > = async (context: any) => {
   const id = context.params.id;
-  const data = await client.getList<Blog | ParsedUrlQuery | PreviewData>({
+  const data = await clientBlog.getList<Blog>({
     endpoint: "blog",
     queries: { offset: (id - 1) * 5, limit: 5 },
   });
