@@ -4,6 +4,7 @@ import { clientBlog } from "src/pages/api/clientBlog";
 import { Title } from "src/components/title";
 import { Blog, BlogProps } from "src/types/types";
 import { BlogCard } from "src/components/card";
+import { Pagenation } from "src/components/pagination";
 
 const Blog: NextPage<BlogProps> = (props) => {
   return (
@@ -24,9 +25,14 @@ const Blog: NextPage<BlogProps> = (props) => {
               );
             })}
           </ul>
+
+          {props.contents.length > 6 ? (
+            <div className="flex justify-center">
+              <Pagenation totalCount={props.totalCount} />
+            </div>
+          ) : null}
         </div>
       </div>
-      <div className="mb-16 flex justify-center"></div>
     </Layout>
   );
 };
