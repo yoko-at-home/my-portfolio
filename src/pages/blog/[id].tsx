@@ -4,17 +4,12 @@ import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { ParsedUrlQuery } from "querystring";
 import { Title } from "src/components/title";
 import { Layout } from "src/layout";
 import { clientBlog } from "src/pages/api/clientBlog";
-import { Blog } from "src/types/types";
+import { Blog, PropsPath } from "src/types/types";
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
-export type PropsPath = Blog &
-  MicroCMSContentId &
-  MicroCMSDate &
-  ParsedUrlQuery;
 
 const BlogId: NextPage<Props> = (props) => {
   const router = useRouter();

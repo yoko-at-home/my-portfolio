@@ -1,4 +1,9 @@
-import { MicroCMSListResponse } from "microcms-js-sdk";
+import {
+  MicroCMSContentId,
+  MicroCMSDate,
+  MicroCMSListResponse,
+} from "microcms-js-sdk";
+import { ParsedUrlQuery } from "querystring";
 
 export type Blog = {
   title?: string;
@@ -19,7 +24,17 @@ export type Blog = {
 
 export type BlogProps = MicroCMSListResponse<Blog>;
 
+export type BlogProps2 = {
+  blogData: MicroCMSListResponse<Blog>[];
+  totalCount: number;
+};
+
 export type BlogPortfolioProps = {
   blogData: MicroCMSListResponse<Blog>;
   portfolioData: MicroCMSListResponse<Blog>;
 };
+
+export type PropsPath = Blog &
+  MicroCMSContentId &
+  MicroCMSDate &
+  ParsedUrlQuery;
