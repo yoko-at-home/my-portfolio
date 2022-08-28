@@ -1,1 +1,1 @@
-export { Portfolios } from "./portfolios";
+export { PortfolioCard } from "./card";

@@ -1,27 +1,39 @@
 import { Button } from "@mantine/core";
-import { NextPage } from "next";
+import dayjs from "dayjs";
+import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { Title } from "src/components/title";
 import { Layout } from "src/layout";
 import { metaData } from "src/metadata";
+import { client } from "src/pages/api/client";
+import { PropsPath } from "src/pages/blog/[id]";
+import { Blog } from "src/types/types";
 
-const PortfolioContent: NextPage = () => {
+type Props = Blog & MicroCMSContentId & MicroCMSDate;
+
+const PortfolioId: NextPage<Props> = (props) => {
   const router = useRouter();
+  const imageUrl = props.eyecatch?.url;
   return (
     <Layout>
-      <div className="relative aspect-video w-full object-cover">
-        <Image src="/assets/img/Thumbnail.webp" alt="画像" layout="fill" />
+      <div className="mx-auto w-full lg:w-2/3">
+        <div className="relative aspect-video w-full object-cover">
+          <Image src={`${imageUrl}`} alt="画像" layout="fill" />
+        </div>
       </div>
-      <div className="my-4 text-xl font-bold text-gray-900">
-        {metaData.name}
+      <div>
+        <Title>{props.title}</Title>
+
+        <time dateTime={props.publishedAt} className="mt-2 block">
+          {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
+        </time>
+        <article
+          className="prose-sm mt-8"
+          dangerouslySetInnerHTML={{ __html: props.content! }}
+        />
       </div>
-      <p className="mb-4 text-xs font-bold text-gray-400">2021.10 - 2021.12</p>
-      <p
-        className="my-2 text-gray-900"
-        dangerouslySetInnerHTML={{
-          __html: `${metaData.description}`,
-        }}
-      />
       <div className="flex justify-center py-10">
         <Button color="dark" onClick={() => router.back()}>
           Return
@@ -31,4 +43,34 @@ const PortfolioContent: NextPage = () => {
   );
 };
 
-export default PortfolioContent;
+export const getStaticPaths: GetStaticPaths<PropsPath> = async () => {
+  const data = await client.getList<Blog>({
+    endpoint: "portfolio",
+    queries: { limit: 100, offset: 0 },
+  });
+  const ids = data.contents.map((content) => `/portfolio/${content.id}`);
+  return {
+    paths: ids,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
+  ctx
+) => {
+  if (!ctx.params) {
+    return { notFound: true };
+  }
+
+  const data = await client.getListDetail<Blog>({
+    endpoint: "portfolio",
+    contentId: ctx.params.id,
+    queries: { limit: 20, offset: 0 },
+  });
+
+  return {
+    props: data,
+  };
+};
+
+export default PortfolioId;

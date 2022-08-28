@@ -32,9 +32,9 @@ const Blog: NextPage<BlogProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
-  const data = await clientBlog.getList<Blog>({ endpoint: "blog" });
+  const blogData = await clientBlog.getList<Blog>({ endpoint: "blog" });
   return {
-    props: data,
+    props: blogData,
   };
 };
 
