@@ -1,1 +1,0 @@
-export { CardPortion } from "./card";

@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from "next";
 import { Layout } from "src/layout";
 import { clientBlog } from "src/pages/api/clientBlog";
-import { CardPortion } from "src/components/blog/";
 import { Title } from "src/components/title";
 import { Blog, BlogProps } from "src/types/types";
+import { BlogCard } from "src/components/card";
 
 const Blog: NextPage<BlogProps> = (props) => {
   return (
@@ -14,7 +14,7 @@ const Blog: NextPage<BlogProps> = (props) => {
           <ul className="my-16 flex min-h-fit flex-col justify-center">
             {props.contents.map((content) => {
               return (
-                <CardPortion
+                <BlogCard
                   id={content.id}
                   key={content.id}
                   title={content.title}

@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Blog } from "src/types/types";
 import dayjs from "dayjs";
 
-export const CardPortion: FC<Blog> = (props) => {
+export const BlogCard: FC<Blog> = (props) => {
   return (
     <li key={props.id} className="mb-5 list-none hover:bg-gray-100">
       <Link href={`/blog/${props.id}`}>

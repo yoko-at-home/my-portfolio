@@ -7,12 +7,12 @@ import { Button } from "@mantine/core";
 import { Title } from "src/components/title";
 import Link from "next/link";
 import { Blog, BlogProps } from "src/types/types";
-import { CardPortion } from "src/components/blog/card";
+import { BlogCard } from "src/components/card/blogCard";
 import { useRouter } from "next/router";
 import { useViewportSize } from "src/lib/mantine";
 import { clientBlog } from "src/pages/api/clientBlog";
 import { client } from "src/pages/api/client";
-import { PortfolioCard } from "src/components/portfolio/card";
+import { PortfolioCard } from "src/components/card/portfolioCard";
 
 const Home: NextPage<BlogProps> = (props) => {
   const router = useRouter();
@@ -24,7 +24,11 @@ const Home: NextPage<BlogProps> = (props) => {
   const isMobile = width < 576;
 
   const numberToShow = root ? (isMobile ? 4 : 6) : props.contents.length;
-  // let filteredData = props.contents.slice(0, numberToShow);
+  let filteredBlogData = props.blogData.contents.slice(0, numberToShow);
+  let filteredPortfolioData = props.portfolioData.contents.slice(
+    0,
+    numberToShow
+  );
 
   return (
     <Layout>
@@ -33,9 +37,9 @@ const Home: NextPage<BlogProps> = (props) => {
         <div>
           <Title>Blog</Title>
           <ul className="my-16 flex min-h-fit flex-col justify-center">
-            {props.blogData.contents.map((content: any) => {
+            {filteredBlogData.map((content: any) => {
               return (
-                <CardPortion
+                <BlogCard
                   id={content.id}
                   key={content.id}
                   title={content.title}
@@ -55,7 +59,7 @@ const Home: NextPage<BlogProps> = (props) => {
         <div className="mx-auto max-w-7xl px-4 pb-10">
           <Title>Portfolio</Title>
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {props.portfolioData.contents.map((content: any) => {
+            {filteredPortfolioData.map((content: any) => {
               return (
                 <PortfolioCard
                   id={content.id}
@@ -97,7 +101,7 @@ export const getStaticProps: GetStaticProps = async () => {
     console.error(err);
     return {
       props: {
-        err: "データ取得で問題が発生しました。",
+        err: "Error occurred. Try later!",
       },
     };
   }
