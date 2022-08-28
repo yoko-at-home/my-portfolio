@@ -24,7 +24,9 @@ const Home: NextPage<BlogProps> = (props) => {
   const isMobile = width < 576;
 
   const numberToShow = root ? (isMobile ? 4 : 6) : props.contents.length;
+  // @ts-ignore
   let filteredBlogData = props.blogData.contents.slice(0, numberToShow);
+  // @ts-ignore
   let filteredPortfolioData = props.portfolioData.contents.slice(
     0,
     numberToShow
