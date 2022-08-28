@@ -4,7 +4,6 @@ import { Layout } from "../layout";
 
 const Success: NextPage = () => {
   const router = useRouter();
-  console.log(router);
 
   return (
     <Layout>
