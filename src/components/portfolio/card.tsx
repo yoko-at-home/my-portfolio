@@ -1,4 +1,5 @@
-import { Image, Text } from "@mantine/core";
+import { Text } from "@mantine/core";
+import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 
@@ -6,23 +7,28 @@ type CardProps = {
   id?: number;
   thumbnail: string;
   title: string;
-  content: string;
+  content?: string;
+  lead: string;
   date: string;
 };
 
-export const CardPortion: FC<CardProps> = (props) => {
+export const PortfolioCard: FC<CardProps> = (props) => {
   return (
-    <li key={props.id} className="mx-auto flex max-w-lg list-none flex-col">
+    <li
+      key={props.id}
+      className="relative mx-auto flex h-72 w-full max-w-lg list-none flex-col"
+    >
       <Link href={`/portfolio/${props.id}`}>
         <a>
-          <Image src={props.thumbnail} alt={props.title} />
-          <Text weight={500} size="lg">
+          <Image src={props.thumbnail} alt={props.title} layout="fill" />
+          <div className="absolute bottom-0 right-0 w-full bg-black/40 p-3 text-white">
             {props.title}
-          </Text>
-          <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
-            {props.content}
+            <br />
+            {props.date}
+            <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
+              {props.lead}
+            </div>
           </div>
-          <Text size="sm">{props.date}</Text>
         </a>
       </Link>
     </li>
