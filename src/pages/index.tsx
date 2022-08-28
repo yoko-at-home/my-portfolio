@@ -6,7 +6,7 @@ import { Layout } from "src/layout";
 import { Button } from "@mantine/core";
 import { Title } from "src/components/title";
 import Link from "next/link";
-import { Blog, BlogProps } from "src/types/types";
+import { Blog, BlogPortfolioProps } from "src/types/types";
 import { BlogCard } from "src/components/card/blogCard";
 import { useRouter } from "next/router";
 import { useViewportSize } from "src/lib/mantine";
@@ -14,7 +14,7 @@ import { clientBlog } from "src/pages/api/clientBlog";
 import { client } from "src/pages/api/client";
 import { PortfolioCard } from "src/components/card/portfolioCard";
 
-const Home: NextPage<BlogProps> = (props) => {
+const Home: NextPage<BlogPortfolioProps> = (props) => {
   const router = useRouter();
   const root = router.asPath === "/";
   const { width } = useViewportSize();
@@ -23,10 +23,13 @@ const Home: NextPage<BlogProps> = (props) => {
   }
   const isMobile = width < 576;
 
-  const numberToShow = root ? (isMobile ? 4 : 6) : props.contents.length;
-  // @ts-ignore
+  const numberToShow = root
+    ? isMobile
+      ? 4
+      : 6
+    : props.blogData.contents.length;
+
   let filteredBlogData = props.blogData.contents.slice(0, numberToShow);
-  // @ts-ignore
   let filteredPortfolioData = props.portfolioData.contents.slice(
     0,
     numberToShow
