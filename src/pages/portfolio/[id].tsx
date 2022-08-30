@@ -4,7 +4,7 @@ import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Title } from "src/components/title";
+import { Title } from "src/components/atom/title";
 import { Layout } from "src/layout";
 import { client } from "src/pages/api/client";
 import { Blog, PropsPath } from "src/types/types";

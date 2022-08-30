@@ -1,5 +1,5 @@
 import { Button } from "@mantine/core";
-import { Title } from "src/components/title";
+import { Title } from "src/components/atom/title";
 import { data } from "./data";
 import { CardPortion } from "src/components/twitter/card";
 import { useRouter } from "next/router";

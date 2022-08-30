@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
 import { Layout } from "src/layout";
 import { client } from "src/pages/api/client";
-import { Title } from "src/components/title";
+import { Title } from "src/components/atom/title";
 import { Blog, BlogProps } from "src/types/types";
 import { PortfolioCard } from "src/components/card";
 
