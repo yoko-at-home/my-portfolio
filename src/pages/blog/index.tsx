@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
 import { Layout } from "src/layout";
 import { clientBlog } from "src/pages/api/clientBlog";
-import { Title } from "src/components/title";
+import { Title } from "src/components/atom/title";
 import { Blog, BlogProps } from "src/types/types";
 import { BlogCard } from "src/components/card";
 import { Pagenation } from "src/components/pagination";

@@ -19,7 +19,7 @@ const BlogId: NextPage<BlogProps2> = (props) => {
           {`記事の総数：${props.totalCount}`}
         </div>
 
-        <div className="mx-auto">
+        {/* <div className="mx-auto">
           {props.blogData.map((content: any) => {
             return (
               <li className="mb-5 list-none hover:bg-gray-100" key={content.id}>
@@ -36,7 +36,7 @@ const BlogId: NextPage<BlogProps2> = (props) => {
               </li>
             );
           })}
-        </div>
+        </div> */}
         <div className="flex justify-end pb-10">
           <Button color="dark" onClick={() => router.back()}>
             Return
@@ -53,25 +53,24 @@ const BlogId: NextPage<BlogProps2> = (props) => {
 export const getStaticPaths = async () => {
   const repos = await clientBlog.get({ endpoint: "blog" });
 
-  const range = (start: number, end: number) =>
-    [...Array(end - start + 1)].map((_, i) => start + i);
+  // const range = (start: number, end: number) =>
+  //   [...Array(end - start + 1)].map((_, i) => start + i);
 
-  const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map(
-    (repo) => `/blog/page/${repo}`
-  );
+  // const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map(
+  //   (repo) => `/blog/page/${repo}`
+  // );
 
-  return { paths, fallback: false };
+  // return { paths, fallback: false };
 };
 
 // データを取得
 export const getStaticProps: GetStaticProps = async (context) => {
-  // @ts-ignore
-  const id = context.params.id;
+  // const id = context.params.id;
+  // console.log(id);
 
   const data = await clientBlog.get({
     endpoint: "blog",
-    // @ts-ignore
-    queries: { offset: (id - 1) * 5, limit: 5 },
+    // queries: { offset: (id - 1) * 5, limit: 5 },
   });
 
   return {

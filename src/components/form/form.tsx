@@ -1,7 +1,7 @@
 import { FC, FormEvent, useState } from "react";
-import { Title } from "src/components/title";
 import { useForm } from "@mantine/form";
 import { Button, Group, Textarea, TextInput } from "@mantine/core";
+import { Title } from "src/components/atom/title";
 
 export const ContactForm: FC = () => {
   const [sendMessage, setSendMessage] = useState<string>("Need help?");

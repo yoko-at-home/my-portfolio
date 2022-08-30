@@ -1,10 +1,10 @@
 import type { GetStaticProps, NextPage } from "next";
 import { GitHubReps } from "src/components/github";
-import { Hero } from "src/components/hero";
+import { Hero } from "src/components/atom/hero";
 import { TwitterSec } from "src/components/twitter";
 import { Layout } from "src/layout";
 import { Button } from "@mantine/core";
-import { Title } from "src/components/title";
+import { Title } from "src/components/atom/title";
 import Link from "next/link";
 import { Blog, BlogPortfolioProps } from "src/types/types";
 import { BlogCard } from "src/components/card/blogCard";
