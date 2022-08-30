@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { Layout } from "src/layout";
-import { Title } from "src/components/title";
+import { Title } from "src/components/atom/title";
 import { Text } from "@mantine/core";
 import { metaData } from "src/metadata";
 

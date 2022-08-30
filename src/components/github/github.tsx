@@ -2,7 +2,7 @@ import { Button } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 import { useRouter } from "next/router";
 import { CardPortion } from "src/components/github/card";
-import { Title } from "src/components/title";
+import { Title } from "src/components/atom/title";
 import { metaData } from "src/metadata";
 import { data } from "./data";
 export const GitHubReps = () => {
