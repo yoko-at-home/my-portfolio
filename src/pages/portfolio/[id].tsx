@@ -6,10 +6,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { Title } from "src/components/title";
 import { Layout } from "src/layout";
-import { metaData } from "src/metadata";
 import { client } from "src/pages/api/client";
-import { PropsPath } from "src/pages/blog/[id]";
-import { Blog } from "src/types/types";
+import { Blog, PropsPath } from "src/types/types";
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
