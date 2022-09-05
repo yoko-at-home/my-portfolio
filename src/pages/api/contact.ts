@@ -1,12 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+
 import { client } from "./client";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
     console.log(req.body);
     await client.create({
-      endpoint: "contact",
       content: req.body,
+      endpoint: "contact",
     });
     res.status(200).json("OK");
   } catch (err) {
