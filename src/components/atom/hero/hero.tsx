@@ -6,7 +6,7 @@ export const Hero = () => {
     <div
       className=" w-screen bg-cover bg-top text-white"
       style={{
-        backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.8), rgba(100,100,333,0.7)),
+        backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(100,100,333,0.8)),
   url('/assets/img/about.webp')`,
       }}
     >
@@ -15,9 +15,7 @@ export const Hero = () => {
           <div className="text-[28px] font-bold leading-7">
             {metaData.title.toLocaleUpperCase()}
           </div>
-          <div className="text-[16px] leading-6">
-            {metaData.name}のポートフォリオのためのページです
-          </div>
+          <div className="pt-1 text-[16px] leading-6 ">{metaData.lead}</div>
         </div>
         <div className="flex h-[17px] justify-start">
           <img
