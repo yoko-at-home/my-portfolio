@@ -1,18 +1,18 @@
+import { Button } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
-import { GitHubReps } from "src/components/github";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { Hero } from "src/components/atom/hero";
+import { Title } from "src/components/atom/title";
+import { BlogCard } from "src/components/card/blogCard";
+import { PortfolioCard } from "src/components/card/portfolioCard";
+import { GitHubReps } from "src/components/github";
 import { TwitterSec } from "src/components/twitter";
 import { Layout } from "src/layout";
-import { Button } from "@mantine/core";
-import { Title } from "src/components/atom/title";
-import Link from "next/link";
-import { Blog, BlogPortfolioProps } from "src/types/types";
-import { BlogCard } from "src/components/card/blogCard";
-import { useRouter } from "next/router";
 import { useViewportSize } from "src/lib/mantine";
-import { clientBlog } from "src/pages/api/clientBlog";
 import { client } from "src/pages/api/client";
-import { PortfolioCard } from "src/components/card/portfolioCard";
+import { clientBlog } from "src/pages/api/clientBlog";
+import { Blog, BlogPortfolioProps } from "src/types/types";
 
 const Home: NextPage<BlogPortfolioProps> = (props) => {
   const router = useRouter();

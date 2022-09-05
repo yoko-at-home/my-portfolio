@@ -1,14 +1,14 @@
-import { FC, FormEvent, useState } from "react";
-import { useForm } from "@mantine/form";
 import { Button, Group, Textarea, TextInput } from "@mantine/core";
+import { useForm } from "@mantine/form";
+import { FC, useState } from "react";
 import { Title } from "src/components/atom/title";
 
 export const ContactForm: FC = () => {
   const [sendMessage, setSendMessage] = useState<string>("Need help?");
   const form = useForm({
     initialValues: {
-      email: "",
       name: "",
+      email: "",
       message: "",
     },
 
@@ -21,12 +21,12 @@ export const ContactForm: FC = () => {
     try {
       // microCMSに送信
       await fetch("/api/contact", {
-        method: "POST",
+        body: JSON.stringify(values),
         headers: {
           Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(values),
+        method: "POST",
       });
       form.reset();
       setSendMessage("Thank you! We'll be in touch.");
@@ -72,11 +72,11 @@ export const ContactForm: FC = () => {
               radius="xl"
               color={"dark"}
               sx={(theme) => ({
-                color: theme.colorScheme === "dark" ? "black" : "white",
                 backgroundColor:
                   theme.colorScheme === "dark"
                     ? theme.colors.dark[2]
                     : theme.colors.gray[7],
+                color: theme.colorScheme === "dark" ? "black" : "white",
               })}
             >
               Send message

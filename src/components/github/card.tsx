@@ -3,12 +3,12 @@ import { FC } from "react";
 
 type CardProps = {
   id?: number;
-  thumbnail: string;
   title: string;
   content: string;
-  typescript: string;
   javascript: string;
   other: string;
+  thumbnail: string;
+  typescript: string;
 };
 
 export const CardPortion: FC<CardProps> = (props) => {

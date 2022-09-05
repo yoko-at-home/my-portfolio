@@ -1,7 +1,7 @@
-import { NextPage } from "next";
-import { Layout } from "src/layout";
-import { Title } from "src/components/atom/title";
 import { Text } from "@mantine/core";
+import { NextPage } from "next";
+import { Title } from "src/components/atom/title";
+import { Layout } from "src/layout";
 import { metaData } from "src/metadata";
 
 const AboutPage: NextPage = () => {

@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
+
 import { Layout } from "../layout";
 
 const Success: NextPage = () => {

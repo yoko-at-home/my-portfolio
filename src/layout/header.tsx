@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
+import { Text } from "@mantine/core";
 import Link from "next/link";
 import { CSSProperties } from "react";
 import { Navigation, NavMobile } from "src/layout/navigation";
-import { Text } from "@mantine/core";
 import { metaData } from "src/metadata";
 
 type Props = {
-  inView: boolean;
   className?: CSSProperties;
+  inView: boolean;
 };
 
 export const HeaderPart = ({ inView }: Props) => {

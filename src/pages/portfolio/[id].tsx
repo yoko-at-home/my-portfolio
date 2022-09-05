@@ -48,8 +48,8 @@ export const getStaticPaths: GetStaticPaths<PropsPath> = async () => {
   });
   const ids = data.contents.map((content) => `/portfolio/${content.id}`);
   return {
-    paths: ids,
     fallback: false,
+    paths: ids,
   };
 };
 
@@ -61,8 +61,8 @@ export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
   }
 
   const data = await client.getListDetail<Blog>({
-    endpoint: "portfolio",
     contentId: ctx.params.id,
+    endpoint: "portfolio",
     queries: { limit: 20, offset: 0 },
   });
 
