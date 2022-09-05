@@ -5,7 +5,7 @@ export const data = [
       "📣 新サービス「Noway Form」をリリースしました！Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogle FormsでやっていたことがNotionだけで完結します✌✨試しに使っていただけると幸いです😊",
     date: "2021.10 - 2021.12",
     href: "https://www.noway-form.com/ja",
-    thumbnail: "/assets/img/Ellipse 2.png",
+    thumbnail: "/assets/img/Ellipse 2.jpg",
   },
   {
     id: "2",
@@ -13,7 +13,7 @@ export const data = [
       "📣 新サービス「Noway Form」をリリースしました！Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogle FormsでやっていたことがNotionだけで完結します✌✨試しに使っていただけると幸いです😊",
     date: "2021.10 - 2021.12",
     href: "https://www.noway-form.com/ja",
-    thumbnail: "/assets/img/Ellipse 2.png",
+    thumbnail: "/assets/img/Ellipse 2.jpg",
   },
   {
     id: "3",
@@ -21,7 +21,7 @@ export const data = [
       "📣 新サービス「Noway Form」をリリースしました！Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogle FormsでやっていたことがNotionだけで完結します✌✨試しに使っていただけると幸いです😊",
     date: "2021.10 - 2021.12",
     href: "https://www.noway-form.com/ja",
-    thumbnail: "/assets/img/Ellipse 2.png",
+    thumbnail: "/assets/img/Ellipse 2.jpg",
   },
   {
     id: "4",
@@ -29,7 +29,7 @@ export const data = [
       "📣 新サービス「Noway Form」をリリースしました！Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogle FormsでやっていたことがNotionだけで完結します✌✨試しに使っていただけると幸いです😊",
     date: "2021.10 - 2021.12",
     href: "https://www.noway-form.com/ja",
-    thumbnail: "/assets/img/Ellipse 2.png",
+    thumbnail: "/assets/img/Ellipse 2.jpg",
   },
   {
     id: "5",
@@ -37,7 +37,7 @@ export const data = [
       "📣 新サービス「Noway Form」をリリースしました！Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogle FormsでやっていたことがNotionだけで完結します✌✨試しに使っていただけると幸いです😊",
     date: "2021.10 - 2021.12",
     href: "https://www.noway-form.com/ja",
-    thumbnail: "/assets/img/Ellipse 2.png",
+    thumbnail: "/assets/img/Ellipse 2.jpg",
   },
   {
     id: "6",
@@ -45,6 +45,6 @@ export const data = [
       "📣 新サービス「Noway Form」をリリースしました！Noway Formは、Notionのデータベースをもとにフォームを作成できるサービスです。これまでGoogle FormsでやっていたことがNotionだけで完結します✌✨試しに使っていただけると幸いです😊",
     date: "2021.10 - 2021.12",
     href: "https://www.noway-form.com/ja",
-    thumbnail: "/assets/img/Ellipse 2.png",
+    thumbnail: "/assets/img/Ellipse 2.jpg",
   },
 ];
