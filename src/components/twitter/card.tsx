@@ -18,7 +18,7 @@ export const CardPortion: FC<CardProps> = (props) => {
           <Avatar
             src={props.thumbnail}
             alt={metaData.twitterName}
-            className="mr-3 mt-2"
+            className="mr-3 mt-2 rounded-full"
           />
           <div className="w-full flex-row justify-between">
             <Text weight={500}>
