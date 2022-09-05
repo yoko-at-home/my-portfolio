@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from "next";
+import { Title } from "src/components/atom/title";
+import { PortfolioCard } from "src/components/card";
 import { Layout } from "src/layout";
 import { client } from "src/pages/api/client";
-import { Title } from "src/components/atom/title";
 import { Blog, BlogProps } from "src/types/types";
-import { PortfolioCard } from "src/components/card";
 
 const PortfolioPage: NextPage<BlogProps> = (props) => {
   return (

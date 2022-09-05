@@ -1,6 +1,6 @@
+import { Burger } from "@mantine/core";
 import Link from "next/link";
 import { useState } from "react";
-import { Burger } from "@mantine/core";
 
 const items = [
   // { href: "/", label: "Home" },

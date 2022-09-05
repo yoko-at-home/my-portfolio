@@ -1,13 +1,13 @@
-import { Card, Avatar, Text } from "@mantine/core";
+import { Avatar, Card, Text } from "@mantine/core";
 import { FC } from "react";
 import { metaData } from "src/metadata";
 
 type CardProps = {
   id?: string;
-  thumbnail: string;
   content: string;
-  href: string;
   date: string;
+  href: string;
+  thumbnail: string;
 };
 
 export const CardPortion: FC<CardProps> = (props) => {

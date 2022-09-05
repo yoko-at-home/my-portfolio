@@ -1,9 +1,11 @@
 import { Button } from "@mantine/core";
-import { Title } from "src/components/atom/title";
-import { data } from "./data";
-import { CardPortion } from "src/components/twitter/card";
 import { useRouter } from "next/router";
+import { Title } from "src/components/atom/title";
+import { CardPortion } from "src/components/twitter/card";
 import { useViewportSize } from "src/lib/mantine";
+
+import { data } from "./data";
+
 export const TwitterSec = () => {
   const router = useRouter();
   const root = router.asPath === "/";

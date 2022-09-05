@@ -4,11 +4,11 @@ import { FC } from "react";
 
 type CardProps = {
   id?: number;
-  thumbnail: string;
   title: string;
   content?: string;
-  lead: string;
   date: string;
+  lead: string;
+  thumbnail: string;
 };
 
 export const PortfolioCard: FC<CardProps> = (props) => {
