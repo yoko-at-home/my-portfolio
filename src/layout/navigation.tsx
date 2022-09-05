@@ -36,9 +36,13 @@ export const NavMobile = () => {
         title={title}
       />
       <div
-        className={`duration-0 fixed top-0  right-0 z-10 h-full w-full transform overflow-auto bg-[#E64980] px-6 pt-6 ${
+        className={`duration-0 fixed top-0  right-0 z-10 h-full w-full transform overflow-auto px-6 pt-6 ${
           opened ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(0,0,0), rgba(100,100,333)),
+  url('')`,
+        }}
       >
         <Burger
           opened={opened}
