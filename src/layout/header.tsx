@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CSSProperties } from "react";
 import { Navigation, NavMobile } from "src/layout/navigation";
 import { Text } from "@mantine/core";
+import { metaData } from "src/metadata";
 
 type Props = {
   inView: boolean;
@@ -19,7 +20,7 @@ export const HeaderPart = ({ inView }: Props) => {
       >
         <NavMobile />
         <Text size="lg" weight={700}>
-          <Link href="/">Shimabu IT University</Link>
+          <Link href="/">{metaData.title}</Link>
         </Text>
         <div className="flex leading-6">
           <div className="hidden sm:block">

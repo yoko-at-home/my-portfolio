@@ -4,8 +4,5 @@ type Title = {
   children: ReactNode
 }
 export const Title:FC<Title> = (props) => {
-  return (
-    <div className="text-[26px] font-bold text-[#25262B] my-10">{props.children}</div>
-
-  )
+  return <div className="my-10 text-[26px] font-black">{props.children}</div>;
 }
