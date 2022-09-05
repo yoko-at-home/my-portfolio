@@ -7,7 +7,7 @@ import { metaData } from "src/metadata";
 const AboutPage: NextPage = () => {
   return (
     <div
-      className="bg-black/50 bg-cover bg-center"
+      className="bg-black/50 bg-cover bg-top"
       style={{
         backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.7), rgba(100,100,333,0.9)),
   url('/assets/img/about.webp')`,

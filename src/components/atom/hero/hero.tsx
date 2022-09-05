@@ -4,7 +4,7 @@ import { metaData } from "src/metadata";
 export const Hero = () => {
   return (
     <div
-      className=" w-screen bg-cover bg-top text-white"
+      className=" w-screen bg-cover bg-center text-white"
       style={{
         backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(100,100,333,0.8)),
   url('/assets/img/about.webp')`,
