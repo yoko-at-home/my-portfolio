@@ -6,10 +6,10 @@ const handler = (req, res) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY); //SendGridのAPIキー
 
   msg = {
-    to: req.body.to,
     from: req.body.email,
     subject: req.body.subject,
     text: req.body.text,
+    to: req.body.to,
   };
 
   (async () => {
