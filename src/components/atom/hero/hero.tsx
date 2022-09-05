@@ -1,14 +1,22 @@
+import { metaData } from "src/metadata";
+
 /* eslint-disable @next/next/no-img-element */
 export const Hero = () => {
   return (
-    <div className=" w-screen bg-[#E64980] text-white">
+    <div
+      className=" w-screen bg-cover bg-top text-white"
+      style={{
+        backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.8), rgba(100,100,333,0.7)),
+  url('/assets/img/about.webp')`,
+      }}
+    >
       <div className="flex h-[248px] max-w-7xl flex-col justify-around p-4 sm:mx-auto sm:flex-row sm:items-center sm:justify-between md:pr-20 lg:pr-36">
         <div className="flex flex-col">
           <div className="text-[28px] font-bold leading-7">
-            Shimabu IT University
+            {metaData.title.toLocaleUpperCase()}
           </div>
           <div className="text-[16px] leading-6">
-            しまぶーのポートフォリオのためのページです
+            {metaData.name}のポートフォリオのためのページです
           </div>
         </div>
         <div className="flex h-[17px] justify-start">

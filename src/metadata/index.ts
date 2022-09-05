@@ -1,8 +1,9 @@
 export const metaData = {
-  name: "Shimabu IT University",
+  name: "yoko",
+  title: "yoko's portfolio",
   description:
-    "ITエンジニアYouTuber。神戸大学経営学部卒。未経験から独学でプログラミングを勉強し、新卒でヤフーに入社。2019年に株式会社GameHintを創業。",
-  twitterName: "しまぶーIT大学",
+    "元産業翻訳者。趣味ITエンジニア。ソフトウェア開発勤務（SAAS系翻訳）を機にJSで作るリッチなWebサイト制作に興味を持つ。独学でプログラミングを勉強中。プログラミング学習で知り合った知人から動画制作の依頼もあり並行して学習中。バックエンド学習が後回しになっているのが課題。",
+  twitterName: "yoko",
   twitterAccount: "yokoiwasaki6",
   twitterCard: "/statics/img/Thumbnail.webp",
   facebook: "",
