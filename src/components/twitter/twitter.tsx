@@ -1,9 +1,9 @@
 import { Button } from "@mantine/core";
 import { useRouter } from "next/router";
 import { Title } from "src/components/atom/title";
-import { CardPortion } from "src/components/twitter/card";
 import { useViewportSize } from "src/lib/mantine";
 
+import { TwitterCard } from "./card";
 import { data } from "./data";
 
 export const TwitterSec = () => {
@@ -23,7 +23,7 @@ export const TwitterSec = () => {
         <div className="sm:hidden">
           {filteredData.map((item) => {
             return (
-              <CardPortion
+              <TwitterCard
                 key={item.id}
                 thumbnail={item.thumbnail}
                 content={item.content}
@@ -36,7 +36,7 @@ export const TwitterSec = () => {
         <div className="hidden sm:block">
           {data.map((item) => {
             return (
-              <CardPortion
+              <TwitterCard
                 key={item.id}
                 thumbnail={item.thumbnail}
                 content={item.content}
