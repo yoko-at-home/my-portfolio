@@ -6,20 +6,21 @@ import {
 import { ParsedUrlQuery } from "querystring";
 
 export type Blog = {
+  id?: string;
   title?: string;
-  lead?: string;
   content?: string;
   createdAt?: string;
   eyecatch?: {
-    url?: string;
     height?: number;
+    url?: string;
     width?: number;
   };
-  id?: string;
-  publishedAt?: Date;
+  lead?: string;
   limit?: number;
   offset?: number;
+  publishedAt?: Date;
   totalCount?: number;
+  url?: string;
 };
 
 export type BlogProps = MicroCMSListResponse<Blog>;
