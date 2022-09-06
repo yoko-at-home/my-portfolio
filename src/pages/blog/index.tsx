@@ -1,3 +1,4 @@
+import { Center, Pagination } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
 import { Title } from "src/components/atom/title";
 import { BlogCard } from "src/components/card";
@@ -6,6 +7,10 @@ import { clientBlog } from "src/pages/api/clientBlog";
 import { Blog, BlogProps } from "src/types/types";
 
 const Blog: NextPage<BlogProps> = (props) => {
+  const handleOnChange = () => {
+    alert("clicked");
+  };
+
   return (
     <Layout>
       <div className="flex min-h-[85vh] max-w-[100vw] flex-col justify-between">
@@ -26,7 +31,13 @@ const Blog: NextPage<BlogProps> = (props) => {
           </ul>
 
           {props.contents.length > 6 ? (
-            <div className="flex justify-center"></div>
+            <Center mt="xl">
+              <Pagination
+                onChange={handleOnChange}
+                color={"dark"}
+                total={Math.ceil(props.totalCount / 6) || 1}
+              />
+            </Center>
           ) : null}
         </div>
       </div>
