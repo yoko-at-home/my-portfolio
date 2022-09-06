@@ -2,9 +2,9 @@ import { Button } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 import { useRouter } from "next/router";
 import { Title } from "src/components/atom/title";
-import { CardPortion } from "src/components/github/card";
 import { metaData } from "src/metadata";
 
+import { GitHubCard } from "./card";
 import { data } from "./data";
 
 export const GitHubReps = () => {
@@ -25,7 +25,7 @@ export const GitHubReps = () => {
         <div className="sm:hidden">
           {filteredData.map((item) => {
             return (
-              <CardPortion
+              <GitHubCard
                 key={item.id}
                 thumbnail={item.thumbnail}
                 title={item.title}
@@ -40,7 +40,7 @@ export const GitHubReps = () => {
         <div className="hidden sm:block">
           {data.map((item) => {
             return (
-              <CardPortion
+              <GitHubCard
                 key={item.id}
                 thumbnail={item.thumbnail}
                 title={item.title}

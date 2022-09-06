@@ -10,7 +10,7 @@ type CardProps = {
   thumbnail: string;
 };
 
-export const CardPortion: FC<CardProps> = (props) => {
+export const TwitterCard: FC<CardProps> = (props) => {
   return (
     <li key={props.id} className="mb-2 list-none">
       <Card withBorder>

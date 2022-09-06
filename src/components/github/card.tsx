@@ -11,7 +11,7 @@ type CardProps = {
   typescript: string;
 };
 
-export const CardPortion: FC<CardProps> = (props) => {
+export const GitHubCard: FC<CardProps> = (props) => {
   return (
     <li key={props.id} className="flex list-none flex-col">
       <div className="min-w-full">
