@@ -1,52 +1,26 @@
 export const pagesPath = {
-  $url: (url?: { hash?: string }) => ({
-    hash: url?.hash,
-    pathname: "/" as const,
-  }),
-  about: {
-    $url: (url?: { hash?: string }) => ({
-      hash: url?.hash,
-      pathname: "/about" as const,
-    }),
+  "about": {
+    $url: (url?: { hash?: string }) => ({ pathname: '/about' as const, hash: url?.hash })
   },
-  blog: {
-    $url: (url?: { hash?: string }) => ({
-      hash: url?.hash,
-      pathname: "/blog" as const,
-    }),
+  "blog": {
     _id: (id: string | number) => ({
-      $url: (url?: { hash?: string }) => ({
-        hash: url?.hash,
-        pathname: "/blog/[id]" as const,
-        query: { id },
-      }),
+      $url: (url?: { hash?: string }) => ({ pathname: '/blog/[id]' as const, query: { id }, hash: url?.hash })
     }),
+    $url: (url?: { hash?: string }) => ({ pathname: '/blog' as const, hash: url?.hash })
   },
-  contact: {
-    $url: (url?: { hash?: string }) => ({
-      hash: url?.hash,
-      pathname: "/contact" as const,
-    }),
+  "contact": {
+    $url: (url?: { hash?: string }) => ({ pathname: '/contact' as const, hash: url?.hash })
   },
-  portfolio: {
-    $url: (url?: { hash?: string }) => ({
-      hash: url?.hash,
-      pathname: "/portfolio" as const,
-    }),
+  "portfolio": {
     _id: (id: string | number) => ({
-      $url: (url?: { hash?: string }) => ({
-        hash: url?.hash,
-        pathname: "/portfolio/[id]" as const,
-        query: { id },
-      }),
+      $url: (url?: { hash?: string }) => ({ pathname: '/portfolio/[id]' as const, query: { id }, hash: url?.hash })
     }),
+    $url: (url?: { hash?: string }) => ({ pathname: '/portfolio' as const, hash: url?.hash })
   },
-  success: {
-    $url: (url?: { hash?: string }) => ({
-      hash: url?.hash,
-      pathname: "/success" as const,
-    }),
+  "success": {
+    $url: (url?: { hash?: string }) => ({ pathname: '/success' as const, hash: url?.hash })
   },
-};
+  $url: (url?: { hash?: string }) => ({ pathname: '/' as const, hash: url?.hash })
+}
 
-export type PagesPath = typeof pagesPath;
+export type PagesPath = typeof pagesPath
