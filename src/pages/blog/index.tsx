@@ -4,7 +4,7 @@ import { Title } from "src/components/atom/title";
 import { BlogCard } from "src/components/card";
 import { Layout } from "src/layout";
 import { clientBlog } from "src/pages/api/blog/clientBlog";
-import { Blog, BlogProps } from "src/types/types";
+import { Blog, BlogProps } from "src/types";
 
 const Blog: NextPage<BlogProps> = (props) => {
   const handleOnChange = () => {

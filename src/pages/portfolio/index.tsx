@@ -5,7 +5,7 @@ import { Title } from "src/components/atom/title";
 import { PortfolioCard } from "src/components/card";
 import { Layout } from "src/layout";
 import { client } from "src/pages/api/portfolio/client";
-import { Blog, BlogProps } from "src/types/types";
+import { Blog, BlogProps } from "src/types";
 
 const PortfolioPage: NextPage<BlogProps> = (props) => {
   const router = useRouter();

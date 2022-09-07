@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { Title } from "src/components/atom/title";
 import { Layout } from "src/layout";
 import { clientBlog } from "src/pages/api/blog/clientBlog";
-import { Blog, PropsPath } from "src/types/types";
+import { Blog, PropsPath } from "src/types";
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
