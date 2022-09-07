@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { client } from "./client";
+import { client } from "./portfolio/client";
 
 export default async function handler(
   req: NextApiRequest,

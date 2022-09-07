@@ -10,8 +10,8 @@ import { GitHubReps } from "src/components/github";
 import { TwitterSec } from "src/components/twitter";
 import { Layout } from "src/layout";
 import { useViewportSize } from "src/lib/mantine";
-import { client } from "src/pages/api/client";
-import { clientBlog } from "src/pages/api/clientBlog";
+import { clientBlog } from "src/pages/api/blog/clientBlog";
+import { client } from "src/pages/api/portfolio/client";
 import { Blog, BlogPortfolioProps } from "src/types/types";
 
 const Home: NextPage<BlogPortfolioProps> = (props) => {
