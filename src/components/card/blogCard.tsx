@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import Link from "next/link";
 import { FC } from "react";
-import { Blog } from "src/types/types";
+import { Blog } from "src/types";
 
 export const BlogCard: FC<Blog> = (props) => {
   return (
