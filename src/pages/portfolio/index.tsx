@@ -16,7 +16,7 @@ const PortfolioPage: NextPage<BlogProps> = (props) => {
   const hasMore =
     props.totalCount > items.length || props.totalCount !== items.length;
 
-  const fetchBlog = async () => {
+  const fetchPortfolio = async () => {
     const { data } = await axios.get<BlogProps>("/api/portfolio", {
       params: {
         offset: items.length,
@@ -33,7 +33,7 @@ const PortfolioPage: NextPage<BlogProps> = (props) => {
     <Layout>
       <Title>Portfolio</Title>
       <InfiniteScroll
-        next={fetchBlog}
+        next={fetchPortfolio}
         loader={
           <Center>
             <Loader />
@@ -42,10 +42,7 @@ const PortfolioPage: NextPage<BlogProps> = (props) => {
         dataLength={items.length}
         hasMore={hasMore}
       >
-        {props.contents.map((content: any) => {
-          // eslint-disable-next-line react/jsx-key
-          return <PortfolioCards items={items} />;
-        })}
+        <PortfolioCards items={items} />
       </InfiniteScroll>
     </Layout>
   );

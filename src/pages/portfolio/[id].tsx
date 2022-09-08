@@ -63,7 +63,7 @@ export const getStaticProps: GetStaticProps<Props, { id: string }> = async (
   const data = await client.getListDetail<Blog>({
     contentId: ctx.params.id,
     endpoint: "portfolio",
-    queries: { limit: 20, offset: 0 },
+    queries: { limit: 100, offset: 0 },
   });
 
   return {
