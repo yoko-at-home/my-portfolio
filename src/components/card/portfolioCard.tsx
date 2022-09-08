@@ -1,35 +1,26 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
+import { Blog } from "src/types";
 
-type CardProps = {
-  id?: number;
-  title: string;
-  content?: string;
-  date: string;
-  lead: string;
-  thumbnail: string;
-};
-
-export const PortfolioCard: FC<CardProps> = (props) => {
+export const PortfolioCard: FC<Blog> = (props) => {
   return (
-    <li
-      key={props.id}
-      className="relative mx-auto flex h-72 w-full max-w-lg list-none flex-col text-right"
-    >
-      <Link href={`/portfolio/${props.id}`}>
-        <a>
-          <Image src={props.thumbnail} alt={props.title} layout="fill" />
+    <Link href={`/portfolio/${props.id}`}>
+      <a>
+        <li
+          className="relative mx-auto my-1 flex h-72 w-full max-w-lg list-none flex-col bg-cover bg-center text-right"
+          style={{
+            backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.2), rgba(100,100,333,0.2)),
+  url('${props.eyecatch?.url}')`,
+          }}
+        >
           <div className="absolute bottom-0 right-0 w-full bg-black/40 p-3 text-white">
-            <span className="text-lg font-bold">{props.title}</span>
-            <br />
-            {props.date}
+            <div className="text-lg font-bold">{props.title}</div>
             <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
               {props.lead}
             </div>
           </div>
-        </a>
-      </Link>
-    </li>
+        </li>
+      </a>
+    </Link>
   );
 };

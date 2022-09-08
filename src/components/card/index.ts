@@ -1,2 +1,2 @@
 export { BlogCard } from "./blogCard";
-export { PortfolioCard } from "./portfolioCard";
+export { PortfolioCards } from "./portfolioCards";
