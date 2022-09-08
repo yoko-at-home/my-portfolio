@@ -67,11 +67,10 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
             {filteredPortfolioData.map((content: any) => {
               return (
                 <PortfolioCard
+                  eyecatch={content.eycatch?.url!}
                   id={content.id}
                   key={content.id}
                   title={content.title}
-                  thumbnail={content.eyecatch?.url}
-                  date={content.date}
                   lead={content.lead}
                 />
               );
