@@ -1,13 +1,30 @@
+import { Center, Loader } from "@mantine/core";
+import axios from "axios";
 import type { GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
-import { Suspense } from "react";
+import { useState } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
 import { Title } from "src/components/atom/title";
-import { PortfolioCard } from "src/components/card";
+import { PortfolioCards } from "src/components/card";
 import { Layout } from "src/layout";
 import { client } from "src/pages/api/portfolio/client";
 import { Blog, BlogProps } from "src/types";
 
 const PortfolioPage: NextPage<BlogProps> = (props) => {
+  const [items, setItems] = useState<BlogProps["contents"]>(props.contents);
+
+  const hasMore =
+    props.totalCount > items.length || props.totalCount !== items.length;
+
+  const fetchBlog = async () => {
+    const { data } = await axios.get<BlogProps>("/api/portfolio", {
+      params: {
+        offset: items.length,
+      },
+    });
+
+    setItems([...items, ...data.contents]);
+  };
   const router = useRouter();
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -15,33 +32,33 @@ const PortfolioPage: NextPage<BlogProps> = (props) => {
   return (
     <Layout>
       <Title>Portfolio</Title>
-      <Suspense fallback="loading...">
-        <div className="relative w-[80vw]">
-          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {props.contents.map((content: any) => {
-              return (
-                <PortfolioCard
-                  id={content.id}
-                  key={content.id}
-                  title={content.title}
-                  thumbnail={content.eyecatch?.url}
-                  date={content.date}
-                  lead={content.lead}
-                />
-              );
-            })}
-          </ul>
-        </div>
-      </Suspense>
+      <InfiniteScroll
+        next={fetchBlog}
+        loader={
+          <Center>
+            <Loader />
+          </Center>
+        }
+        dataLength={items.length}
+        hasMore={hasMore}
+      >
+        {props.contents.map((content: any) => {
+          // eslint-disable-next-line react/jsx-key
+          return <PortfolioCards items={items} />;
+        })}
+      </InfiniteScroll>
     </Layout>
   );
 };
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
-  const portfolioData = await client.getList<Blog>({ endpoint: "portfolio" });
+  const portfolioData = await client.getList<Blog>({
+    endpoint: "portfolio",
+    queries: { limit: 100 },
+  });
   return {
     props: portfolioData,
-    revalidate: 60 * 10,
+    revalidate: 10,
   };
 };
 
