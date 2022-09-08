@@ -8,8 +8,8 @@ export const PortfolioCards = ({
   items: MicroCMSListResponse<Blog>["contents"];
 }) => {
   return (
-    <div className="relative w-[80vw]">
-      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="relative w-screen max-w-7xl">
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {items.map((item) => {
           return <PortfolioCard {...item} key={item.id} />;
         })}
