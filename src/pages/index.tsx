@@ -10,7 +10,7 @@ import { GitHubReps } from "src/components/github";
 import { TwitterSec } from "src/components/twitter";
 import { Layout } from "src/layout";
 import { useViewportSize } from "src/lib/mantine";
-import { clientBlog } from "src/pages/api/blog/clientBlog";
+import { clientBlog } from "src/pages/api/blog";
 import { client } from "src/pages/api/portfolio/client";
 import { Blog, BlogPortfolioProps } from "src/types";
 
