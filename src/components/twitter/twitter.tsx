@@ -23,8 +23,6 @@ export const TwitterSec = () => {
       <Title>Twitter</Title>
       <ul className="gridgrid-cols-1 grid max-w-md">
         {tweet?.data.map((item, i) => {
-          console.log(user?.data);
-
           return (
             <li key={item.id} className="mb-2 list-none">
               <Card withBorder>
