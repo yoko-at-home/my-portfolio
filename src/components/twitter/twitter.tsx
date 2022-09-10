@@ -34,15 +34,15 @@ export const TwitterSec = () => {
                     alt={user?.data.username}
                     className="mr-3 mt-2 rounded-full"
                   />
-                  <div className="w-full flex-row justify-between">
-                    <Text weight={500}>
+                  <div className=" w-full flex-row justify-between">
+                    <Text weight={700}>
                       {user?.data.name}
-                      <span className="text-sm text-gray-400">
+                      <span className="text-xs font-light text-gray-600">
                         {" "}
                         @{user?.data.username}
                       </span>
                     </Text>
-                    <div className="text-sm leading-relaxed">
+                    <div className="my-2 text-sm leading-relaxed">
                       <Box
                         sx={{
                           whiteSpace: "pre-wrap",
@@ -66,7 +66,7 @@ export const TwitterSec = () => {
                         )}
                       </Box>
                     </div>
-                    <div className="mt-2 text-sm leading-loose">
+                    <div className="text-sm leading-loose">
                       {dayjs(item.created_at).format("YYYY.MM.DD")}
                     </div>
                   </div>
