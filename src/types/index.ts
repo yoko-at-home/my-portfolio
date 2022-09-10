@@ -25,11 +25,6 @@ export type Blog = {
 
 export type BlogProps = MicroCMSListResponse<Blog>;
 
-export type BlogProps2 = {
-  blogData: MicroCMSListResponse<Blog>[];
-  totalCount: number;
-};
-
 export type BlogPortfolioProps = {
   blogData: MicroCMSListResponse<Blog>;
   portfolioData: MicroCMSListResponse<Blog>;
