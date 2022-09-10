@@ -13,10 +13,10 @@ const Blog: NextPage<BlogProps> = (props) => {
 
   return (
     <Layout>
-      <div className="flex min-h-[85vh] max-w-[100vw] flex-col justify-between">
+      <div className="flex flex-col justify-between">
         <div className="py-10 sm:mx-auto">
           <Title>Blog</Title>
-          <ul className="my-16 flex min-h-fit flex-col justify-center">
+          <ul className="my-16 flex flex-col justify-center">
             {props.contents.map((content) => {
               return (
                 <BlogCard

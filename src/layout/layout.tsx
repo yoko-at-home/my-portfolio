@@ -18,7 +18,7 @@ export const Layout: FC<Body> = (props) => {
       <HeaderPart inView={inView} />
       <div
         className={`mx-auto flex min-h-screen grow flex-col justify-start ${
-          root ? "" : "max-w-7xl px-4"
+          root ? "" : "max-w-full px-4"
         }`}
       >
         {props.children}
