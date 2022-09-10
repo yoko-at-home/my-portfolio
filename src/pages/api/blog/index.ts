@@ -1,7 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { createClient } from "microcms-js-sdk";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { clientBlog } from "./clientBlog";
+export const clientBlog = createClient({
+  apiKey: process.env.BLOG_API_KEY!,
+  serviceDomain: "yoko-blog",
+});
 
 export default async function handler(
   req: NextApiRequest,
