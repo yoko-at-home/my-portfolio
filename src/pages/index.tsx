@@ -1,7 +1,9 @@
-import { Button } from "@mantine/core";
+import { Button, Center, Loader } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Suspense } from "react";
+import { ErrorWrapper } from "src/components/atom/error";
 import { Hero } from "src/components/atom/hero";
 import { Title } from "src/components/atom/title";
 import { BlogCard } from "src/components/card/blogCard";
@@ -41,19 +43,29 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
       <div className="mx-auto max-w-7xl px-4">
         <div>
           <Title>Blog</Title>
-          <ul className="my-16 flex min-h-fit flex-col justify-center">
-            {filteredBlogData.map((content: any) => {
-              return (
-                <BlogCard
-                  id={content.id}
-                  key={content.id}
-                  title={content.title}
-                  lead={content.lead}
-                  createdAt={content.createdAt}
-                />
-              );
-            })}
-          </ul>
+          <ErrorWrapper message="Failed to Fetch portfolio Data.">
+            <Suspense
+              fallback={
+                <Center>
+                  <Loader />
+                </Center>
+              }
+            >
+              <ul className="my-16 flex min-h-fit flex-col justify-center">
+                {filteredBlogData.map((content: any) => {
+                  return (
+                    <BlogCard
+                      id={content.id}
+                      key={content.id}
+                      title={content.title}
+                      lead={content.lead}
+                      createdAt={content.createdAt}
+                    />
+                  );
+                })}
+              </ul>
+            </Suspense>
+          </ErrorWrapper>
         </div>
         <div className="flex justify-center pb-10">
           <Link href="/blog">
@@ -63,19 +75,29 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
 
         <div className="mx-auto max-w-7xl px-4 pb-10">
           <Title>Portfolio</Title>
-          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredPortfolioData.map((content: any) => {
-              return (
-                <PortfolioCard
-                  eyecatch={content.eycatch?.url!}
-                  id={content.id}
-                  key={content.id}
-                  title={content.title}
-                  lead={content.lead}
-                />
-              );
-            })}
-          </ul>
+          <ErrorWrapper message="Failed to Fetch portfolio Data.">
+            <Suspense
+              fallback={
+                <Center>
+                  <Loader />
+                </Center>
+              }
+            >
+              <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {filteredPortfolioData.map((content: any) => {
+                  return (
+                    <PortfolioCard
+                      eyecatch={content.eycatch?.url!}
+                      id={content.id}
+                      key={content.id}
+                      title={content.title}
+                      lead={content.lead}
+                    />
+                  );
+                })}
+              </ul>
+            </Suspense>
+          </ErrorWrapper>
         </div>
         <div className="flex justify-center pb-10">
           <Link href="/portfolio">
@@ -83,8 +105,28 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
           </Link>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <GitHubReps />
-          <TwitterSec />
+          <ErrorWrapper message="Failed to Fetch GitHub Data.">
+            <Suspense
+              fallback={
+                <Center>
+                  <Loader />
+                </Center>
+              }
+            >
+              <GitHubReps />
+            </Suspense>
+          </ErrorWrapper>
+          <ErrorWrapper message="Failed to Fetch Twitter Data.">
+            <Suspense
+              fallback={
+                <Center>
+                  <Loader />
+                </Center>
+              }
+            >
+              <TwitterSec />
+            </Suspense>
+          </ErrorWrapper>
         </div>
       </div>
     </Layout>
