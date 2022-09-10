@@ -25,10 +25,9 @@ export const TwitterSec = () => {
             return (
               <TwitterCard
                 key={item.id}
-                thumbnail={item.thumbnail}
-                content={item.content}
-                href={item.href}
-                date={item.date}
+                created_at={item.created_at}
+                text={item.text}
+                id={item.id}
               />
             );
           })}
@@ -38,10 +37,9 @@ export const TwitterSec = () => {
             return (
               <TwitterCard
                 key={item.id}
-                thumbnail={item.thumbnail}
-                content={item.content}
-                href={item.href}
-                date={item.date}
+                created_at={item.created_at}
+                text={item.text}
+                id={item.id}
               />
             );
           })}

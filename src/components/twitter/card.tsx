@@ -1,22 +1,15 @@
 import { Avatar, Card, Text } from "@mantine/core";
 import { FC } from "react";
 import { metaData } from "src/metadata";
+import { TwitterTweetProps } from "src/types";
 
-type CardProps = {
-  id?: string;
-  content: string;
-  date: string;
-  href: string;
-  thumbnail: string;
-};
-
-export const TwitterCard: FC<CardProps> = (props) => {
+export const TwitterCard: FC<TwitterTweetProps> = (props) => {
   return (
     <li key={props.id} className="mb-2 list-none">
       <Card withBorder>
         <div className="flex">
           <Avatar
-            src={props.thumbnail}
+            src={metaData.profile_image_url}
             alt={metaData.twitterName}
             className="mr-3 mt-2 rounded-full"
           />
@@ -28,11 +21,8 @@ export const TwitterCard: FC<CardProps> = (props) => {
                 @{metaData.twitterAccount}
               </span>
             </Text>
-            <div className="text-sm leading-relaxed">{props.content}</div>
-            <a className="text-blue-500 hover:animate-pulse" href={props.href}>
-              {props.href}
-            </a>
-            <div className="text-sm leading-loose">{props.date}</div>
+            <div className="text-sm leading-relaxed">{props.text}</div>
+            <div className="text-sm leading-loose">{props.created_at}</div>
           </div>
         </div>
       </Card>
