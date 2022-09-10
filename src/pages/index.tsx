@@ -43,7 +43,7 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
       <div className="mx-auto max-w-7xl px-4">
         <div>
           <Title>Blog</Title>
-          <ErrorWrapper message="Failed to Fetch portfolio Data.">
+          <ErrorWrapper message="Failed to Fetch Blog Data.">
             <Suspense
               fallback={
                 <Center>
