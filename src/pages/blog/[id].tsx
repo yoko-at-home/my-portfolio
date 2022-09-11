@@ -4,6 +4,7 @@ import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { AppTitle } from "src/components/atom/appTitle";
 import { Title } from "src/components/atom/title";
 import { Layout } from "src/layout";
 import { clientBlog } from "src/pages/api/blog";
@@ -17,6 +18,7 @@ const BlogId: NextPage<Props> = (props) => {
 
   return (
     <Layout>
+      <AppTitle title={props.title!} description={props.lead!} />
       <div className="relative aspect-video w-full object-cover">
         <Image src={`${imageUrl}`} alt="画像" layout="fill" />
       </div>

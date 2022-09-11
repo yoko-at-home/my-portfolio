@@ -1,5 +1,6 @@
 import { Text } from "@mantine/core";
 import { NextPage } from "next";
+import { AppTitle } from "src/components/atom/appTitle";
 import { Title } from "src/components/atom/title";
 import { Layout } from "src/layout";
 import { metaData } from "src/metadata";
@@ -14,6 +15,7 @@ const AboutPage: NextPage = () => {
       }}
     >
       <Layout>
+        <AppTitle title="about" description="about me" />
         <div className="mx-auto text-white">
           <Title>About</Title>
           <Text size="lg" weight={700}>
