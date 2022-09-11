@@ -1,4 +1,7 @@
 export const pagesPath = {
+  "$404": {
+    $url: (url?: { hash?: string }) => ({ pathname: '/404' as const, hash: url?.hash })
+  },
   "about": {
     $url: (url?: { hash?: string }) => ({ pathname: '/about' as const, hash: url?.hash })
   },
