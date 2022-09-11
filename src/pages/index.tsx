@@ -2,21 +2,25 @@ import { Button, Center, Loader } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { ErrorWrapper } from "src/components/atom/error";
 import { Hero } from "src/components/atom/hero";
 import { Title } from "src/components/atom/title";
+import { PortfolioCards } from "src/components/card";
 import { BlogCard } from "src/components/card/blogCard";
-import { PortfolioCard } from "src/components/card/portfolioCard";
 import { GitHubReps } from "src/components/github";
 import { TwitterSec } from "src/components/twitter";
 import { Layout } from "src/layout";
 import { useViewportSize } from "src/lib/mantine";
 import { clientBlog } from "src/pages/api/blog";
 import { client } from "src/pages/api/portfolio/client";
-import { Blog, BlogPortfolioProps } from "src/types";
+import { Blog, BlogPortfolioProps, BlogProps } from "src/types";
 
 const Home: NextPage<BlogPortfolioProps> = (props) => {
+  const [items, setItems] = useState<BlogProps["contents"]>(
+    props.portfolioData.contents
+  );
+
   const router = useRouter();
   const root = router.asPath === "/";
   const { width } = useViewportSize();
@@ -32,10 +36,6 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
     : props.blogData.contents.length;
 
   let filteredBlogData = props.blogData.contents.slice(0, numberToShow);
-  let filteredPortfolioData = props.portfolioData.contents.slice(
-    0,
-    numberToShow
-  );
 
   return (
     <Layout>
@@ -83,19 +83,7 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
                 </Center>
               }
             >
-              <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {filteredPortfolioData.map((content: any) => {
-                  return (
-                    <PortfolioCard
-                      eyecatch={content.eycatch?.url!}
-                      id={content.id}
-                      key={content.id}
-                      title={content.title}
-                      lead={content.lead}
-                    />
-                  );
-                })}
-              </ul>
+              <PortfolioCards items={items} />
             </Suspense>
           </ErrorWrapper>
         </div>
@@ -136,7 +124,10 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const blogData = await clientBlog.getList<Blog>({ endpoint: "blog" });
-    const portfolioData = await client.getList<Blog>({ endpoint: "portfolio" });
+    const portfolioData = await client.getList<Blog>({
+      endpoint: "portfolio",
+      queries: { limit: 6 },
+    });
     return {
       props: {
         blogData: blogData,
