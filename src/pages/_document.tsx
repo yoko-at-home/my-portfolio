@@ -11,7 +11,12 @@ const MyDocument: NextPage = () => {
         <meta name="description" content={metaData.description} />
         <meta
           property="og:image"
-          content="https://my-portfolio-shimabu.vercel.app/assets/img/Thumbnail.webp"
+          content="https://yoko-portfolio.vercel.app/assets/favicons/android-chrome-512x512.png"
+        />
+        <link
+          rel="manifest"
+          href="/assets/favicons/manifest.json"
+          crossOrigin="use-credentials"
         />
       </Head>
       <body className="bg-white text-black antialiased">
