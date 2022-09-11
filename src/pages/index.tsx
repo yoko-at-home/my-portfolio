@@ -126,7 +126,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const blogData = await clientBlog.getList<Blog>({ endpoint: "blog" });
     const portfolioData = await client.getList<Blog>({
       endpoint: "portfolio",
-      queries: { limit: 6 },
+      queries: { limit: 6, offset: 2 },
     });
     return {
       props: {
