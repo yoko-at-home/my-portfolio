@@ -3,6 +3,7 @@ import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Suspense, useState } from "react";
+import { AppTitle } from "src/components/atom/appTitle";
 import { ErrorWrapper } from "src/components/atom/error";
 import { Hero } from "src/components/atom/hero";
 import { Title } from "src/components/atom/title";
@@ -39,6 +40,8 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
 
   return (
     <Layout>
+      <AppTitle title="welcome" description="welcome to my portfolio site" />
+
       <Hero />
       <div className="mx-auto max-w-7xl px-4">
         <div>

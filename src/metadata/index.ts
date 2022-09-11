@@ -6,7 +6,10 @@ export const metaData = {
   facebook: "",
   github: "https://github.com/yoko-at-home",
   lead: "microCMS, Twitter, GitHub apiでデータを取得しました",
+  ogImage: "",
   profile_image_url: "/assets/img/Ellipse.jpeg",
+  siteLogo: "",
+  siteUrl: "",
   twitterAccount: "yokoiwasaki6",
   twitterName: "yoko",
 };

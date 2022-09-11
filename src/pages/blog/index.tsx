@@ -1,5 +1,6 @@
 import { Center, Pagination } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
+import { AppTitle } from "src/components/atom/appTitle";
 import { Title } from "src/components/atom/title";
 import { BlogCard } from "src/components/card";
 import { Layout } from "src/layout";
@@ -13,6 +14,7 @@ const Blog: NextPage<BlogProps> = (props) => {
 
   return (
     <Layout>
+      <AppTitle title="blog" description="ブログ一覧" />
       <div className="flex flex-col justify-between">
         <div className="py-10 sm:mx-auto">
           <Title>Blog</Title>

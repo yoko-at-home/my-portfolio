@@ -4,6 +4,7 @@ import type { GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { AppTitle } from "src/components/atom/appTitle";
 import { Title } from "src/components/atom/title";
 import { PortfolioCards } from "src/components/card";
 import { Layout } from "src/layout";
@@ -31,6 +32,8 @@ const PortfolioPage: NextPage<BlogProps> = (props) => {
   }
   return (
     <Layout>
+      <AppTitle title="portfolio" description="ポートフォリオ一覧です" />
+
       <Title>Portfolio</Title>
       <InfiniteScroll
         next={fetchPortfolio}
