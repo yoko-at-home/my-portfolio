@@ -1,17 +1,17 @@
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import { Blog } from "src/types";
 
-import { PortfolioCard } from "./portfolioCard";
+import { BlogCard } from "./blogCard";
 
-export const PortfolioCards = ({
+export const BlogCards = ({
   items,
 }: {
   items: MicroCMSListResponse<Blog>["contents"];
 }) => {
   return (
-    <ul className="grid grid-cols-1 justify-center px-5 md:grid-cols-2 xl:grid-cols-3">
+    <ul className="my-16 flex min-h-fit flex-col justify-center">
       {items.map((item) => {
-        return <PortfolioCard {...item} key={item.id} />;
+        return <BlogCard {...item} key={item.id} />;
       })}
     </ul>
   );
