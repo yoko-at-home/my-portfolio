@@ -26,16 +26,10 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
   }
   const isMobile = width < 576;
 
-  const numberToShow = root
-    ? isMobile
-      ? 4
-      : 6
-    : props.blogData.contents.length;
-
-  let filteredBlogData = props.blogData.contents.slice(0, numberToShow);
+  let filteredBlogData = props.blogData.contents.slice(0, isMobile ? 4 : 6);
   let filteredPortfolioData = props.portfolioData.contents.slice(
     0,
-    numberToShow
+    isMobile ? 3 : 6
   );
 
   return (
