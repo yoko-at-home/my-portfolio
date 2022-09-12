@@ -32,7 +32,7 @@ const PortfolioPage: NextPage<BlogProps> = (props) => {
   }
   return (
     <Layout>
-      <AppTitle title="portfolio" description="ポートフォリオ一覧です" />
+      <AppTitle title="portfolio" description="ポートフォリオ一覧" />
 
       <Title>Portfolio</Title>
       <InfiniteScroll
