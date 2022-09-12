@@ -7,7 +7,7 @@ export const PortfolioCard: FC<Blog> = (props) => {
     <Link href={`/portfolio/${props.id}`} passHref key={props.id}>
       <a>
         <li
-          className="relative mx-auto flex h-72 max-w-lg list-none flex-col bg-cover bg-center text-right"
+          className="relative mx-auto flex h-72 max-w-lg list-none flex-col rounded border-4 border-slate-100 bg-cover bg-center text-right shadow-xl transition-transform delay-200 hover:scale-[98%]"
           style={{
             backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.2), rgba(100,100,333,0.2)), url(${props.eyecatch?.url})`,
           }}
