@@ -4,7 +4,7 @@ import { metaData } from "src/metadata";
 export const Hero = () => {
   return (
     <div
-      className=" w-screen bg-cover bg-center text-white"
+      className=" w-screen bg-cover bg-center text-white shadow-xl"
       style={{
         backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(100,100,333,0.8)),
   url('/assets/img/about.webp')`,
@@ -18,11 +18,17 @@ export const Hero = () => {
           <div className="pt-1 text-[16px] leading-6 ">{metaData.lead}</div>
         </div>
         <div className="flex h-[17px] justify-start">
-          <img
-            className="mr-2"
-            src="/assets/svgs/twitter.svg"
-            alt="twitter icon"
-          />
+          <a
+            href="https://twitter.com/yokoiwasaki6"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="mr-2"
+              src="/assets/svgs/twitter.svg"
+              alt="twitter icon"
+            />
+          </a>
           <img
             className="mr-2"
             src="/assets/svgs/facebook.svg"

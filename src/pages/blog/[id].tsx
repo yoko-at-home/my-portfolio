@@ -17,29 +17,37 @@ const BlogId: NextPage<Props> = (props) => {
   const imageUrl = props.eyecatch?.url;
 
   return (
-    <Layout>
-      <AppTitle title={props.title!} description={props.lead!} />
-      <div className="relative aspect-video w-full object-cover">
-        <Image src={`${imageUrl}`} alt="画像" layout="fill" />
-      </div>
+    <div className="relative bg-gradient-to-b from-[#E3FF45]/70 to-[#8D3EAD]/80">
+      <div className="translate-x-50 absolute top-7 right-[40%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
+      <div className="translate-x-50 absolute top-7 right-[50%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
+      <div className="translate-x-50 absolute top-7 right-[60%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
+      <Layout>
+        <AppTitle title={props.title!} description={props.lead!} />
+        <div className="relative mx-auto aspect-video w-full max-w-5xl object-cover">
+          <Image src={`${imageUrl}`} alt="画像" layout="fill" />
+        </div>
 
-      <div>
-        <Title>{props.title}</Title>
+        <div>
+          <Title>{props.title}</Title>
 
-        <time dateTime={props.publishedAt} className="mt-2 block">
-          {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
-        </time>
-        <article
-          className="prose-sm mt-8"
-          dangerouslySetInnerHTML={{ __html: props.content! }}
-        />
-      </div>
-      <div className="flex justify-center pb-10">
-        <Button color="dark" onClick={() => router.back()}>
-          Return
-        </Button>
-      </div>
-    </Layout>
+          <time
+            dateTime={props.publishedAt}
+            className="mt-2 block text-slate-100"
+          >
+            {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
+          </time>
+          <article
+            className="prose-sm mt-8 text-slate-100"
+            dangerouslySetInnerHTML={{ __html: props.content! }}
+          />
+        </div>
+        <div className="flex justify-center pb-10">
+          <Button color="gray" onClick={() => router.back()}>
+            Return
+          </Button>
+        </div>
+      </Layout>
+    </div>
   );
 };
 
