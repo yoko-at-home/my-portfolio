@@ -13,12 +13,13 @@ export const Layout: FC<Body> = (props) => {
   const { inView } = useInView({ threshold: 0 });
   const router = useRouter();
   const root = router.asPath === "/";
+  const portfolioPage = router.asPath === "/portfolio";
   return (
     <div className="flex min-h-screen flex-col text-[#25262B]">
       <HeaderPart inView={inView} />
       <div
         className={`mx-auto flex min-h-screen grow flex-col justify-start ${
-          root ? "" : "max-w-full px-4"
+          root || portfolioPage ? "" : "max-w-7xl px-4"
         }`}
       >
         {props.children}
