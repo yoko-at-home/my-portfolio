@@ -4,6 +4,7 @@ import type { GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Skeleton from "react-loading-skeleton";
 import { AppTitle } from "src/components/atom/appTitle";
 import { Title } from "src/components/atom/title";
 import { BlogCards } from "src/components/card/blogCards";
@@ -28,7 +29,12 @@ const Blog: NextPage<BlogProps> = (props) => {
   };
   const router = useRouter();
   if (router.isFallback) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        <Skeleton height={50} />
+        <Skeleton count={6} />
+      </>
+    );
   }
   return (
     <Layout>
@@ -46,7 +52,7 @@ const Blog: NextPage<BlogProps> = (props) => {
             dataLength={items.length}
             hasMore={hasMore}
           >
-            <ul className="my-16 flex flex-col justify-center">
+            <ul className="my-4 flex flex-col justify-center md:my-16">
               <BlogCards items={items} />
             </ul>
           </InfiniteScroll>
