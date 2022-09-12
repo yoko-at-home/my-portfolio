@@ -15,7 +15,7 @@ export const Layout: FC<Body> = (props) => {
   const root = router.asPath === "/";
   const portfolioPage = router.asPath === "/portfolio";
   return (
-    <div className="flex min-h-screen flex-col text-[#25262B]">
+    <div className="flex min-h-screen flex-col text-slate-700">
       <HeaderPart inView={inView} />
       <div
         className={`mx-auto flex min-h-screen grow flex-col justify-start ${
