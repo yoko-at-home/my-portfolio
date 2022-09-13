@@ -2,6 +2,7 @@ import { Button, Center, Loader } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
+import Skeleton from "react-loading-skeleton";
 import { AppTitle } from "src/components/atom/appTitle";
 import { ErrorWrapper } from "src/components/atom/error";
 import { Hero } from "src/components/atom/hero";
@@ -41,7 +42,8 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
             <Suspense
               fallback={
                 <Center>
-                  <Loader />
+                  <Skeleton height={50} />
+                  <Skeleton count={6} />
                 </Center>
               }
             >
@@ -61,7 +63,8 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
             <Suspense
               fallback={
                 <Center>
-                  <Loader />
+                  <Skeleton height={50} />
+                  <Skeleton count={6} />
                 </Center>
               }
             >
