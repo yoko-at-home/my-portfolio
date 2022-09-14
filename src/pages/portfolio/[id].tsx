@@ -16,7 +16,7 @@ const PortfolioId: NextPage<Props> = (props) => {
   const router = useRouter();
   const imageUrl = props.eyecatch?.url;
   return (
-    <div className="relative bg-gradient-to-b from-[#4548ff]/10 to-[#8D3EAD]/80">
+    <div className="relative ">
       <div className="translate-x-50 absolute top-7 right-[40%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <div className="translate-x-50 absolute top-7 right-[50%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <div className="translate-x-50 absolute top-7 right-[60%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
@@ -32,14 +32,11 @@ const PortfolioId: NextPage<Props> = (props) => {
         <div>
           <Title>{props.title}</Title>
 
-          <time
-            dateTime={props.publishedAt}
-            className="mt-2 block text-slate-100"
-          >
+          <time dateTime={props.publishedAt} className="mt-2 block">
             {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
           </time>
           <article
-            className="prose-sm mt-8 text-slate-100"
+            className="prose-sm mt-8 whitespace-pre-line"
             dangerouslySetInnerHTML={{ __html: props.content! }}
           />
         </div>

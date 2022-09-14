@@ -34,7 +34,7 @@ const BlogId: NextPage<Props> = (props) => {
             {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
           </time>
           <article
-            className="prose-sm mt-8"
+            className="whitespace-wrap mt-8 w-screen break-all sm:break-words"
             dangerouslySetInnerHTML={{ __html: props.content! }}
           />
         </div>
