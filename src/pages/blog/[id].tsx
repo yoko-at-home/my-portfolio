@@ -38,7 +38,7 @@ const BlogId: NextPage<Props> = (props) => {
             dangerouslySetInnerHTML={{ __html: props.content! }}
           />
         </div>
-        <div className="flex justify-center pb-10">
+        <div className="flex justify-center py-10">
           <Button color="gray" onClick={() => router.back()}>
             Return
           </Button>
