@@ -6,7 +6,7 @@ import { Blog } from "src/types";
 export const BlogCard: FC<Blog> = (props) => {
   return (
     <Link href={`/blog/${props.id}`} passHref key={props.id}>
-      <li className="nm-container mb-8 list-none rounded from-[#E3FF45]/20 to-[#8D3EAD]/20 p-3  hover:bg-gradient-to-r">
+      <li className="nm-list mb-8 list-none rounded from-[#E3FF45]/20 to-[#8D3EAD]/20 p-3  hover:bg-gradient-to-r">
         <div className="mb-3 text-lg font-semibold">{props.title}</div>
         <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
           {props.lead}
