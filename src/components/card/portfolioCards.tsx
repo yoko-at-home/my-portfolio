@@ -9,7 +9,7 @@ export const PortfolioCards = ({
   items: MicroCMSListResponse<Blog>["contents"];
 }) => {
   return (
-    <ul className="grid grid-cols-1 justify-center px-5 md:grid-cols-2 xl:grid-cols-3">
+    <ul className="grid grid-cols-1 justify-center gap-3 md:grid-cols-2 xl:grid-cols-3">
       {items.map((item) => {
         return <PortfolioCard {...item} key={item.id} />;
       })}
