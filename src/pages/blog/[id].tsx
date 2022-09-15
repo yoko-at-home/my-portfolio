@@ -23,18 +23,19 @@ const BlogId: NextPage<Props> = (props) => {
       <div className="translate-x-50 absolute top-7 right-[60%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <Layout>
         <AppTitle title={props.title!} description={props.lead!} />
-        <div className="relative mx-auto aspect-video w-full max-w-5xl object-cover">
-          <Image src={`${imageUrl}`} alt="画像" layout="fill" />
+        <div className="mx-auto w-full">
+          <div className="relative mx-auto aspect-video object-cover">
+            <Image src={`${imageUrl}`} alt="画像" layout="fill" />
+          </div>
         </div>
-
-        <div>
+        <div className="whitespace-wrap mx-auto w-screen max-w-md overflow-x-auto break-all px-4 sm:max-w-full sm:break-words">
           <Title>{props.title}</Title>
 
           <time dateTime={props.publishedAt} className="mt-2 block">
             {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
           </time>
           <article
-            className="whitespace-wrap mt-8 w-screen break-all sm:break-words"
+            className="mt-8 break-all"
             dangerouslySetInnerHTML={{ __html: props.content! }}
           />
         </div>
