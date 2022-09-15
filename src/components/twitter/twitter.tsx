@@ -1,4 +1,5 @@
 import { Anchor, Avatar, Box, Button, Card, Text } from "@mantine/core";
+import { loadDefaultJapaneseParser } from "budoux";
 import dayjs from "dayjs";
 import reactStringReplace from "react-string-replace";
 import { Title } from "src/components/atom/title";
@@ -6,6 +7,7 @@ import { useFetcher } from "src/hooks/useFetcher";
 import { TwitterTweetProps, TwitterUserProps } from "src/types";
 
 export const TwitterSec = () => {
+  const parser = loadDefaultJapaneseParser();
   const { data: user, error: userError } = useFetcher<{
     data: TwitterUserProps;
   }>("twitter/user?user.fields=profile_image_url");
@@ -48,7 +50,7 @@ export const TwitterSec = () => {
                         }}
                       >
                         {reactStringReplace(
-                          item.text,
+                          parser.parse(item.text),
                           /(https?:\/\/\S+)/g,
                           (match, i) => (
                             <Anchor
