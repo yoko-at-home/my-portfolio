@@ -16,7 +16,7 @@ const PortfolioId: NextPage<Props> = (props) => {
   const router = useRouter();
   const imageUrl = props.eyecatch?.url;
   return (
-    <div className="relative ">
+    <div className="relative z-0">
       <div className="translate-x-50 absolute top-7 right-[40%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <div className="translate-x-50 absolute top-7 right-[50%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <div className="translate-x-50 absolute top-7 right-[60%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
