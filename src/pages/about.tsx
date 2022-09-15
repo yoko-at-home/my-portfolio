@@ -1,4 +1,5 @@
 import { Text } from "@mantine/core";
+import { loadDefaultJapaneseParser } from "budoux";
 import { NextPage } from "next";
 import { AppTitle } from "src/components/atom/appTitle";
 import { Title } from "src/components/atom/title";
@@ -6,6 +7,7 @@ import { Layout } from "src/layout";
 import { metaData } from "src/metadata";
 
 const AboutPage: NextPage = () => {
+  const parser = loadDefaultJapaneseParser();
   return (
     <div
       className="bg-black/50 bg-cover bg-top"
@@ -23,9 +25,10 @@ const AboutPage: NextPage = () => {
           <Text size="lg" weight={700}>
             {metaData.name}
           </Text>
-          <div className="mt-3">{metaData.description}</div>
+          <div className="mt-3">{parser.parse(metaData.description)}</div>
         </div>
       </Layout>
+      $
     </div>
   );
 };
