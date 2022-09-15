@@ -4,7 +4,7 @@ import { metaData } from "src/metadata";
 export const Hero = () => {
   return (
     <div
-      className=" w-screen bg-cover bg-center text-white shadow-xl"
+      className="w-screen bg-cover bg-center text-white"
       style={{
         backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(100,100,333,0.8)),
   url('/assets/img/about.webp')`,
@@ -37,6 +37,12 @@ export const Hero = () => {
           <img className="" src="/assets/svgs/rss.svg" alt="rss icon" />
         </div>
       </div>
+      <style jsx>{`
+        .nm-container {
+          background: #ccd1da;
+          box-shadow: 20px 20px 67px #adb2b9, -20px -20px 67px #ebf0fb;
+        }
+      `}</style>
     </div>
   );
 };

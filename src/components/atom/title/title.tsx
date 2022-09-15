@@ -13,12 +13,14 @@ export const Title: FC<Title> = (props) => {
     router.asPath === "/portfolio" ||
     router.asPath === "/contact";
   return (
-    <div
-      className={`my-10 text-[26px] font-bold ${
-        root ? "text-[#313335]" : "text-slate-600"
+    <h1
+      className={`my-10 text-[26px] font-bold lg:text-4xl ${
+        root
+          ? "text-[#45515d]"
+          : "bg-gradient-to-r from-slate-500 to-violet-500 bg-clip-text text-transparent"
       }`}
     >
       {props.children}
-    </div>
+    </h1>
   );
 };

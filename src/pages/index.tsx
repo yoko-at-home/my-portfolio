@@ -48,14 +48,14 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
               <BlogCards items={filteredBlogData} />
             </Suspense>
           </ErrorWrapper>
-        </div>
-        <div className="flex justify-center pb-10">
-          <Link href="/blog">
-            <Button color="dark">View All</Button>
-          </Link>
+          <div className="flex justify-center pb-10">
+            <Link href="/blog">
+              <Button color="dark">View All</Button>
+            </Link>
+          </div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 pb-10">
+        <div className=" mx-auto max-w-7xl px-4 pb-10">
           <Title>Portfolio</Title>
           <ErrorWrapper message="Failed to Fetch portfolio Data.">
             <Suspense

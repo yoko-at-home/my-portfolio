@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nm-container
+{
+          background: #e6ebf4;
+          box-shadow: 20px 20px 67px #adb2b9, -20px -20px 67px #ebf0fb;
+        }
+
+.nm-con2 {
+          border-radius: 50px;
+background: #e6ebf4;
+box-shadow: inset 20px 20px 67px #c4c8cf,
+            inset -20px -20px 67px #ffffff;
+        }
