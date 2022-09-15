@@ -16,8 +16,10 @@ const AboutPage: NextPage = () => {
     >
       <Layout>
         <AppTitle title="about" description="about me" />
-        <div className="mx-auto text-white">
-          <Title>About</Title>
+        <div className="mx-auto max-w-6xl text-white">
+          <Title>
+            <span className="text-white">About</span>
+          </Title>
           <Text size="lg" weight={700}>
             {metaData.name}
           </Text>

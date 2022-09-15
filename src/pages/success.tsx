@@ -10,7 +10,7 @@ const Success: NextPage = () => {
     <Layout>
       <div className="mx-auto flex flex-col items-center justify-center">
         <iframe src="https://embed.lottiefiles.com/animation/83039"></iframe>
-        <div className="nm-container mt-20 p-3 text-lg">
+        <div className="nm-list mt-20 p-3 text-lg">
           <div className="mx-auto whitespace-pre-line break-words">
             {router.query.text}Thank you!
           </div>

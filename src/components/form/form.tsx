@@ -37,7 +37,7 @@ export const ContactForm: FC = () => {
   };
 
   return (
-    <div className="nm-container mx-auto mt-5 w-screen py-20 px-3 sm:px-20 md:max-w-5xl">
+    <div className="nm-list mx-auto mt-5 w-screen py-20 px-3 sm:px-20 md:max-w-5xl">
       <Title>Contact</Title>
       <div className="mx-auto max-w-2xl">
         <div className="mb-3 font-bold">{sendMessage}</div>

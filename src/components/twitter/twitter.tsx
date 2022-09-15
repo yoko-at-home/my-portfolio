@@ -19,12 +19,12 @@ export const TwitterSec = () => {
   if (tweetError) throw new Error(tweetError);
 
   return (
-    <div className="nm-con2 mx-auto px-4 pb-10 sm:px-10">
+    <div className="nm-container mx-auto px-4 pb-10 sm:px-10">
       <Title>Twitter</Title>
       <ul className="gridgrid-cols-1 grid max-w-md">
         {tweet?.data.map((item, i) => {
           return (
-            <li key={item.id} className="nm-container mb-2 list-none">
+            <li key={item.id} className="nm-list mb-2 list-none">
               <Card withBorder>
                 <div className="flex">
                   <Avatar

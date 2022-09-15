@@ -38,7 +38,7 @@ export const Hero = () => {
         </div>
       </div>
       <style jsx>{`
-        .nm-container {
+        .nm-list {
           background: #ccd1da;
           box-shadow: 20px 20px 67px #adb2b9, -20px -20px 67px #ebf0fb;
         }
