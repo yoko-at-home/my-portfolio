@@ -21,7 +21,11 @@ export const HeaderPart = ({ inView }: Props) => {
         <NavMobile />
         <div className="pl-5">
           <Text size="lg" weight={700}>
-            <Link href="/">{metaData.title}</Link>
+            <Link href="/">
+              <span className="bg-gradient-to-r from-slate-500 to-violet-500 bg-clip-text text-transparent">
+                {metaData.title}
+              </span>
+            </Link>
           </Text>
         </div>
         <div className="flex leading-6">
