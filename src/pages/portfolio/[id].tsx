@@ -24,19 +24,19 @@ const PortfolioId: NextPage<Props> = (props) => {
       <Layout>
         <AppTitle title={props.title!} description={props.lead!} />
 
-        <div className="mx-auto w-full lg:w-2/3">
-          <div className="relative aspect-video w-full object-cover">
+        <div className="mx-auto w-full">
+          <div className="relative mx-auto aspect-video object-cover">
             <Image src={`${imageUrl}`} alt="画像" layout="fill" />
           </div>
         </div>
-        <div>
+        <div className="mx-auto w-screen max-w-md sm:max-w-full">
           <Title>{props.title}</Title>
 
           <time dateTime={props.publishedAt} className="mt-2 block">
             {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
           </time>
           <article
-            className="prose-sm mt-8 whitespace-pre-line"
+            className="mt-8 whitespace-pre-line"
             dangerouslySetInnerHTML={{ __html: props.content! }}
           />
         </div>

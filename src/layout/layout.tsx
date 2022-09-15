@@ -15,11 +15,11 @@ export const Layout: FC<Body> = (props) => {
   const root = router.asPath === "/";
   const portfolioPage = router.asPath === "/portfolio";
   return (
-    <div className="flex min-h-screen flex-col text-slate-700">
+    <div className="flex min-h-screen w-screen flex-col text-slate-700">
       <HeaderPart inView={inView} />
       <div
         className={`mx-auto flex min-h-screen grow flex-col justify-start ${
-          root || portfolioPage ? "" : "max-w-7xl px-4"
+          root || portfolioPage ? "" : "max-w-7xl"
         }`}
       >
         {props.children}
