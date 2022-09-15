@@ -12,7 +12,7 @@ type Props = {
 
 export const HeaderPart = ({ inView }: Props) => {
   return (
-    <div className="z-5 sticky top-0 items-center">
+    <div className="sticky top-0 z-10 items-center">
       <div
         className={`mx-auto flex w-screen justify-between py-5 leading-6 ${
           inView ? `` : "top-[0] flex bg-slate-50/60"

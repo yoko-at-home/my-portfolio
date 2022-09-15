@@ -36,7 +36,7 @@ export const NavMobile = () => {
         title={title}
       />
       <div
-        className={`duration-0 fixed top-0  right-0 z-10 h-full w-full transform overflow-auto px-6 pt-6 ${
+        className={`duration-0 fixed top-0 right-0 z-50 h-full w-full transform overflow-auto px-6 pt-6 ${
           opened ? "translate-x-0" : "translate-x-full"
         }`}
         style={{
