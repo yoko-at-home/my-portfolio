@@ -18,7 +18,7 @@ export const Layout: FC<Body> = (props) => {
     <div className="bg-[#f0ebeb]/02 flex min-h-screen w-screen flex-col text-slate-700">
       <HeaderPart inView={inView} />
       <div
-        className={`mx-auto flex min-h-screen grow flex-col justify-start ${
+        className={`mx-auto flex min-h-screen grow flex-col justify-start px-2 ${
           root || portfolioPage ? "" : "max-w-7xl"
         }`}
       >
