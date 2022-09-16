@@ -16,7 +16,7 @@ export const PortfolioCardSlider = ({
   items: MicroCMSListResponse<Blog>["contents"];
 }) => {
   return (
-    <ul className="mx-auto w-[75vw]">
+    <ul className="mx-auto w-[95vw] sm:w-[75vw]">
       <Swiper
         speed={600}
         parallax={true}
