@@ -23,7 +23,7 @@ export const TwitterSec = () => {
   return (
     <div className="nm-container mx-auto px-4 pb-10 sm:px-10">
       <Title>Twitter</Title>
-      <ul className="gridgrid-cols-1 grid max-w-md">
+      <ul className="grid grid-cols-1 sm:w-96">
         {tweet?.data.map((item, i) => {
           return (
             <li key={item.id} className="nm-list mb-2 list-none">
@@ -34,7 +34,7 @@ export const TwitterSec = () => {
                     alt={user?.data.username}
                     className="mr-3 mt-2 rounded-full"
                   />
-                  <div className=" w-full flex-row justify-between">
+                  <div className=" w-80 flex-row justify-between">
                     <Text weight={700}>
                       {user?.data.name}
                       <span className="text-xs font-light text-gray-600">
