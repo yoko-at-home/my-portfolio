@@ -19,9 +19,9 @@ export const GitHubReps = () => {
   const numberToShow = root ? (isMobile ? 3 : 6) : data.length;
   let filteredData = data.slice(0, numberToShow);
   return (
-    <div className="nm-container px-4 pb-10">
+    <div className="nm-container mx-auto px-4 pb-10 sm:px-10">
       <Title>GitHub</Title>
-      <ul className="flex flex-col">
+      <ul className="grid grid-cols-1 sm:w-96">
         <div className="sm:hidden">
           {filteredData.map((item) => {
             return (
