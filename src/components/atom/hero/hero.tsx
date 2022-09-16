@@ -6,8 +6,8 @@ export const Hero = () => {
     <div
       className="w-screen bg-cover bg-center text-white"
       style={{
-        backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(100,100,333,0.8)),
-  url('/assets/img/about.webp')`,
+        backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(207, 212, 220,0.8)),
+  url('/assets/img/')`,
       }}
     >
       <div className="flex h-[248px] max-w-7xl flex-col justify-around p-4 sm:mx-auto sm:flex-row sm:items-center sm:justify-between md:pr-20 lg:pr-36">

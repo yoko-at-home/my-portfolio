@@ -27,6 +27,7 @@ background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
 -webkit-text-fill-color: transparent;
 }
 .text-gradient-sub{
+font-weight:bold;
 background: #957E17;
 background: linear-gradient(to right, #957E17 0%, #78918C 90%, #5A6D69 100%);
 -webkit-background-clip: text;
