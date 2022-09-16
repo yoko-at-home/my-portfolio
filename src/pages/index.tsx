@@ -6,8 +6,8 @@ import { AppTitle } from "src/components/atom/appTitle";
 import { ErrorWrapper } from "src/components/atom/error";
 import { Hero } from "src/components/atom/hero";
 import { Title } from "src/components/atom/title";
-import { PortfolioCards } from "src/components/card";
 import { BlogCards } from "src/components/card/blogCards";
+import { PortfolioCardSlider } from "src/components/card/portfolioCardSlider";
 import { GitHubReps } from "src/components/github";
 import { TwitterSec } from "src/components/twitter";
 import { Layout } from "src/layout";
@@ -55,7 +55,7 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
           </div>
         </div>
 
-        <div className=" mx-auto max-w-7xl px-4 pb-10">
+        <div className="mx-auto max-w-7xl px-4 pb-10">
           <Title>Portfolio</Title>
           <ErrorWrapper message="Failed to Fetch portfolio Data.">
             <Suspense
@@ -65,7 +65,7 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
                 </Center>
               }
             >
-              <PortfolioCards items={filteredPortfolioData} />
+              <PortfolioCardSlider items={filteredPortfolioData} />
             </Suspense>
           </ErrorWrapper>
         </div>
