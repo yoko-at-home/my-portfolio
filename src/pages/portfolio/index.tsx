@@ -45,7 +45,7 @@ const PortfolioPage: NextPage<BlogProps> = (props) => {
         dataLength={items.length}
         hasMore={hasMore}
       >
-        <div className="relative w-screen max-w-7xl">
+        <div className="relative w-screen max-w-7xl" id="home">
           <PortfolioCards items={items} />
         </div>
       </InfiniteScroll>

@@ -4,6 +4,7 @@ import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { Link } from "react-scroll";
 import { AppTitle } from "src/components/atom/appTitle";
 import { Title } from "src/components/atom/title";
 import { Layout } from "src/layout";
@@ -23,7 +24,7 @@ const BlogId: NextPage<Props> = (props) => {
       <div className="translate-x-50 absolute top-7 right-[60%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <Layout>
         <AppTitle title={props.title!} description={props.lead!} />
-        <div className="mx-auto w-full">
+        <div className="mx-auto w-full" id="page-top">
           <div className="relative mx-auto aspect-video object-cover">
             <Image src={`${imageUrl}`} alt="画像" layout="fill" />
           </div>
@@ -43,6 +44,18 @@ const BlogId: NextPage<Props> = (props) => {
           <Button color="gray" onClick={() => router.back()}>
             Return
           </Button>
+        </div>
+        <div className="p-3 text-right">
+          <Link
+            activeClass="active"
+            to="page-top"
+            spy={true}
+            smooth="easeInOutQuart"
+            offset={-70}
+            duration={2000}
+          >
+            <a className="text-gradient p-3">page top</a>
+          </Link>
         </div>
       </Layout>
     </div>
