@@ -15,7 +15,7 @@ export const Navigation = () => {
       {items.map(({ href, label }) => {
         return (
           <Link key={href} href={href}>
-            <a className="mr-2 whitespace-nowrap text-lg font-semibold text-black">
+            <a className="text-gradient-sub mr-2 whitespace-nowrap text-lg font-semibold">
               {label}
             </a>
           </Link>

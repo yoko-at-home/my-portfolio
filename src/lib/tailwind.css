@@ -19,3 +19,16 @@ border-radius: 50px;
 background: linear-gradient(145deg, #cfd4dc, #f6fbff);
 box-shadow:  20px 20px 67px #c4c8cf,-20px -20px 67px #ffffff;
 }
+
+.text-gradient{
+background: #121FCF;
+background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.text-gradient-sub{
+background: #957E17;
+background: linear-gradient(to right, #957E17 0%, #78918C 90%, #5A6D69 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}

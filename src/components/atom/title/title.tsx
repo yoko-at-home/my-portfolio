@@ -15,9 +15,7 @@ export const Title: FC<Title> = (props) => {
   return (
     <h1
       className={`my-10 text-[26px] font-bold lg:text-4xl ${
-        root
-          ? "text-[#45515d]"
-          : "bg-gradient-to-r from-slate-500 to-violet-500 bg-clip-text text-transparent"
+        root ? "text-[#45515d]" : "text-gradient-sub"
       }`}
     >
       {props.children}

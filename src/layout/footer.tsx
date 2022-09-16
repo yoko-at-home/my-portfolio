@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { Link } from "react-scroll";
 import { metaData } from "src/metadata";
 
 export const FooterPart = () => {
@@ -13,7 +14,7 @@ export const FooterPart = () => {
   return (
     <div
       className={`my-14 flex justify-center text-sm ${
-        root ? "text-[#868E96]" : "text-slate-200"
+        root ? "text-[#868E96]" : "text-gradient"
       }`}
     >
       <Link
