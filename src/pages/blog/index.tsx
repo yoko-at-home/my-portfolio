@@ -40,7 +40,7 @@ const Blog: NextPage<BlogProps> = (props) => {
   return (
     <Layout>
       <AppTitle title="blog" description="ブログ一覧" />
-      <div className="flex flex-col justify-between">
+      <div className="flex flex-col justify-between" id="home">
         <div className="py-10 sm:mx-auto">
           <Title>Blog</Title>
           <InfiniteScroll

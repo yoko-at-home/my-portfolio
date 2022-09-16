@@ -35,7 +35,7 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
       <AppTitle title="welcome" description="welcome to my portfolio site" />
 
       <Hero />
-      <div className="mx-4 max-w-7xl sm:mx-auto sm:px-4">
+      <div className="mx-auto max-w-7xl px-4">
         <div>
           <Title>Blog</Title>
           <ErrorWrapper message="Failed to Fetch Blog Data.">

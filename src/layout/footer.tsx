@@ -16,7 +16,17 @@ export const FooterPart = () => {
         root ? "text-[#868E96]" : "text-slate-200"
       }`}
     >
-      {`© ${new Date().getFullYear()}`} {metaData.title}
+      <Link
+        activeClass="active"
+        to="home"
+        spy={true}
+        smooth="easeInOutQuart"
+        offset={-70}
+        duration={2000}
+      >
+        {`© ${new Date().getFullYear()} `}
+        {metaData.title}
+      </Link>
     </div>
   );
 };
