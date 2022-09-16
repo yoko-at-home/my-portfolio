@@ -10,7 +10,7 @@ const AboutPage: NextPage = () => {
   const parser = loadDefaultJapaneseParser();
   return (
     <div
-      className="bg-black/50 bg-cover bg-top"
+      className="bg-black/50 bg-cover bg-center"
       style={{
         backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.7), rgba(100,100,333,0.9)),
   url('/assets/img/about.webp')`,
@@ -25,7 +25,9 @@ const AboutPage: NextPage = () => {
           <Text size="lg" weight={700}>
             {metaData.name}
           </Text>
-          <div className="mt-3">{parser.parse(metaData.description)}</div>
+          <div className="mt-3">{parser.parse(metaData.description_0)}</div>
+          <div className="mt-3">{parser.parse(metaData.description_1)}</div>
+          <div className="mt-3">{parser.parse(metaData.description_2)}</div>
         </div>
       </Layout>
       $
