@@ -1,74 +1,74 @@
 export const pagesPath = {
+  $url: (url?: { hash?: string }) => ({
+    hash: url?.hash,
+    pathname: "/" as const,
+  }),
   about: {
     $url: (url?: { hash?: string }) => ({
-      pathname: "/about" as const,
       hash: url?.hash,
+      pathname: "/about" as const,
     }),
   },
   blog: {
+    $url: (url?: { hash?: string }) => ({
+      hash: url?.hash,
+      pathname: "/blog" as const,
+    }),
     _id: (id: string | number) => ({
       $url: (url?: { hash?: string }) => ({
+        hash: url?.hash,
         pathname: "/blog/[id]" as const,
         query: { id },
-        hash: url?.hash,
       }),
     }),
     page: {
       _id: (id: string | number) => ({
         $url: (url?: { hash?: string }) => ({
+          hash: url?.hash,
           pathname: "/blog/page/[id]" as const,
           query: { id },
-          hash: url?.hash,
         }),
       }),
     },
-    $url: (url?: { hash?: string }) => ({
-      pathname: "/blog" as const,
-      hash: url?.hash,
-    }),
   },
   blog2: {
+    $url: (url?: { hash?: string }) => ({
+      hash: url?.hash,
+      pathname: "/blog2" as const,
+    }),
     _id: (id: string | number) => ({
       $url: (url?: { hash?: string }) => ({
+        hash: url?.hash,
         pathname: "/blog/[id]" as const,
         query: { id },
-        hash: url?.hash,
       }),
-    }),
-    $url: (url?: { hash?: string }) => ({
-      pathname: "/blog2" as const,
-      hash: url?.hash,
     }),
   },
   contact: {
     $url: (url?: { hash?: string }) => ({
-      pathname: "/contact" as const,
       hash: url?.hash,
+      pathname: "/contact" as const,
     }),
   },
   portfolio: {
+    $url: (url?: { hash?: string }) => ({
+      hash: url?.hash,
+      pathname: "/portfolio" as const,
+    }),
     _id: (id: string | number) => ({
       $url: (url?: { hash?: string }) => ({
+        hash: url?.hash,
         pathname: "/portfolio/[id]" as const,
         query: { id },
-        hash: url?.hash,
       }),
-    }),
-    $url: (url?: { hash?: string }) => ({
-      pathname: "/portfolio" as const,
-      hash: url?.hash,
     }),
   },
   success: {
     $url: (url?: { hash?: string }) => ({
-      pathname: "/success" as const,
       hash: url?.hash,
+      pathname: "/success" as const,
     }),
   },
-  $url: (url?: { hash?: string }) => ({
-    pathname: "/" as const,
-    hash: url?.hash,
-  }),
 };
 
 export type PagesPath = typeof pagesPath

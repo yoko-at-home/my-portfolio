@@ -9,11 +9,6 @@ export const pagesPath = {
     _id: (id: string | number) => ({
       $url: (url?: { hash?: string }) => ({ pathname: '/blog/[id]' as const, query: { id }, hash: url?.hash })
     }),
-    "page": {
-      _id: (id: string | number) => ({
-        $url: (url?: { hash?: string }) => ({ pathname: '/blog/page/[id]' as const, query: { id }, hash: url?.hash })
-      })
-    },
     $url: (url?: { hash?: string }) => ({ pathname: '/blog' as const, hash: url?.hash })
   },
   "contact": {
