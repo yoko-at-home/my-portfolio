@@ -8,7 +8,7 @@ const MyDocument: NextPage = () => {
       <Head>
         <meta charSet="utf-8" />
         <meta name="title" content="Lightsound Shimabu" />
-        <meta name="description" content={metaData.description} />
+        <meta name="description" content={metaData.description_0} />
         <meta
           property="og:image"
           content="https://yoko-portfolio.vercel.app/assets/favicons/android-chrome-512x512.png"
