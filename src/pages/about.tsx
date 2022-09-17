@@ -19,8 +19,8 @@ const AboutPage: NextPage = () => {
       <Layout>
         <AppTitle
           title="about"
-          description="about me"
-          url="https://yoko-portfolio.vercel.app/assets/favicons/android-chrome-512x512.png"
+          description={metaData.description_0}
+          url={`${metaData.siteUrl}${metaData.siteLogo}`}
         />
         <div className="mx-auto max-w-6xl text-white">
           <Title>

@@ -11,8 +11,8 @@ export const metaData = {
   lead: "microCMS, Twitter, GitHub apiでデータを取得しました",
   ogImage: "",
   profile_image_url: "/assets/img/Ellipse.jpeg",
-  siteLogo: "",
-  siteUrl: "",
+  siteLogo: "/assets/favicons/android-chrome-512x512.png",
+  siteUrl: "https://yoko-portfolio.vercel.app",
   twitterAccount: "yokoiwasaki6",
   twitterName: "yoko",
 };
