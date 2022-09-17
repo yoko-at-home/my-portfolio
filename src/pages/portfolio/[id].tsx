@@ -5,6 +5,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { AppTitle } from "src/components/atom/appTitle";
+import { ToTopButton } from "src/components/atom/pageTop";
 import { Title } from "src/components/atom/title";
 import { Layout } from "src/layout";
 import { client } from "src/pages/api/portfolio/client";
@@ -16,7 +17,7 @@ const PortfolioId: NextPage<Props> = (props) => {
   const router = useRouter();
   const imageUrl = props.eyecatch?.url;
   return (
-    <div className="relative z-0">
+    <div className="relative z-0" id="page-top">
       <div className="translate-x-50 absolute top-7 right-[40%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <div className="translate-x-50 absolute top-7 right-[50%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <div className="translate-x-50 absolute top-7 right-[60%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
@@ -45,6 +46,7 @@ const PortfolioId: NextPage<Props> = (props) => {
             Return
           </Button>
         </div>
+        <ToTopButton />
       </Layout>
     </div>
   );
