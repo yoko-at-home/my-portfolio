@@ -20,7 +20,7 @@ const AboutPage: NextPage = () => {
         <AppTitle
           title="about"
           description="about me"
-          url="/assets/img/about.webp"
+          url="https://yoko-portfolio.vercel.app/assets/favicons/android-chrome-512x512.png"
         />
         <div className="mx-auto max-w-6xl text-white">
           <Title>
