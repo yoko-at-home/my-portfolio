@@ -4,8 +4,8 @@ import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Link } from "react-scroll";
 import { AppTitle } from "src/components/atom/appTitle";
+import { ToTopButton } from "src/components/atom/pageTop";
 import { Title } from "src/components/atom/title";
 import { Layout } from "src/layout";
 import { clientBlog } from "src/pages/api/blog";
@@ -45,18 +45,7 @@ const BlogId: NextPage<Props> = (props) => {
             Return
           </Button>
         </div>
-        <div className="p-3 text-right">
-          <Link
-            activeClass="active"
-            to="page-top"
-            spy={true}
-            smooth="easeInOutQuart"
-            offset={-70}
-            duration={2000}
-          >
-            <a className="text-gradient p-3">page top</a>
-          </Link>
-        </div>
+        <ToTopButton />
       </Layout>
     </div>
   );
