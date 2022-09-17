@@ -32,7 +32,11 @@ const PortfolioPage: NextPage<BlogProps> = (props) => {
   }
   return (
     <Layout>
-      <AppTitle title="portfolio" description="ポートフォリオ一覧" />
+      <AppTitle
+        title="portfolio"
+        description="ポートフォリオ一覧"
+        url="/assets/favicons/android-chrome-512x512.png"
+      />
 
       <Title>Portfolio</Title>
       <InfiniteScroll

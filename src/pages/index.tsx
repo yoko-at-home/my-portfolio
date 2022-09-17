@@ -28,7 +28,11 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
 
   return (
     <Layout>
-      <AppTitle title="welcome" description="welcome to my portfolio site" />
+      <AppTitle
+        title="welcome"
+        description="welcome to my portfolio site"
+        url="/assets/favicons/android-chrome-512x512.png"
+      />
 
       <Hero />
       <div className="mx-auto max-w-7xl px-4">
