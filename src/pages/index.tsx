@@ -25,10 +25,6 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
   const isMobile = width < 576;
 
   let filteredBlogData = props.blogData.contents.slice(0, isMobile ? 4 : 6);
-  let filteredPortfolioData = props.portfolioData.contents.slice(
-    0,
-    isMobile ? 3 : 6
-  );
 
   return (
     <Layout>
@@ -57,7 +53,7 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
           </div>
         </div>
 
-        <div className=" mx-auto max-w-7xl px-4 pb-10">
+        <div className="mx-auto max-w-7xl pb-10">
           <Title>Portfolio</Title>
           <ErrorWrapper message="Failed to Fetch portfolio Data.">
             <Suspense
@@ -68,7 +64,7 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
                 </Center>
               }
             >
-              <PortfolioCardSlider items={filteredPortfolioData} />
+              <PortfolioCardSlider items={props.portfolioData.contents} />
             </Suspense>
           </ErrorWrapper>
         </div>
