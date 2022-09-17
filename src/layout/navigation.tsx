@@ -29,7 +29,7 @@ export const NavMobile = () => {
   const title = opened ? "Close navigation" : "Open navigation";
 
   return (
-    <div className="text-white sm:hidden">
+    <div className="z-50 text-white sm:hidden">
       <Burger
         opened={opened}
         onClick={() => setOpened((o) => !o)}
