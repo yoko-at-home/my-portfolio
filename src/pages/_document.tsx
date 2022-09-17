@@ -11,7 +11,7 @@ const MyDocument: NextPage = () => {
         <meta name="description" content={metaData.description_0} />
         <meta
           property="og:image"
-          content="https://yoko-portfolio.vercel.app/assets/favicons/android-chrome-512x512.png"
+          content={`${metaData.siteUrl}${metaData.siteLogo}`}
         />
         <meta
           name="msapplication-square70x70logo"
