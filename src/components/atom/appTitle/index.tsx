@@ -24,11 +24,14 @@ export const AppTitle: FC<Props> = ({ title, description, url }) => {
       <meta property="og:title" content={title} />
       <meta property="og:image" content={url} />
       {/* <!-- Twitter --> */}
-      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:card" content="summary" />
       <meta property="twitter:url" content={url} />
       <meta property="twitter:title" content={metaData.title} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={url} />
+      <meta
+        property="twitter:image"
+        content="https://yoko-portfolio.vercel.app/assets/favicons/android-chrome-512x512.png"
+      />
       <meta name="twitter:image:width" content="1200" />
       <meta name="twitter:image:height" content="630" />
       <meta name="author" content="Yoko Iwasaki"></meta>
