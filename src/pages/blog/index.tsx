@@ -6,7 +6,6 @@ import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Skeleton from "react-loading-skeleton";
 import { AppTitle } from "src/components/atom/appTitle";
-import { Pagination } from "src/components/atom/paginate";
 import { Title } from "src/components/atom/title";
 import { BlogCards } from "src/components/card/blogCards";
 import { Layout } from "src/layout";
@@ -64,7 +63,7 @@ const Blog: NextPage<BlogProps> = (props) => {
                 color={"dark"}
                 total={Math.ceil(props.totalCount / 6) || 1}
               /> */}
-              <Pagination currentPageNum={0} maxPageNum={0} />
+              {/* <Pagination currentPageNum={0} maxPageNum={0} /> */}
             </Center>
           ) : null}
         </div>
