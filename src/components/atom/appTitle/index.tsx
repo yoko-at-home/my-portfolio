@@ -32,8 +32,8 @@ export const AppTitle: FC<Props> = ({ title, description, url }) => {
         property="twitter:image"
         content="https://yoko-portfolio.vercel.app/assets/favicons/android-chrome-512x512.png"
       />
-      <meta name="twitter:image:width" content="1200" />
-      <meta name="twitter:image:height" content="630" />
+      <meta name="twitter:image:width" content="512" />
+      <meta name="twitter:image:height" content="512" />
       <meta name="author" content="Yoko Iwasaki"></meta>
     </Head>
   );
