@@ -6,9 +6,10 @@ import { metaData } from "src/metadata";
 type Props = {
   title: string;
   description: string;
+  url: string;
 };
 
-export const AppTitle: FC<Props> = ({ title, description }) => {
+export const AppTitle: FC<Props> = ({ title, description, url }) => {
   const newTitle = `${title} | yoko's portfolio`;
   const router = useRouter();
 
@@ -21,6 +22,7 @@ export const AppTitle: FC<Props> = ({ title, description }) => {
       <meta property="og:site_name" content={metaData.title} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
+      <meta property="og:image" content={url} />
     </Head>
   );
 };

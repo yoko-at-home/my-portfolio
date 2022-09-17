@@ -15,7 +15,7 @@ type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
 const BlogId: NextPage<Props> = (props) => {
   const router = useRouter();
-  const imageUrl = props.eyecatch?.url;
+  const imageUrl = props.eyecatch?.url!;
 
   return (
     <div className="relative">
@@ -23,7 +23,11 @@ const BlogId: NextPage<Props> = (props) => {
       <div className="translate-x-50 absolute top-7 right-[50%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <div className="translate-x-50 absolute top-7 right-[60%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <Layout>
-        <AppTitle title={props.title!} description={props.lead!} />
+        <AppTitle
+          title={props.title!}
+          description={props.lead!}
+          url={imageUrl}
+        />
         <div className="mx-auto w-full" id="page-top">
           <div className="relative mx-auto aspect-video object-cover">
             <Image src={`${imageUrl}`} alt="画像" layout="fill" />
