@@ -11,7 +11,9 @@ export const ToTopButton = () => {
         offset={-70}
         duration={2000}
       >
-        <a className="text-gradient-sub p-3">page top</a>
+        <span className="text-gradient-sub p-3 hover:cursor-pointer">
+          page top
+        </span>
       </Link>
     </div>
   );
