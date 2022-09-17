@@ -8,6 +8,7 @@ import { AppTitle } from "src/components/atom/appTitle";
 import { Title } from "src/components/atom/title";
 import { PortfolioCards } from "src/components/card";
 import { Layout } from "src/layout";
+import { metaData } from "src/metadata";
 import { client } from "src/pages/api/portfolio/client";
 import { Blog, BlogProps } from "src/types";
 
@@ -34,8 +35,8 @@ const PortfolioPage: NextPage<BlogProps> = (props) => {
     <Layout>
       <AppTitle
         title="portfolio"
-        description="ポートフォリオ一覧"
-        url="/assets/favicons/android-chrome-512x512.png"
+        description="ポートフォリオ一覧です"
+        url={`${metaData.siteUrl}${metaData.siteLogo}`}
       />
 
       <Title>Portfolio</Title>
