@@ -23,7 +23,11 @@ const PortfolioId: NextPage<Props> = (props) => {
       <div className="translate-x-50 absolute top-7 right-[60%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
 
       <Layout>
-        <AppTitle title={props.title!} description={props.lead!} />
+        <AppTitle
+          title={props.title!}
+          description={props.lead!}
+          url={props.eyecatch?.url!}
+        />
 
         <div className="mx-auto w-full">
           <div className="relative mx-auto aspect-video object-cover">
