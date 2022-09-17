@@ -34,7 +34,7 @@ export const TwitterSec = () => {
                     alt={user?.data.username}
                     className="mr-3 mt-2 rounded-full"
                   />
-                  <div className="w-52 flex-row justify-between sm:w-80">
+                  <div className="w-52 flex-row justify-between xs:w-60 sm:w-80">
                     <Text weight={700}>
                       {user?.data.name}
                       <span className="text-xs font-light text-gray-600">
