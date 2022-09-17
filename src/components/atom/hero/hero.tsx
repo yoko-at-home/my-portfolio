@@ -37,12 +37,6 @@ export const Hero = () => {
           <img className="" src="/assets/svgs/rss.svg" alt="rss icon" />
         </div>
       </div>
-      <style jsx>{`
-        .nm-list {
-          background: #ccd1da;
-          box-shadow: 20px 20px 67px #adb2b9, -20px -20px 67px #ebf0fb;
-        }
-      `}</style>
     </div>
   );
 };
