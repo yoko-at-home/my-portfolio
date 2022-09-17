@@ -6,7 +6,11 @@ import { Layout } from "src/layout";
 const ContactPage: NextPage = () => {
   return (
     <Layout>
-      <AppTitle title="contact" description="お問合せページ" />
+      <AppTitle
+        title="contact"
+        description="お問合せページ"
+        url="/assets/favicons/android-chrome-512x512.png"
+      />
 
       <ContactForm />
     </Layout>

@@ -17,7 +17,11 @@ const AboutPage: NextPage = () => {
       }}
     >
       <Layout>
-        <AppTitle title="about" description="about me" />
+        <AppTitle
+          title="about"
+          description="about me"
+          url="/assets/img/about.webp"
+        />
         <div className="mx-auto max-w-6xl text-white">
           <Title>
             <span className="text-white">About</span>

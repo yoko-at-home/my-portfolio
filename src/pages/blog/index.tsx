@@ -38,7 +38,11 @@ const Blog: NextPage<BlogProps> = (props) => {
   }
   return (
     <Layout>
-      <AppTitle title="blog" description="ブログ一覧" />
+      <AppTitle
+        title="blog"
+        description="ブログ一覧"
+        url="/assets/favicons/android-chrome-512x512.png"
+      />
       <div className="flex flex-col justify-between" id="home">
         <div className="py-10 sm:mx-auto">
           <Title>Blog</Title>
