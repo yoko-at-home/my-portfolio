@@ -26,7 +26,6 @@ const BlogId: NextPage<Props> = (props) => {
         <AppTitle
           title={props.title!}
           description={props.lead!}
-          // ogUrl={metaData.siteUrl + router.asPath}
           url={imageUrl}
         />
         <div className="mx-auto w-full" id="page-top">
