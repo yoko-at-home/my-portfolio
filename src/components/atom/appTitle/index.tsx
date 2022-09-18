@@ -15,7 +15,6 @@ export const AppTitle: FC<Props> = ({ title, description, url }) => {
 
   return (
     <Head>
-      <meta charSet="utf-8" />
       <title>{newTitle}</title>
       <meta name="description" content={description} />
       <link rel="icon" href="/assets/favicons/favicon.ico" />
