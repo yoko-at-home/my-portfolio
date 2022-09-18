@@ -1,37 +1,37 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { FC } from "react";
 import { metaData } from "src/metadata";
 
 type Props = {
   title: string;
   description: string;
+  ogUrl: string;
   url: string;
 };
 
-export const AppTitle: FC<Props> = ({ title, description, url }) => {
+export const AppTitle: FC<Props> = ({ title, description, ogUrl, url }) => {
   const newTitle = `${title} | yoko's portfolio`;
-  const router = useRouter();
 
   return (
     <Head>
       <title>{newTitle}</title>
       <meta name="description" content={description} />
       <link rel="icon" href="/assets/favicons/favicon.ico" />
-      <meta property="og:url" content={metaData.siteUrl + router.asPath} />
+      <meta property="og:url" content={ogUrl} />
       <meta property="og:site_name" content={metaData.title} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:image" content={url} />
+      <meta property="og:type" content="website" />
       {/* <!-- Twitter --> */}
       <meta property="twitter:card" content="summary" />
-      <meta property="twitter:url" content={metaData.twitterAccount} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={url} />
       <meta name="twitter:image:width" content="512" />
       <meta name="twitter:image:height" content="512" />
-      <meta name="author" content="Yoko Iwasaki"></meta>
+      <meta name="twitter:site" content="metaData.twitterAccount" />
+      <meta name="twitter:creator" content="metaData.twitterAccount" />
       {/* favicons */}
       <meta
         name="msapplication-square70x70logo"
