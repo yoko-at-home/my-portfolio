@@ -1,7 +1,6 @@
 import { Text } from "@mantine/core";
 import { loadDefaultJapaneseParser } from "budoux";
 import { NextPage } from "next";
-import router from "next/router";
 import { AppTitle } from "src/components/atom/appTitle";
 import { Title } from "src/components/atom/title";
 import { Layout } from "src/layout";
@@ -21,7 +20,6 @@ const AboutPage: NextPage = () => {
         <AppTitle
           title="about"
           description={metaData.description_0}
-          ogUrl={metaData.siteUrl + router.asPath}
           url={metaData.siteUrl + metaData.siteLogo}
         />
         <div className="mx-auto max-w-6xl text-white">

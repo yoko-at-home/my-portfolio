@@ -43,7 +43,6 @@ const Blog: NextPage<BlogProps> = (props) => {
         title="blog"
         description="ブログ一覧です"
         url={metaData.siteUrl + metaData.siteLogo}
-        ogUrl={metaData.siteUrl + router.asPath}
       />
       <div className="flex flex-col justify-between" id="home">
         <div className="py-10 sm:mx-auto">
