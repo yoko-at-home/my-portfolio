@@ -5,11 +5,10 @@ import { metaData } from "src/metadata";
 type Props = {
   title: string;
   description: string;
-  ogUrl: string;
   url: string;
 };
 
-export const AppTitle: FC<Props> = ({ title, description, ogUrl, url }) => {
+export const AppTitle: FC<Props> = ({ title, description, url }) => {
   const newTitle = `${title} | yoko's portfolio`;
 
   return (
@@ -17,7 +16,7 @@ export const AppTitle: FC<Props> = ({ title, description, ogUrl, url }) => {
       <title>{newTitle}</title>
       <meta name="description" content={description} />
       <link rel="icon" href="/assets/favicons/favicon.ico" />
-      <meta property="og:url" content={ogUrl} />
+      <meta property="og:url" content={metaData.siteUrl} />
       <meta property="og:site_name" content={metaData.title} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />

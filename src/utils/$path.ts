@@ -20,9 +20,6 @@ export const pagesPath = {
     }),
     $url: (url?: { hash?: string }) => ({ pathname: '/portfolio' as const, hash: url?.hash })
   },
-  "success": {
-    $url: (url?: { hash?: string }) => ({ pathname: '/success' as const, hash: url?.hash })
-  },
   $url: (url?: { hash?: string }) => ({ pathname: '/' as const, hash: url?.hash })
 }
 

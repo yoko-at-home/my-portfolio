@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import router from "next/router";
 import { AppTitle } from "src/components/atom/appTitle";
 import { ContactForm } from "src/components/form";
 import { Layout } from "src/layout";
@@ -11,7 +10,6 @@ const ContactPage: NextPage = () => {
       <AppTitle
         title="contact"
         description="お問合せページ"
-        ogUrl={metaData.siteUrl + router.asPath}
         url={metaData.siteUrl + metaData.siteLogo}
       />
 
