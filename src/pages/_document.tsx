@@ -7,7 +7,7 @@ const MyDocument: NextPage = () => {
     <Html lang="ja">
       <Head>
         <meta charSet="utf-8" />
-        <meta name="title" content="Lightsound Shimabu" />
+        <meta name="title" content={metaData.title} />
         <meta name="description" content={metaData.description_0} />
         <meta
           property="og:image"
@@ -253,7 +253,7 @@ const MyDocument: NextPage = () => {
           crossOrigin="use-credentials"
         />
       </Head>
-      <body className="bg-white text-black antialiased">
+      <body className="antialiased">
         <Main />
         <NextScript />
       </body>
