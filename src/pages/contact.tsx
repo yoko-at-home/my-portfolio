@@ -10,7 +10,7 @@ const ContactPage: NextPage = () => {
       <AppTitle
         title="contact"
         description="お問合せページ"
-        url={`${metaData.siteUrl}${metaData.siteLogo}`}
+        url={metaData.siteUrl + metaData.siteLogo}
       />
 
       <ContactForm />
