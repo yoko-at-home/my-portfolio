@@ -29,10 +29,10 @@ export const AppTitle: FC<Props> = ({ title, description, url }) => {
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={url} />
-      {/* <meta
+      <meta
         property="twitter:image"
-        content={`${metaData.siteUrl}${metaData.siteLogo}`}
-      /> */}
+        content={metaData.siteUrl + metaData.siteLogo}
+      />
       {/* <meta name="twitter:image:width" content="512" />
       <meta name="twitter:image:height" content="512" /> */}
       <meta name="author" content="Yoko Iwasaki"></meta>
