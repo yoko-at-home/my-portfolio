@@ -36,6 +36,7 @@ const PortfolioPage: NextPage<BlogProps> = (props) => {
       <AppTitle
         title="portfolio"
         description="ポートフォリオ一覧です"
+        ogUrl={metaData.siteUrl + router.asPath}
         url={metaData.siteUrl + metaData.siteLogo}
       />
 

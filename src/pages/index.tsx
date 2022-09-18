@@ -32,6 +32,7 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
       <AppTitle
         title="welcome"
         description="welcome to my portfolio site"
+        ogUrl={metaData.siteUrl}
         url={metaData.siteUrl + metaData.siteLogo}
       />
 
