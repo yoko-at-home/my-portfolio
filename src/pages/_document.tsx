@@ -11,7 +11,7 @@ const MyDocument: NextPage = () => {
         <meta name="description" content={metaData.description_0} />
         <meta
           property="og:image"
-          content={`${metaData.siteUrl}${metaData.siteLogo}`}
+          content={metaData.siteUrl + metaData.siteLogo}
         />
         <meta
           name="msapplication-square70x70logo"
