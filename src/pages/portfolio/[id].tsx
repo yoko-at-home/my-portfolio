@@ -15,7 +15,7 @@ type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
 const PortfolioId: NextPage<Props> = (props) => {
   const router = useRouter();
-  const imageUrl = props.eyecatch?.url;
+  const imageUrl = props.eyecatch?.url!;
   return (
     <div className="relative z-0" id="page-top">
       <div className="translate-x-50 absolute top-7 right-[40%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
@@ -26,7 +26,7 @@ const PortfolioId: NextPage<Props> = (props) => {
         <AppTitle
           title={props.title!}
           description={props.lead!}
-          url={props.eyecatch?.url!}
+          url={imageUrl}
         />
 
         <div className="mx-auto w-full">

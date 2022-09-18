@@ -36,7 +36,7 @@ const PortfolioPage: NextPage<BlogProps> = (props) => {
       <AppTitle
         title="portfolio"
         description="ポートフォリオ一覧です"
-        url={`${metaData.siteUrl}${metaData.siteLogo}`}
+        url={metaData.siteUrl + metaData.siteLogo}
       />
 
       <Title>Portfolio</Title>

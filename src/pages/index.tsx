@@ -32,7 +32,7 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
       <AppTitle
         title="welcome"
         description="welcome to my portfolio site"
-        url={`${metaData.siteUrl}${metaData.siteLogo}`}
+        url={metaData.siteUrl + metaData.siteLogo}
       />
 
       <Hero />

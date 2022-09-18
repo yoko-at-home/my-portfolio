@@ -42,7 +42,7 @@ const Blog: NextPage<BlogProps> = (props) => {
       <AppTitle
         title="blog"
         description="ブログ一覧です"
-        url={`${metaData.siteUrl}${metaData.siteLogo}`}
+        url={metaData.siteUrl + metaData.siteLogo}
       />
       <div className="flex flex-col justify-between" id="home">
         <div className="py-10 sm:mx-auto">

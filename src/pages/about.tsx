@@ -20,7 +20,7 @@ const AboutPage: NextPage = () => {
         <AppTitle
           title="about"
           description={metaData.description_0}
-          url={`${metaData.siteUrl}${metaData.siteLogo}`}
+          url={metaData.siteUrl + metaData.siteLogo}
         />
         <div className="mx-auto max-w-6xl text-white">
           <Title>
