@@ -25,15 +25,16 @@ export const AppTitle: FC<Props> = ({ title, description, url }) => {
       <meta property="og:image" content={url} />
       {/* <!-- Twitter --> */}
       <meta property="twitter:card" content="summary" />
-      <meta property="twitter:url" content={url} />
+      <meta property="twitter:url" content={metaData.twitterAccount} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta
+      <meta property="twitter:image" content={url} />
+      {/* <meta
         property="twitter:image"
         content={`${metaData.siteUrl}${metaData.siteLogo}`}
-      />
-      <meta name="twitter:image:width" content="512" />
-      <meta name="twitter:image:height" content="512" />
+      /> */}
+      {/* <meta name="twitter:image:width" content="512" />
+      <meta name="twitter:image:height" content="512" /> */}
       <meta name="author" content="Yoko Iwasaki"></meta>
     </Head>
   );
