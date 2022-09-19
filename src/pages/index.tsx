@@ -1,11 +1,5 @@
 /* eslint-disable @next/next/no-title-in-document-head */
-import {
-  ApolloClient,
-  createHttpLink,
-  gql,
-  InMemoryCache,
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
+import { gql } from "@apollo/client";
 import { Button, Center, Loader } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
@@ -22,6 +16,7 @@ import { TwitterSec } from "src/components/twitter";
 import { Layout } from "src/layout";
 import { useViewportSize } from "src/lib/mantine";
 import { clientBlog } from "src/pages/api/blog";
+import { githubClient } from "src/pages/api/github";
 import { client } from "src/pages/api/portfolio/client";
 import { Blog, BlogPortfolioProps, GitHubCardProps } from "src/types";
 
@@ -127,24 +122,6 @@ export const getStaticProps: GetStaticProps = async () => {
     });
 
     // apollo start
-    const httpLink = createHttpLink({
-      uri: "https://api.github.com/graphql",
-    });
-
-    const authLink = setContext((_, { headers }) => {
-      return {
-        headers: {
-          ...headers,
-          authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
-        },
-      };
-    });
-
-    const githubClient = new ApolloClient({
-      cache: new InMemoryCache(),
-      link: authLink.concat(httpLink),
-    });
-
     const { data } = await githubClient.query({
       query: gql`
         {
