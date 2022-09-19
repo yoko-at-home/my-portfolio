@@ -3,7 +3,7 @@ import { FC } from "react";
 
 type CardProps = {
   id?: number;
-  title: string;
+  name: string;
   content: string;
   javascript: string;
   other: string;
@@ -15,7 +15,7 @@ export const GitHubCard: FC<CardProps> = (props) => {
   return (
     <li key={props.id} className="flex list-none flex-col">
       <div className="min-w-full">
-        <div className="text-[22px] font-semibold">{props.title}</div>
+        <div className="text-[22px] font-semibold">{props.name}</div>
         <Text className="overflow-hidden text-ellipsis text-sm line-clamp-2">
           {props.content}
         </Text>

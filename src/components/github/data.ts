@@ -1,7 +1,7 @@
 export const data = [
   {
     id: 1,
-    title: "lightsound/nexst-tailwind",
+    name: "lightsound/nexst-tailwind",
     content: "Next.js starter template.",
     javascript: "24.5%",
     other: "10%",
@@ -10,7 +10,7 @@ export const data = [
   },
   {
     id: 2,
-    title: "lightsound/nexst-tailwind 1",
+    name: "lightsound/nexst-tailwind 1",
     content: "Next.js starter template.",
     javascript: "24.5%",
     other: "10%",
@@ -19,7 +19,7 @@ export const data = [
   },
   {
     id: 3,
-    title: "lightsound/nexst-tailwind 2",
+    name: "lightsound/nexst-tailwind 2",
     content: "Next.js starter template.",
     javascript: "24.5%",
     other: "10%",
@@ -28,7 +28,7 @@ export const data = [
   },
   {
     id: 4,
-    title: "lightsound/nexst-tailwind 3",
+    name: "lightsound/nexst-tailwind 3",
     content: "Next.js starter template.",
     javascript: "24.5%",
     other: "10%",
@@ -37,7 +37,7 @@ export const data = [
   },
   {
     id: 5,
-    title: "lightsound/nexst-tailwind 4",
+    name: "lightsound/nexst-tailwind 4",
     content: "Next.js starter template.",
     javascript: "24.5%",
     other: "10%",
@@ -46,7 +46,7 @@ export const data = [
   },
   {
     id: 6,
-    title: "lightsound/nexst-tailwind 5",
+    name: "lightsound/nexst-tailwind 5",
     content: "Next.js starter template.",
     javascript: "24.5%",
     other: "10%",
