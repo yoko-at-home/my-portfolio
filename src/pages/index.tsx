@@ -10,7 +10,6 @@ import { Hero } from "src/components/atom/hero";
 import { Title } from "src/components/atom/title";
 import { PortfolioCards } from "src/components/card";
 import { BlogCards } from "src/components/card/blogCards";
-import { PortfolioCardSlider } from "src/components/card/portfolioCardSlider";
 import { GitHubReps } from "src/components/github";
 import { TwitterSec } from "src/components/twitter";
 import { Layout } from "src/layout";
@@ -68,7 +67,7 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
                 </Center>
               }
             >
-              <PortfolioCards items={filteredPortfolioData} />
+              <PortfolioCards items={props.portfolioData.contents} />
             </Suspense>
           </ErrorWrapper>
         </div>
