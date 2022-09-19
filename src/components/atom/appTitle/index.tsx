@@ -18,7 +18,7 @@ export const AppTitle: FC<Props> = ({
 }) => {
   const newTitle = `${title} | yoko's portfolio`;
   const router = useRouter();
-  const root = router.pathname === "/" || "/blog" || "portfolio" || "contact";
+  const root = router.pathname === "/" || "/blog" || "/portfolio" || "/contact";
 
   return (
     <Head>
