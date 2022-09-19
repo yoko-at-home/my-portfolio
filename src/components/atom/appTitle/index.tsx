@@ -35,10 +35,15 @@ export const AppTitle: FC<Props> = ({
       <meta property="twitter:card" content="summary" />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta
-        property="twitter:image"
-        content={root ? metaData.siteUrl + metaData.siteLogo : ImageUrl}
-      />
+      {root ? (
+        <meta
+          property="twitter:image"
+          content={metaData.siteUrl + metaData.siteLogo}
+        />
+      ) : (
+        <meta property="twitter:image" content={ImageUrl} />
+      )}
+
       <meta name="twitter:image:width" content="512" />
       <meta name="twitter:image:height" content="512" />
       <meta name="twitter:site" content="metaData.twitterAccount" />
