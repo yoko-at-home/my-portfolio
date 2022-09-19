@@ -9,41 +9,25 @@ import { data } from "./data";
 
 export const GitHubReps = () => {
   const router = useRouter();
-  const root = router.asPath === "/";
   const { width } = useViewportSize();
   if (width === undefined) {
     return <div />;
   }
 
   const isMobile = width < 576;
-  const numberToShow = root ? (isMobile ? 3 : 6) : data.length;
+  const numberToShow = isMobile ? 3 : 6;
   let filteredData = data.slice(0, numberToShow);
   return (
     <div className="nm-container mx-auto px-4 pb-10 sm:px-10">
       <Title>GitHub</Title>
       <ul className="grid grid-cols-1 sm:w-96">
-        <div className="sm:hidden">
+        <div className="">
           {filteredData.map((item) => {
             return (
               <GitHubCard
                 key={item.id}
                 thumbnail={item.thumbnail}
-                title={item.title}
-                content={item.content}
-                typescript={item.typescript}
-                javascript={item.javascript}
-                other={item.other}
-              />
-            );
-          })}
-        </div>
-        <div className="hidden sm:block">
-          {data.map((item) => {
-            return (
-              <GitHubCard
-                key={item.id}
-                thumbnail={item.thumbnail}
-                title={item.title}
+                name={item.name}
                 content={item.content}
                 typescript={item.typescript}
                 javascript={item.javascript}
