@@ -1,7 +1,6 @@
 import { Button, Center, Loader } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { Suspense } from "react";
 import Skeleton from "react-loading-skeleton";
 import { AppTitle } from "src/components/atom/appTitle";
@@ -20,8 +19,6 @@ import { client } from "src/pages/api/portfolio/client";
 import { Blog, BlogPortfolioProps } from "src/types";
 
 const Home: NextPage<BlogPortfolioProps> = (props) => {
-  const router = useRouter();
-
   const { width } = useViewportSize();
   if (width === undefined) {
     return <div />;
