@@ -15,6 +15,7 @@ import { Blog, BlogProps } from "src/types";
 
 const Blog: NextPage<BlogProps> = (props) => {
   const [items, setItems] = useState<BlogProps["contents"]>(props.contents);
+  const router = useRouter();
 
   const hasMore =
     props.totalCount > items.length || props.totalCount !== items.length;
@@ -28,7 +29,6 @@ const Blog: NextPage<BlogProps> = (props) => {
 
     setItems([...items, ...data.contents]);
   };
-  const router = useRouter();
   if (router.isFallback) {
     return (
       <>
@@ -42,7 +42,8 @@ const Blog: NextPage<BlogProps> = (props) => {
       <AppTitle
         title="blog"
         description="ブログ一覧です"
-        url={metaData.siteUrl + metaData.siteLogo}
+        ImageUrl={metaData.siteUrl + metaData.siteLogo}
+        ogUrl={metaData.siteUrl + router.pathname}
       />
       <div className="flex flex-col justify-between" id="home">
         <div className="py-10 sm:mx-auto">
