@@ -54,6 +54,10 @@ export type GitHubCardProps = {
   description: string;
   forkCount: number;
   pinnedItems?: any;
+  primaryLanguage: {
+    name: string;
+    color: string;
+  };
   stargazers: {
     totalCount?: number;
   };

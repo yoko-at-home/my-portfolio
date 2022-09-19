@@ -7,11 +7,11 @@ export const GitHubCard: FC<GitHubCardProps> = (props) => {
     <li key={props.id} className="mb-5 flex list-none flex-col sm:mb-8">
       <div className="min-w-full">
         <a key={props.id} href={props.url} target="_blank" rel="noreferrer">
-          <div className="text-[22px] font-semibold hover:text-blue-500">
+          <div className="text-gradient text-[22px] font-semibold hover:text-[#CF1512]">
             {props.name}
           </div>
         </a>
-        <Text className="overflow-hidden text-ellipsis text-sm line-clamp-2">
+        <Text className="text-gradient overflow-hidden text-ellipsis text-sm">
           {props.description}
         </Text>
         <div className="my-3 flex justify-start">
@@ -25,12 +25,12 @@ export const GitHubCard: FC<GitHubCardProps> = (props) => {
           </div>
         </div>
         <div className="mb-2 flex">
-          <span className="h-2 w-[65.5%] rounded-l bg-[#3178C6]"></span>
-          <span className="h-2 w-[24.5%] bg-[#F1E05A]"></span>
+          <span className="h-2 w-[65.5%] rounded-l bg-[#3178c6]"></span>
+          <span className="h-2 w-[24.5%] bg-[#f1e05a]"></span>
           <span className="h-2 w-[10%] rounded-r bg-[#EDEDED]"></span>
         </div>
         <div className="flex justify-between text-sm">
-          <div>TypeScript 65.5%</div>
+          <div>{props.primaryLanguage.name} 65.5%</div>
           <div>JavaScript 24.5%</div>
           <div>Other 10%</div>
         </div>

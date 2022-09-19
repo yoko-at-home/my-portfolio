@@ -162,6 +162,10 @@ export const getStaticProps: GetStaticProps = async () => {
                       totalCount
                     }
                     forkCount
+                    primaryLanguage {
+                      name
+                      color
+                    }
                   }
                 }
               }

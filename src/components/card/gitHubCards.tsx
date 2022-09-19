@@ -25,6 +25,10 @@ export const GitHubReps: FC<Props> = (props) => {
                 id={item.id}
                 url={item.url}
                 forkCount={item.forkCount}
+                primaryLanguage={{
+                  name: "TypeScript",
+                  color: "",
+                }}
               />
             );
           })}
