@@ -21,9 +21,10 @@ export const GitHubReps: FC<Props> = (props) => {
                 key={item.id}
                 name={item.name}
                 description={item.description}
-                stargazers={{ totalCount: 0 }}
+                stargazers={{ totalCount: 3 }}
                 id={item.id}
                 url={item.url}
+                forkCount={item.forkCount}
               />
             );
           })}

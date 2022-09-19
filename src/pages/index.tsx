@@ -161,6 +161,7 @@ export const getStaticProps: GetStaticProps = async () => {
                     stargazers {
                       totalCount
                     }
+                    forkCount
                   }
                 }
               }

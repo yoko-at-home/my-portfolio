@@ -21,7 +21,7 @@ export const GitHubCard: FC<GitHubCardProps> = (props) => {
           </div>
           <div className="flex">
             <Image src="/assets/svgs/fork.svg" alt="star icon" />
-            <span>{props.stargazers.totalCount}</span>
+            <span>{props.forkCount}</span>
           </div>
         </div>
         <div className="mb-2 flex">
