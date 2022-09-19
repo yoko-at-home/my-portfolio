@@ -1,11 +1,20 @@
 import { NextPage } from "next";
 import { Head, Html, Main, NextScript } from "next/document";
+import { metaData } from "src/metadata";
 
 const MyDocument: NextPage = () => {
+  const ogImage = metaData.siteUrl + metaData.siteLogo;
   return (
     <Html lang="ja">
       <Head>
         <meta charSet="utf-8" />
+        <meta property="og:site_name" content={metaData.title} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:url" content={metaData.siteUrl} />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:title" content={metaData.title} />
+        <meta property="twitter:description" content={metaData.description_0} />
+        <meta property="twitter:image" content={ogImage} />
         {/* favicons */}
         <meta
           name="msapplication-square70x70logo"

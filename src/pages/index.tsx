@@ -13,7 +13,6 @@ import { GitHubReps } from "src/components/github";
 import { TwitterSec } from "src/components/twitter";
 import { Layout } from "src/layout";
 import { useViewportSize } from "src/lib/mantine";
-import { metaData } from "src/metadata";
 import { clientBlog } from "src/pages/api/blog";
 import { client } from "src/pages/api/portfolio/client";
 import { Blog, BlogPortfolioProps } from "src/types";
@@ -29,12 +28,7 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
 
   return (
     <Layout>
-      <AppTitle
-        title="welcome"
-        description="welcome to my portfolio site"
-        ImageUrl={metaData.siteUrl + metaData.siteLogo}
-        ogUrl={metaData.siteUrl}
-      />
+      <AppTitle title="welcome" description="welcome to my portfolio site" />
 
       <Hero />
       <div className="mx-auto max-w-7xl px-4">
