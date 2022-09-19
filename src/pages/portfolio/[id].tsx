@@ -1,5 +1,4 @@
 import { Button } from "@mantine/core";
-import dayjs from "dayjs";
 import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
@@ -37,21 +36,31 @@ const PortfolioId: NextPage<Props> = (props) => {
         <div className="mx-auto w-screen max-w-md sm:max-w-full">
           <Title>{props.title}</Title>
 
-          <time
+          {/* <time
             dateTime={props.publishedAt}
             className="text-gradient-sub mt-2 block "
           >
             {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
-          </time>
+          </time> */}
           <article
             className="text-gradient-sub mt-8 whitespace-pre-line "
             dangerouslySetInnerHTML={{ __html: props.content! }}
           />
         </div>
-        <div className="flex justify-center py-10">
-          <Button color="gray" onClick={() => router.back()}>
-            Return
-          </Button>
+        <div className="flex flex-col justify-around py-10 sm:flex-row">
+          <a
+            href={props.url}
+            target="_blank"
+            rel="noreferrer"
+            className="mb-2 text-center"
+          >
+            <Button color="grape">Visit {props.title} Website</Button>
+          </a>
+          <div className="text-center">
+            <Button color="gray" onClick={() => router.back()}>
+              Return
+            </Button>
+          </div>
         </div>
         <ToTopButton />
       </Layout>
