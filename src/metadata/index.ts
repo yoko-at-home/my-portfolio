@@ -10,7 +10,6 @@ export const metaData = {
   github: "https://github.com/yoko-at-home",
   lead: "microCMS, Twitter, GitHub apiでデータを取得しました",
   ogImage: "",
-  profile_image_url: "/assets/img/Ellipse.jpeg",
   siteLogo: "/assets/favicons/android-chrome-512x512.png",
   siteUrl: "https://yoko-portfolio.vercel.app",
   twitterAccount: "yokoiwasaki6",
