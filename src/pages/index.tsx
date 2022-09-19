@@ -36,7 +36,7 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
         title="welcome"
         description="welcome to my portfolio site"
         ImageUrl={metaData.siteUrl + metaData.siteLogo}
-        ogUrl={metaData.siteUrl + router.pathname}
+        ogUrl={metaData.siteUrl}
       />
 
       <Hero />
