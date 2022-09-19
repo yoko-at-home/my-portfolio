@@ -6,24 +6,30 @@ import { metaData } from "src/metadata";
 type Props = {
   title: string;
   description: string;
-  url: string;
+  ImageUrl: string;
+  ogUrl: string;
 };
 
-export const AppTitle: FC<Props> = ({ title, description, url }) => {
+export const AppTitle: FC<Props> = ({
+  title,
+  description,
+  ImageUrl,
+  ogUrl,
+}) => {
   const newTitle = `${title} | yoko's portfolio`;
   const router = useRouter();
-  const root = router.pathname === "/" || "/blog";
+  const root = router.pathname === "/" || "/blog" || "portfolio" || "contact";
 
   return (
     <Head>
       <title>{newTitle}</title>
       <meta name="description" content={description} />
       <link rel="icon" href="/assets/favicons/favicon.ico" />
-      <meta property="og:url" content={metaData.siteUrl + router.pathname} />
+      <meta property="og:url" content={ogUrl} />
       <meta property="og:site_name" content={metaData.title} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
-      <meta property="og:image" content={url} />
+      <meta property="og:image" content={ImageUrl} />
       <meta property="og:type" content="website" />
       {/* <!-- Twitter --> */}
       <meta property="twitter:card" content="summary" />
@@ -31,7 +37,7 @@ export const AppTitle: FC<Props> = ({ title, description, url }) => {
       <meta property="twitter:description" content={description} />
       <meta
         property="twitter:image"
-        content={!root ? url : metaData.siteUrl + metaData.siteLogo}
+        content={root ? metaData.siteUrl + metaData.siteLogo : ImageUrl}
       />
       <meta name="twitter:image:width" content="512" />
       <meta name="twitter:image:height" content="512" />
