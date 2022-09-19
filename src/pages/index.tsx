@@ -1,9 +1,10 @@
+/* eslint-disable @next/next/no-title-in-document-head */
 import { Button, Center, Loader } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import { Suspense } from "react";
 import Skeleton from "react-loading-skeleton";
-import { AppTitle } from "src/components/atom/appTitle";
 import { ErrorWrapper } from "src/components/atom/error";
 import { Hero } from "src/components/atom/hero";
 import { Title } from "src/components/atom/title";
@@ -25,10 +26,12 @@ const Home: NextPage<BlogPortfolioProps> = (props) => {
   const isMobile = width < 576;
 
   let filteredBlogData = props.blogData.contents.slice(0, isMobile ? 4 : 6);
-
   return (
     <Layout>
-      <AppTitle title="welcome" description="welcome to my portfolio site" />
+      <Head>
+        <title>Welcome 🐈 | yoko&#39;s portfolio</title>
+        <meta name="description" content="Welcom to my portfolio site!" />
+      </Head>
 
       <Hero />
       <div className="mx-auto max-w-7xl px-4">

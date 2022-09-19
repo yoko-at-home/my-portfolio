@@ -11,8 +11,8 @@ const ContactPage: NextPage = () => {
   return (
     <Layout>
       <AppTitle
-        title="contact"
-        description="お問合せページ"
+        title="Contact 🐈 "
+        description="🐈 お問合せページ 🐈"
         ImageUrl={metaData.siteUrl + metaData.siteLogo}
         ogUrl={metaData.siteUrl + router.pathname}
       />

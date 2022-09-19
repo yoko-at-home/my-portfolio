@@ -21,7 +21,7 @@ const AboutPage: NextPage = () => {
     >
       <Layout>
         <AppTitle
-          title="about"
+          title="About Yoko 🐈 "
           description={metaData.description_0}
           ImageUrl={metaData.siteUrl + metaData.siteLogo}
           ogUrl={metaData.siteUrl + router.pathname}
