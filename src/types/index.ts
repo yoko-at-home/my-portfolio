@@ -47,3 +47,14 @@ export type TwitterTweetProps = {
   created_at: string;
   text: string;
 };
+
+export type GitHubCardProps = {
+  id: string;
+  name: string;
+  description: string;
+  pinnedItems?: any;
+  stargazers: {
+    totalCount?: number;
+  };
+  url: string;
+};

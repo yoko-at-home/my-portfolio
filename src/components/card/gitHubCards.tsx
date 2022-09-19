@@ -1,37 +1,29 @@
 import { Button } from "@mantine/core";
-import { useViewportSize } from "@mantine/hooks";
-import { useRouter } from "next/router";
+import { FC } from "react";
 import { Title } from "src/components/atom/title";
 import { metaData } from "src/metadata";
+import { GitHubCardProps } from "src/types";
 
-import { GitHubCard } from "./card";
-import { data } from "./data";
+import { GitHubCard } from "./gitHubCard";
 
-export const GitHubReps = () => {
-  const router = useRouter();
-  const { width } = useViewportSize();
-  if (width === undefined) {
-    return <div />;
-  }
-
-  const isMobile = width < 576;
-  const numberToShow = isMobile ? 3 : 6;
-  let filteredData = data.slice(0, numberToShow);
+type Props = {
+  pinnedItems: [] & GitHubCardProps;
+};
+export const GitHubReps: FC<Props> = (props) => {
   return (
     <div className="nm-container mx-auto px-4 pb-10 sm:px-10">
       <Title>GitHub</Title>
       <ul className="grid grid-cols-1 sm:w-96">
         <div className="">
-          {filteredData.map((item) => {
+          {props.pinnedItems.map((item: any) => {
             return (
               <GitHubCard
                 key={item.id}
-                thumbnail={item.thumbnail}
                 name={item.name}
-                content={item.content}
-                typescript={item.typescript}
-                javascript={item.javascript}
-                other={item.other}
+                description={item.description}
+                stargazers={{ totalCount: 0 }}
+                id={item.id}
+                url={item.url}
               />
             );
           })}

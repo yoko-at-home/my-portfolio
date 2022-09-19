@@ -1,1 +1,0 @@
-export { GitHubReps } from "./github";
