@@ -25,6 +25,11 @@ export type Blog = {
 
 export type BlogProps = MicroCMSListResponse<Blog>;
 
+export type BlogPortfolioProps = {
+  blogData: MicroCMSListResponse<Blog>;
+  portfolioData: MicroCMSListResponse<Blog>;
+};
+
 export type PropsPath = Blog &
   MicroCMSContentId &
   MicroCMSDate &
