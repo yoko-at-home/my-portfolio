@@ -37,13 +37,6 @@ const PortfolioId: NextPage<Props> = (props) => {
         </div>
         <div className="mx-auto w-screen max-w-md sm:max-w-full">
           <Title>{props.title}</Title>
-
-          {/* <time
-            dateTime={props.publishedAt}
-            className="text-gradient-sub mt-2 block "
-          >
-            {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
-          </time> */}
           <article
             className="text-gradient-sub mt-8 whitespace-pre-line "
             dangerouslySetInnerHTML={{ __html: props.content! }}

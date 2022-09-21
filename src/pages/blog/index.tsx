@@ -62,16 +62,6 @@ const Blog: NextPage<BlogProps> = (props) => {
               <BlogCards items={items} />
             </ul>
           </InfiniteScroll>
-
-          {props.contents.length > 6 ? (
-            <Center mt="xl">
-              {/* <Pagination
-                color={"dark"}
-                total={Math.ceil(props.totalCount / 6) || 1}
-              /> */}
-              {/* <Pagination currentPageNum={0} maxPageNum={0} /> */}
-            </Center>
-          ) : null}
         </div>
       </div>
     </Layout>
