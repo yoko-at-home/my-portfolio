@@ -27,10 +27,21 @@ const Home: NextPage<Props> = ({ blogData, pinnedItems, portfolioData }) => {
   if (width === undefined) {
     return <div />;
   }
-  const isMobile = width < 576;
+  const mobileWidth = 576;
+  const isMobile = width < mobileWidth;
 
-  let filteredBlogData = blogData.contents.slice(0, isMobile ? 4 : 6);
-  let filteredGitHubData = pinnedItems.slice(0, isMobile ? 3 : 6);
+  const numberToShowBlogOnMobile = 4;
+  const numberToShowGitHubDataOnMobile = 3;
+  const numberToShowOnPC = 6;
+
+  let filteredBlogData = blogData.contents.slice(
+    0,
+    isMobile ? numberToShowBlogOnMobile : numberToShowOnPC
+  );
+  let filteredGitHubData = pinnedItems.slice(
+    0,
+    isMobile ? numberToShowGitHubDataOnMobile : numberToShowOnPC
+  );
   return (
     <Layout>
       <Head>
