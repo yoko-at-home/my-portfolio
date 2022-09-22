@@ -17,7 +17,7 @@ export const GitHubCard: FC<GitHubCardProps> = (props) => {
         <div className="my-3 flex justify-start">
           <div className="mr-8 flex">
             <Image src="/assets/svgs/star.svg" alt="star icon" />
-            <span>{props.stargazers.totalCount}</span>
+            <span>0</span>
           </div>
           <div className="flex">
             <Image src="/assets/svgs/fork.svg" alt="star icon" />
@@ -30,7 +30,7 @@ export const GitHubCard: FC<GitHubCardProps> = (props) => {
           <span className="h-2 w-[10%] rounded-r bg-[#EDEDED]"></span>
         </div>
         <div className="flex justify-between text-sm">
-          <div>{props.primaryLanguage.name} 65.5%</div>
+          <div>TypeScript 65.5%</div>
           <div>JavaScript 24.5%</div>
           <div>Other 10%</div>
         </div>

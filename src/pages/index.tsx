@@ -146,14 +146,7 @@ export const getStaticProps: GetStaticProps = async () => {
                     id
                     url
                     description
-                    stargazers {
-                      totalCount
-                    }
                     forkCount
-                    primaryLanguage {
-                      name
-                      color
-                    }
                   }
                 }
               }

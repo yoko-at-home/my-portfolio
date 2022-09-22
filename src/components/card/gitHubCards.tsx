@@ -6,10 +6,8 @@ import { GitHubCardProps } from "src/types";
 
 import { GitHubCard } from "./gitHubCard";
 
-type Props = {
-  pinnedItems: [] & GitHubCardProps;
-};
-export const GitHubReps: FC<Props> = (props) => {
+
+export const GitHubReps: FC<GitHubCardProps> = (props) => {
   return (
     <div className="nm-container mx-auto px-4 pb-10 sm:px-10">
       <Title>GitHub</Title>
@@ -21,14 +19,9 @@ export const GitHubReps: FC<Props> = (props) => {
                 key={item.id}
                 name={item.name}
                 description={item.description}
-                stargazers={{ totalCount: 3 }}
                 id={item.id}
                 url={item.url}
                 forkCount={item.forkCount}
-                primaryLanguage={{
-                  name: "TypeScript",
-                  color: "",
-                }}
               />
             );
           })}
