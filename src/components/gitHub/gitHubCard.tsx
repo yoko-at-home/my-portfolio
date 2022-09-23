@@ -3,6 +3,8 @@ import { FC } from "react";
 import { GitHubCardProps } from "src/types";
 
 export const GitHubCard: FC<GitHubCardProps> = (props) => {
+  console.log(props);
+
   return (
     <li key={props.id} className="mb-5 flex list-none flex-col sm:mb-8">
       <div className="min-w-full">
