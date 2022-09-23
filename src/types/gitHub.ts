@@ -1,46 +1,50 @@
 export type GitHubCardProps = {
   id: string;
   name: string;
-  description: string;
+  description: string | null;
   forkCount: number;
-  pinnedItems?: any;
+  stargazerCount: number;
   url: string;
 };
 
-export type LanguageStaticsProp = {
-  languages: {
-    edges: [
-      {
-        node: {
-          name: string;
-          color: string;
-        };
-        size: number;
-      }
-    ];
-    totalSize: number;
-  };
-};
-
-export type PinnedItemsProps = {
+export type Repositories = {
   user: {
-    pinnedItems: {
+    repositories: {
       edges: {
-        nodes: nodesType;
-      };
-      totalCount: number;
+        node: {
+          id: string;
+          name: string;
+          description: string | null;
+          forkCount: number;
+          languages: {
+            edges: {
+              node: {
+                id: string;
+                name: string;
+                color: string;
+              };
+              size: number;
+            }[];
+            totalSize: number;
+          };
+          stargazerCount: number;
+          url: string;
+        };
+      }[];
     };
   };
 };
 
-export type nodesType = {
-  node: {
-    id: string;
-    name: string;
-    description: string;
-    forkCount: number;
-    languages: LanguageStaticsProp;
-    stargazerCount: 0;
-    url: string;
-  };
+export type LanguageProp = {
+  languages: {
+    edges: {
+      node: {
+        id: string;
+        name: string;
+        color: string;
+      };
+      size: number;
+    }[];
+    totalSize: number;
+  }[];
 };

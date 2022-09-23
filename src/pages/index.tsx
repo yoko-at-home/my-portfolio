@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-title-in-document-head */
-import { gql } from "@apollo/client";
 import { Button, Center, Loader } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
@@ -11,18 +10,17 @@ import { Hero } from "src/components/atom/hero";
 import { Title } from "src/components/atom/title";
 import { BlogCards } from "src/components/card/blogCards";
 import { PortfolioCardSlider } from "src/components/card/portfolioCardSlider";
-import { GitHubReps } from "src/components/gitHub/gitHubCards";
+import { GitHubSection } from "src/components/gitHub";
 import { TwitterSec } from "src/components/twitter";
 import { Layout } from "src/layout";
 import { useViewportSize } from "src/lib/mantine";
 import { clientBlog } from "src/pages/api/blog";
-import { githubClient } from "src/pages/api/github";
 import { client } from "src/pages/api/portfolio/client";
 import { Blog, BlogPortfolioProps, GitHubCardProps } from "src/types";
 
 type Props = BlogPortfolioProps & GitHubCardProps;
 
-const Home: NextPage<Props> = ({ blogData, pinnedItems, portfolioData }) => {
+const Home: NextPage<Props> = ({ blogData, portfolioData }) => {
   const { width } = useViewportSize();
   if (width === undefined) {
     return <div />;
@@ -38,10 +36,7 @@ const Home: NextPage<Props> = ({ blogData, pinnedItems, portfolioData }) => {
     0,
     isMobile ? numberToShowBlogOnMobile : numberToShowOnPC
   );
-  let filteredGitHubData = pinnedItems.slice(
-    0,
-    isMobile ? numberToShowGitHubDataOnMobile : numberToShowOnPC
-  );
+
   return (
     <Layout>
       <Head>
@@ -101,7 +96,7 @@ const Home: NextPage<Props> = ({ blogData, pinnedItems, portfolioData }) => {
                 </Center>
               }
             >
-              <GitHubReps pinnedItems={filteredGitHubData} />
+              <GitHubSection />
             </Suspense>
           </ErrorWrapper>
           <ErrorWrapper message="Failed to Fetch Twitter Data.">
@@ -132,37 +127,9 @@ export const getStaticProps: GetStaticProps = async () => {
       queries: { limit: 6, offset: 2 },
     });
 
-    // apollo start
-    const { data } = await githubClient.query({
-      query: gql`
-        {
-          user(login: "yoko-at-home") {
-            pinnedItems(first: 6, types: [REPOSITORY]) {
-              totalCount
-              edges {
-                node {
-                  ... on Repository {
-                    name
-                    id
-                    url
-                    description
-                    forkCount
-                  }
-                }
-              }
-            }
-          }
-        }
-      `,
-    });
-
-    const { user } = data;
-    const pinnedItems = user.pinnedItems.edges.map((edge: any) => edge.node);
-    //apollo end
     return {
       props: {
         blogData: blogData,
-        pinnedItems,
         portfolioData: portfolioData,
       },
     };

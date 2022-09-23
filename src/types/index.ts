@@ -1,4 +1,4 @@
-export type { GitHubCardProps } from "./gitHub";
+export type { GitHubCardProps, LanguageProp, Repositories } from "./gitHub";
 export type {
   Blog,
   BlogPortfolioProps,
