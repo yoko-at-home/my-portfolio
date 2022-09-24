@@ -45,6 +45,22 @@ export type TwitterUserProps = {
 export type TwitterTweetProps = {
   id: string;
   created_at: string;
+  data: {
+    id: string;
+    attachments?: {
+      media_keys: string[];
+    };
+    created_at: string;
+    imageUrls?: string[];
+    text: string;
+  }[];
+  includes: {
+    media: {
+      media_key: string;
+      type: "photo" | "video";
+      url: string;
+    }[];
+  };
   text: string;
 };
 

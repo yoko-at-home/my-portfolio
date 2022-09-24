@@ -1,6 +1,7 @@
-import { Anchor, Avatar, Box, Button, Card, Text } from "@mantine/core";
+import { Anchor, Avatar, Box, Button, Card, Image, Text } from "@mantine/core";
 import { loadDefaultJapaneseParser } from "budoux";
 import dayjs from "dayjs";
+import { useMemo } from "react";
 import reactStringReplace from "react-string-replace";
 import { Title } from "src/components/atom/title";
 import { useFetcher } from "src/hooks/useFetcher";
@@ -11,20 +12,39 @@ export const TwitterSec = () => {
   const { data: user, error: userError } = useFetcher<{
     data: TwitterUserProps;
   }>("twitter/user?user.fields=profile_image_url");
-  const { data: tweet, error: tweetError } = useFetcher<{
-    data: TwitterTweetProps[];
-  }>(
-    "twitter/tweet?max_results=5&tweet.fields=created_at&user.fields=name&exclude=replies,retweets"
+  const { data: tweet, error: tweetError } = useFetcher<TwitterTweetProps>(
+    "twitter/tweet?max_results=5&tweet.fields=created_at&user.fields=name,profile_image_url&exclude=replies,retweets&expansions=attachments.media_keys&media.fields=url"
   );
 
   if (userError) throw new Error(userError);
   if (tweetError) throw new Error(tweetError);
 
+  const formattedTweets = useMemo(() => {
+    const newTweets = tweet?.data.map((x) => {
+      // メディアがあった場合
+      if (x.attachments) {
+        const imageUrls = x.attachments.media_keys.map((key) => {
+          const targetImage = tweet.includes.media.find(
+            (y) => y.media_key === key
+          );
+          // 画像ならurlを返す
+          if (targetImage && targetImage.type === "photo") {
+            return targetImage.url;
+          }
+          return "";
+        });
+        x.imageUrls = imageUrls;
+      }
+      return x;
+    });
+    return newTweets;
+  }, [tweet]);
+
   return (
     <div className="nm-container mx-auto px-4 pb-10 sm:px-10">
       <Title>Twitter</Title>
       <ul className="grid w-96 grid-cols-1 sm:w-[30vw] xs:px-8">
-        {tweet?.data.map((item, i) => {
+        {formattedTweets?.map((item, i) => {
           return (
             <li key={item.id} className="nm-list mb-2 list-none">
               <Card withBorder>
@@ -39,7 +59,7 @@ export const TwitterSec = () => {
                       {user?.data.name}
                       <span className="text-xs font-light text-gray-600">
                         {" "}
-                        @{user?.data.username} -{" "}
+                        @{user?.data.username}・{" "}
                         {dayjs(item.created_at).format("YYYY.MM.DD")}
                       </span>
                     </Text>
@@ -51,7 +71,7 @@ export const TwitterSec = () => {
                         }}
                       >
                         {reactStringReplace(
-                          parser.parse(item.text),
+                          item.text,
                           /(https?:\/\/\S+)/g,
                           (match, i) => (
                             <Anchor
@@ -64,6 +84,14 @@ export const TwitterSec = () => {
                               {match}
                             </Anchor>
                           )
+                        )}
+                        {item.imageUrls && (
+                          <Box mt={16} sx={{ display: "grid", rowGap: "1rem" }}>
+                            {item.imageUrls?.map(
+                              (url, i) =>
+                                url && <Image key={i} src={url} alt="" />
+                            )}
+                          </Box>
                         )}
                       </Box>
                     </div>
