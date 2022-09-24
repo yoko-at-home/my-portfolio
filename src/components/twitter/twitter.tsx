@@ -23,7 +23,7 @@ export const TwitterSec = () => {
   return (
     <div className="nm-container mx-auto px-4 pb-10 sm:px-10">
       <Title>Twitter</Title>
-      <ul className="grid grid-cols-1 sm:w-96">
+      <ul className="grid w-96 grid-cols-1 sm:w-[30vw] xs:px-8">
         {tweet?.data.map((item, i) => {
           return (
             <li key={item.id} className="nm-list mb-2 list-none">
@@ -34,12 +34,13 @@ export const TwitterSec = () => {
                     alt={user?.data.username}
                     className="mr-3 mt-2 rounded-full"
                   />
-                  <div className="w-52 flex-row justify-between xs:w-60 sm:w-80">
+                  <div className="w-52 flex-row justify-between md:w-full sm:w-96 xs:w-60">
                     <Text weight={700}>
                       {user?.data.name}
                       <span className="text-xs font-light text-gray-600">
                         {" "}
-                        @{user?.data.username}
+                        @{user?.data.username} -{" "}
+                        {dayjs(item.created_at).format("YYYY.MM.DD")}
                       </span>
                     </Text>
                     <div className="my-2 text-sm leading-relaxed">
@@ -65,9 +66,6 @@ export const TwitterSec = () => {
                           )
                         )}
                       </Box>
-                    </div>
-                    <div className="text-sm leading-loose">
-                      {dayjs(item.created_at).format("YYYY.MM.DD")}
                     </div>
                   </div>
                 </div>
