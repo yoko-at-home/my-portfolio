@@ -16,11 +16,9 @@ import { Layout } from "src/layout";
 import { useViewportSize } from "src/lib/mantine";
 import { clientBlog } from "src/pages/api/blog";
 import { client } from "src/pages/api/portfolio/client";
-import { Blog, BlogPortfolioProps, GitHubCardProps } from "src/types";
+import { Blog, BlogPortfolioProps } from "src/types";
 
-type Props = BlogPortfolioProps & GitHubCardProps;
-
-const Home: NextPage<Props> = ({ blogData, portfolioData }) => {
+const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
   const { width } = useViewportSize();
   if (width === undefined) {
     return <div />;
@@ -29,7 +27,6 @@ const Home: NextPage<Props> = ({ blogData, portfolioData }) => {
   const isMobile = width < mobileWidth;
 
   const numberToShowBlogOnMobile = 4;
-  const numberToShowGitHubDataOnMobile = 3;
   const numberToShowOnPC = 6;
 
   let filteredBlogData = blogData.contents.slice(

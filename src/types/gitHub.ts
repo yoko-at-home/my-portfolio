@@ -1,12 +1,3 @@
-export type GitHubCardProps = {
-  id: string;
-  name: string;
-  description: string | null;
-  forkCount: number;
-  stargazerCount: number;
-  url: string;
-};
-
 export type Repositories = {
   user: {
     repositories: {
