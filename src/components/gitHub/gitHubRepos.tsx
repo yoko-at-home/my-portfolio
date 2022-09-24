@@ -1,6 +1,7 @@
 import { Box, Group, Image, Progress, Stack } from "@mantine/core";
 import { useMemo } from "react";
 import { useFetcher } from "src/hooks/useFetcher";
+import { useViewportSize } from "src/lib/mantine";
 import { Repositories } from "src/types";
 
 export const GitHubRepos = () => {
@@ -28,10 +29,24 @@ export const GitHubRepos = () => {
   if (error) throw new Error(error);
   if (!languageProps) throw new Error();
 
+  const { width } = useViewportSize();
+  if (width === undefined) {
+    return <div />;
+  }
+  const mobileWidth = 576;
+  const isMobile = width < mobileWidth;
+
+  const numberToShowOnMobile = 3;
+  const numberToShowOnPC = 6;
+  let filteredGitHubData = data?.user.pinnedItems.edges.slice(
+    0,
+    isMobile ? numberToShowOnMobile : numberToShowOnPC
+  );
+
   return (
     <ul className="grid grid-cols-1 sm:w-96">
       <Stack spacing={40} mb={32}>
-        {data?.user.pinnedItems.edges.map(({ node }, index) => (
+        {filteredGitHubData!.map(({ node }, index) => (
           <Box key={node.id}>
             <a href={node.url} target="_blank" rel="noreferrer">
               <div className="text-[22px] font-semibold text-slate-600">
