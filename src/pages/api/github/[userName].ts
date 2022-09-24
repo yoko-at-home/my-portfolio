@@ -22,6 +22,7 @@ export default async function handler(
             stargazerCount
             name
             description
+            url
             languages(first: 6) {
               edges {
                 size
