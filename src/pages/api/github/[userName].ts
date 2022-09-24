@@ -13,9 +13,10 @@ export default async function handler(
   const query = `
   query Repositories ($userName:String!) {
     user(login: $userName) {
-      repositories(last: 6, privacy: PUBLIC, orderBy: {field: PUSHED_AT, direction: ASC}) {
-        edges {
-          node {
+    pinnedItems(first: 6, types: REPOSITORY) {
+      edges {
+        node {
+          ... on Repository {
             id
             forkCount
             stargazerCount
@@ -37,6 +38,7 @@ export default async function handler(
       }
     }
   }
+}
   `;
   const repositories = await octokit.graphql<Repositories>(query, {
     userName,

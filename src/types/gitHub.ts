@@ -1,6 +1,6 @@
 export type Repositories = {
   user: {
-    repositories: {
+    pinnedItems: {
       edges: {
         node: {
           id: string;
@@ -37,5 +37,5 @@ export type LanguageProp = {
       size: number;
     }[];
     totalSize: number;
-  }[];
+  };
 };

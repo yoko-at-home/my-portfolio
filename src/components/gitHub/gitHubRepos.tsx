@@ -8,7 +8,7 @@ export const GitHubRepos = () => {
 
   const languageProps = useMemo(() => {
     if (data) {
-      return data.user.repositories.edges.map((repo) => {
+      return data.user.pinnedItems.edges.map((repo) => {
         const totalSize = repo.node.languages.totalSize;
         return repo.node.languages.edges.flatMap((lang) => {
           const size = parseFloat(((lang.size / totalSize) * 100).toFixed(1));
@@ -31,7 +31,7 @@ export const GitHubRepos = () => {
   return (
     <ul className="grid grid-cols-1 sm:w-96">
       <Stack spacing={40} mb={32}>
-        {data?.user.repositories.edges.map(({ node }, index) => (
+        {data?.user.pinnedItems.edges.map(({ node }, index) => (
           <Box key={node.id}>
             <a href={node.url} target="_blank" rel="noreferrer">
               <div className="text-[22px] font-semibold text-slate-600">
@@ -53,7 +53,7 @@ export const GitHubRepos = () => {
             </div>
             <Box>
               <Progress mb={8} sections={languageProps[index]} />
-              <Group sx={{ gap: "4px 20px" }}>
+              <Group sx={{ gap: "4px 10px" }}>
                 {languageProps[index].map((props, i) => (
                   <Group key={i} spacing={6}>
                     <Box sx={{ backgroundColor: props.color }} />
