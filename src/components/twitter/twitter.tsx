@@ -43,7 +43,7 @@ export const TwitterSec = () => {
   return (
     <div className="nm-container mx-auto px-4 pb-10 sm:px-10">
       <Title>Twitter</Title>
-      <ul className="grid w-96 grid-cols-1 sm:w-[30vw] xs:px-8">
+      <ul className="grid grid-cols-1 sm:w-[30vw] xs:px-8">
         {formattedTweets?.map((item, i) => {
           return (
             <li key={item.id} className="nm-list mb-2 list-none">
