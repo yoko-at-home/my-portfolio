@@ -11,7 +11,7 @@ import { Title } from "src/components/atom/title";
 import { BlogCards } from "src/components/card/blogCards";
 import { PortfolioCardSlider } from "src/components/card/portfolioCardSlider";
 import { GitHubSection } from "src/components/gitHub";
-import { TwitterSec } from "src/components/twitter";
+import { TwitterFeed } from "src/components/twitter";
 import { Layout } from "src/layout";
 import { useViewportSize } from "src/lib/mantine";
 import { clientBlog } from "src/pages/api/blog";
@@ -104,7 +104,7 @@ const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
                 </Center>
               }
             >
-              <TwitterSec />
+              <TwitterFeed />
             </Suspense>
           </ErrorWrapper>
         </div>
