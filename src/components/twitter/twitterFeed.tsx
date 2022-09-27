@@ -12,20 +12,31 @@ export const TwitterFeed = () => {
     <div className="nm-container mx-auto px-4 pb-10 sm:px-10">
       <Title>Twitter</Title>
       <div
-        className={`nm-tray overflow-scroll ${
-          isMobile ? "h-screen" : "h-[120vh]"
+        className={`nm-tray overflow-hidden ${
+          isMobile ? "h-screen" : "h-[125vh]"
         }`}
       >
-        <Timeline
-          dataSource={{ screenName: "yokoiwasaki6", sourceType: "profile" }}
-          options={{
-            height: "1200",
-            lang: "en",
-            width: "400",
-          }}
-        />
+        {isMobile ? (
+          <Timeline
+            dataSource={{ screenName: "yokoiwasaki6", sourceType: "profile" }}
+            options={{
+              height: "800",
+              lang: "en",
+              width: "310",
+            }}
+          />
+        ) : (
+          <Timeline
+            dataSource={{ screenName: "yokoiwasaki6", sourceType: "profile" }}
+            options={{
+              height: "1200",
+              lang: "en",
+              width: "400",
+            }}
+          />
+        )}
       </div>
-      <div className="flex justify-center py-10">
+      <div className="mt-6 flex justify-center py-10">
         <a
           href="https://twitter.com/yokoiwasaki6"
           target="_blank"
