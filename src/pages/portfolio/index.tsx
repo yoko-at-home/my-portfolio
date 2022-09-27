@@ -8,7 +8,6 @@ import { AppTitle } from "src/components/atom/appTitle";
 import { Title } from "src/components/atom/title";
 import { PortfolioCards } from "src/components/card";
 import { Layout } from "src/layout";
-import { metaData } from "src/metadata";
 import { client } from "src/pages/api/portfolio/client";
 import { Blog, BlogProps } from "src/types";
 
@@ -33,12 +32,7 @@ const PortfolioPage: NextPage<BlogProps> = (props) => {
   }
   return (
     <Layout>
-      <AppTitle
-        title="🐈 Portfolio 🐈"
-        description="ポートフォリオ一覧です"
-        ImageUrl={metaData.siteUrl + metaData.siteLogo}
-        ogUrl={metaData.siteUrl + router.pathname}
-      />
+      <AppTitle title="🐈 Portfolio 🐈" description="ポートフォリオ一覧です" />
 
       <Title>Portfolio</Title>
       <InfiniteScroll

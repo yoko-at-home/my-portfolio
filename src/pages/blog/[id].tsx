@@ -8,7 +8,6 @@ import { AppTitle } from "src/components/atom/appTitle";
 import { ToTopButton } from "src/components/atom/pageTop";
 import { Title } from "src/components/atom/title";
 import { Layout } from "src/layout";
-import { metaData } from "src/metadata";
 import { clientBlog } from "src/pages/api/blog";
 import { Blog, PropsPath } from "src/types";
 
@@ -24,12 +23,7 @@ const BlogId: NextPage<Props> = (props) => {
       <div className="translate-x-50 absolute top-7 right-[50%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <div className="translate-x-50 absolute top-7 right-[60%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <Layout>
-        <AppTitle
-          title={props.title!}
-          description={props.lead!}
-          ImageUrl={imageUrl}
-          ogUrl={metaData.siteUrl + router.pathname}
-        />
+        <AppTitle title={props.title!} description={props.lead!} />
         <div className="mx-auto w-full" id="page-top">
           <div className="relative mx-auto aspect-video object-cover">
             <Image src={imageUrl} alt="画像" layout="fill" />

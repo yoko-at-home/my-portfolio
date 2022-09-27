@@ -20,12 +20,7 @@ const AboutPage: NextPage = () => {
       }}
     >
       <Layout>
-        <AppTitle
-          title="About Yoko 🐈 "
-          description={metaData.description_0}
-          ImageUrl={metaData.siteUrl + metaData.siteLogo}
-          ogUrl={metaData.siteUrl + router.pathname}
-        />
+        <AppTitle title="About Yoko 🐈 " description={metaData.description_0} />
         <div className="mx-auto max-w-6xl text-white">
           <Title>
             <span className="text-white">About</span>
