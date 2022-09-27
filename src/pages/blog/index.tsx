@@ -9,6 +9,7 @@ import { AppTitle } from "src/components/atom/appTitle";
 import { Title } from "src/components/atom/title";
 import { BlogCards } from "src/components/card/blogCards";
 import { Layout } from "src/layout";
+import { metaData } from "src/metadata";
 import { clientBlog } from "src/pages/api/blog";
 import { Blog, BlogProps } from "src/types";
 
@@ -38,7 +39,12 @@ const Blog: NextPage<BlogProps> = (props) => {
   }
   return (
     <Layout>
-      <AppTitle title="🐈 Blog 🐈 " description="ブログ一覧です" />
+      <AppTitle
+        title="🐈 Blog 🐈 "
+        description="ブログ一覧です"
+        ImageUrl={metaData.siteUrl + metaData.siteLogo}
+        ogUrl={metaData.siteUrl + router.pathname}
+      />
       <div className="flex flex-col justify-between" id="home">
         <div className="py-10 sm:mx-auto">
           <Title>Blog</Title>
