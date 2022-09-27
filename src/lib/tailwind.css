@@ -9,13 +9,13 @@ box-shadow: 20px 20px 37px #adb2b9, -20px -20px 37px #ebf0fb;
 }
 
 .nm-container {
-border-radius: 50px;
+border-radius: 100px;
 background: #e6ebf4;
 box-shadow: inset 20px 20px 67px #c4c8cf,inset -20px -20px 67px #ffffff;
 }
 
 .nm-tray {
-border-radius: 50px;
+border-radius: 5px;
 background: linear-gradient(145deg, #cfd4dc, #f6fbff);
 box-shadow:  20px 20px 67px #c4c8cf,-20px -20px 67px #ffffff;
 }
