@@ -1,6 +1,8 @@
 import { Timeline } from "react-twitter-widgets";
 import { Title } from "src/components/atom/title";
-import { Button, useViewportSize } from "src/lib/mantine";
+import { LinkButton } from "src/components/button/LinkButton";
+import { useViewportSize } from "src/lib/mantine";
+import { metaData } from "src/metadata";
 
 export const TwitterFeed = () => {
   const { width } = useViewportSize();
@@ -37,13 +39,9 @@ export const TwitterFeed = () => {
         )}
       </div>
       <div className="mt-6 flex justify-center py-10">
-        <a
-          href="https://twitter.com/yokoiwasaki6"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Button color="dark">View on Twitter</Button>
-        </a>
+        <LinkButton href={metaData.twitterURL} color="dark">
+          View on Twitter
+        </LinkButton>
       </div>
     </div>
   );

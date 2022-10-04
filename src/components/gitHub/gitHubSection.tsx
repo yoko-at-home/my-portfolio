@@ -1,6 +1,7 @@
 import { Button } from "@mantine/core";
 import React from "react";
 import { Title } from "src/components/atom/title";
+import { LinkButton } from "src/components/button/LinkButton";
 import { useViewportSize } from "src/lib/mantine";
 import { metaData } from "src/metadata";
 
@@ -23,7 +24,7 @@ export const GitHubSection = () => {
         <GitHubRepos />
       </div>
       <div className="mt-6 flex justify-center py-10">
-        <a href={metaData.github} target="_blank" rel="noreferrer">
+        <LinkButton href={metaData.github} color="dark">
           <Button color="dark">View on GitHub</Button>
         </a>
       </div>
