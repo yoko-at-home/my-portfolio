@@ -1,4 +1,4 @@
-import { useViewportSize } from "@mantine/hooks";
+import { useViewportSize } from "src/lib/mantine";
 
 export const MOBILE_WIDTH = 576;
 export const useIsMobile = () => {
