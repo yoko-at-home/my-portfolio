@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Box, Group, Image, Progress, Stack } from "@mantine/core";
 import { useMemo } from "react";
 import { useFetcher } from "src/hooks/useFetcher";
-import { useViewportSize } from "src/lib/mantine";
+import { useIsMobile } from "src/lib/useIsMobile";
 import { Repositories } from "src/types";
 
 export const GitHubRepos = () => {
@@ -19,28 +20,22 @@ export const GitHubRepos = () => {
           return {
             name: lang.node.name,
             color: lang.node.color,
-            value: parseFloat(((lang.size / totalSize) * 100).toFixed(1)),
+            value: size,
           };
         });
       });
     }
   }, [data]);
+  console.log(languageProps);
 
   if (error) throw new Error(error);
   if (!languageProps) throw new Error();
-
-  const { width } = useViewportSize();
-  if (width === undefined) {
-    return <div />;
-  }
-  const mobileWidth = 576;
-  const isMobile = width < mobileWidth;
 
   const numberToShowOnMobile = 3;
   const numberToShowOnPC = 6;
   let filteredGitHubData = data?.user.pinnedItems.edges.slice(
     0,
-    isMobile ? numberToShowOnMobile : numberToShowOnPC
+    useIsMobile() ? numberToShowOnMobile : numberToShowOnPC
   );
 
   return (

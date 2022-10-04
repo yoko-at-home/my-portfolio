@@ -13,25 +13,18 @@ import { PortfolioCardSlider } from "src/components/card/portfolioCardSlider";
 import { GitHubSection } from "src/components/gitHub";
 import { TwitterFeed } from "src/components/twitter";
 import { Layout } from "src/layout";
-import { useViewportSize } from "src/lib/mantine";
+import { useIsMobile } from "src/lib/useIsMobile";
 import { clientBlog } from "src/pages/api/blog";
 import { client } from "src/pages/api/portfolio/client";
 import { Blog, BlogPortfolioProps } from "src/types";
 
 const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
-  const { width } = useViewportSize();
-  if (width === undefined) {
-    return <div />;
-  }
-  const mobileWidth = 576;
-  const isMobile = width < mobileWidth;
-
   const numberToShowBlogOnMobile = 4;
   const numberToShowOnPC = 6;
 
   let filteredBlogData = blogData.contents.slice(
     0,
-    isMobile ? numberToShowBlogOnMobile : numberToShowOnPC
+    useIsMobile() ? numberToShowBlogOnMobile : numberToShowOnPC
   );
 
   return (
