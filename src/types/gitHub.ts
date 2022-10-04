@@ -7,17 +7,7 @@ export type Repositories = {
           name: string;
           description: string | null;
           forkCount: number;
-          languages: {
-            edges: {
-              node: {
-                id: string;
-                name: string;
-                color: string;
-              };
-              size: number;
-            }[];
-            totalSize: number;
-          };
+          languages: LanguageProp;
           stargazerCount: number;
           url: string;
         };
@@ -27,15 +17,13 @@ export type Repositories = {
 };
 
 export type LanguageProp = {
-  languages: {
-    edges: {
-      node: {
-        id: string;
-        name: string;
-        color: string;
-      };
-      size: number;
-    }[];
-    totalSize: number;
-  };
+  edges: {
+    node: {
+      id: string;
+      name: string;
+      color: string;
+    };
+    size: number;
+  }[];
+  totalSize: number;
 };
