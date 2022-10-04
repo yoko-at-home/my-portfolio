@@ -1,6 +1,6 @@
 import { Timeline } from "react-twitter-widgets";
 import { Title } from "src/components/atom/title";
-import { LinkButton } from "src/components/button/LinkButton";
+import { LinkButton } from "src/components/button";
 import { useViewportSize } from "src/lib/mantine";
 import { metaData } from "src/metadata";
 

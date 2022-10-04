@@ -1,5 +1,5 @@
 import { Title } from "src/components/atom/title";
-import { LinkButton } from "src/components/button/LinkButton";
+import { LinkButton } from "src/components/button/";
 import { useIsMobile } from "src/lib/useIsMobile";
 import { metaData } from "src/metadata";
 

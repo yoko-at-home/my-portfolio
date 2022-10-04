@@ -1,4 +1,5 @@
 import { Button } from "@mantine/core";
+import Link from "next/link";
 import { FC } from "react";
 
 type Props = {
@@ -9,8 +10,15 @@ type Props = {
 
 export const LinkButton: FC<Props> = (props) => {
   return (
-    <a href={props.href} target="_blank" rel="noreferrer">
-      <Button color={props.color}>{props.children}</Button>
-    </a>
+    <Link href={props.href} passHref>
+      <Button
+        color={props.color}
+        component="a"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {props.children}
+      </Button>
+    </Link>
   );
 };

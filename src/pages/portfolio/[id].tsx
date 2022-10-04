@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { AppTitle } from "src/components/atom/appTitle";
 import { ToTopButton } from "src/components/atom/pageTop";
 import { Title } from "src/components/atom/title";
-import { LinkButton } from "src/components/button/LinkButton";
+import { LinkButton } from "src/components/button";
 import { Layout } from "src/layout";
 import { metaData } from "src/metadata";
 import { client } from "src/pages/api/portfolio/client";
