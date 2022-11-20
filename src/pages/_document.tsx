@@ -3,8 +3,7 @@ import { Head, Html, Main, NextScript } from "next/document";
 import { metaData } from "src/metadata";
 
 const MyDocument: NextPage = () => {
-  const ogImage =
-    "https://yoko-portfolio.vercel.app//assets/favicons/android-chrome-512x512.png";
+  const ogImage = metaData.siteUrl + metaData.siteLogo;
   return (
     <Html lang="ja">
       <Head>
