@@ -1,11 +1,13 @@
 import { Timeline } from "react-twitter-widgets";
 import { Title } from "src/components/atom/title";
-import { Button, useViewportSize } from "src/lib/mantine";
+import { LinkButton } from "src/components/button";
+import { useViewportSize } from "src/lib/mantine";
+import { metaData } from "src/metadata";
 
 export const TwitterFeed = () => {
   const { width } = useViewportSize();
   if (width === undefined) {
-    return <div />;
+    return null;
   }
   const isMobile = width < 576;
   return (

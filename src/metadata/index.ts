@@ -15,4 +15,5 @@ export const metaData = {
   siteUrl: "https://yoko-portfolio.vercel.app",
   twitterAccount: "yokoiwasaki6",
   twitterName: "yoko",
+  twitterURL: "https://twitter.com/yokoiwasaki6",
 };
