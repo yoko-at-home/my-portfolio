@@ -37,13 +37,9 @@ export const TwitterFeed = () => {
         )}
       </div>
       <div className="mt-6 flex justify-center py-10">
-        <a
-          href="https://twitter.com/yokoiwasaki6"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Button color="dark">View on Twitter</Button>
-        </a>
+        <LinkButton href={metaData.twitterURL} color="dark">
+          View on Twitter
+        </LinkButton>
       </div>
     </div>
   );
