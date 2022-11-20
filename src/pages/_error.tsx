@@ -9,7 +9,7 @@ const ErrorPage: NextPage<Props> = ({ statusCode }) => {
   return statusCode ? (
     <Error statusCode={statusCode}></Error>
   ) : (
-    <p>An error occurred on client</p>
+    <div>An error occurred on client</div>
   );
 };
 
