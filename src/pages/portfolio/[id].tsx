@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { AppTitle } from "src/components/atom/appTitle";
 import { ToTopButton } from "src/components/atom/pageTop";
 import { Title } from "src/components/atom/title";
+import { LinkButton } from "src/components/button";
 import { Layout } from "src/layout";
 import { metaData } from "src/metadata";
 import { client } from "src/pages/api/portfolio/client";
@@ -43,14 +44,9 @@ const PortfolioId: NextPage<Props> = (props) => {
           />
         </div>
         <div className="flex flex-col justify-around py-10 sm:flex-row">
-          <a
-            href={props.url}
-            target="_blank"
-            rel="noreferrer"
-            className="mb-2 text-center"
-          >
-            <Button color="grape">Visit {props.title} Website</Button>
-          </a>
+          <LinkButton href={props.url!} color="grape">
+            Visit {props.title} Website
+          </LinkButton>
           <div className="text-center">
             <Button color="gray" onClick={() => router.back()}>
               Return
