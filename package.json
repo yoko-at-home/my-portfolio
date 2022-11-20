@@ -9,11 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.6.9",
     "@mantine/core": "4.2.8",
     "@mantine/form": "^5.2.3",
     "@mantine/hooks": "4.2.8",
     "@mantine/next": "4.2.8",
+    "@octokit/core": "^4.0.5",
     "@tanstack/query-core": "^4.2.3",
     "@types/react-scroll": "^1.8.4",
     "axios": "^0.27.2",
