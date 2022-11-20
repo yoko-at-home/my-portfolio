@@ -7,7 +7,7 @@ import { metaData } from "src/metadata";
 export const TwitterFeed = () => {
   const { width } = useViewportSize();
   if (width === undefined) {
-    return <div />;
+    return null;
   }
   const isMobile = width < 576;
   return (
