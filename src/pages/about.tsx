@@ -4,6 +4,7 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { AppTitle } from "src/components/atom/appTitle";
 import { Title } from "src/components/atom/title";
+import { TimeLine } from "src/components/history";
 import { Layout } from "src/layout";
 import { metaData } from "src/metadata";
 
@@ -37,6 +38,7 @@ const AboutPage: NextPage = () => {
           <div className="mt-3">{parser.parse(metaData.description_1)}</div>
           <div className="mt-3">{parser.parse(metaData.description_2)}</div>
         </div>
+        <TimeLine />
       </Layout>
       $
     </div>
