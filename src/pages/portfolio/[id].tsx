@@ -2,6 +2,7 @@ import { Button } from "@mantine/core";
 import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { AppTitle } from "src/components/atom/appTitle";
 import { ToTopButton } from "src/components/atom/pageTop";
@@ -33,7 +34,11 @@ const PortfolioId: NextPage<Props> = (props) => {
 
         <div className="mx-auto w-full">
           <div className="relative mx-auto aspect-video object-cover">
-            <Image src={imageUrl} alt="画像" layout="fill" />
+            <Link href={props.url!}>
+              <a target="_blank" rel="noreferrer">
+                <Image src={imageUrl} alt="画像" layout="fill" />
+              </a>
+            </Link>
           </div>
         </div>
         <div className="mx-auto w-screen max-w-md sm:max-w-full">
