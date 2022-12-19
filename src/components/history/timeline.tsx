@@ -14,7 +14,7 @@ import { data } from "./data";
 export const TimeLine = () => {
   return (
     <div
-      className="my-20 bg-[#080869]/20 py-20"
+      className="my-20 max-w-sm  py-20 sm:w-screen"
       style={{ fontFamily: "Trebuchet Ms" }}
     >
       <VerticalTimeline>
