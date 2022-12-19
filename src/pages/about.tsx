@@ -36,7 +36,9 @@ const AboutPage: NextPage = () => {
           </Text>
           <div className="mt-3">{parser.parse(metaData.description_0)}</div>
           <div className="mt-3">{parser.parse(metaData.description_1)}</div>
-          <div className="mt-3">{parser.parse(metaData.description_2)}</div>
+          <div className="mt-3">
+            過去の活動や作品をまとめております。ご参照くださいませ。
+          </div>
         </div>
         <TimeLine />
       </Layout>

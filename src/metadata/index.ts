@@ -3,8 +3,8 @@ export const metaData = {
   title: "yoko's portfolio",
   description_0: "はじめまして。",
   description_1: "サイトをご覧いただきありがとうございます。",
-  description_2:
-    "過去の活動や作品をまとめております。ごゆるりとご鑑賞くださいませ。",
+  // description_2:
+  //   "過去の活動や作品をまとめております。ごゆるりとご鑑賞くださいませ。",
   facebook: "",
   github: "https://github.com/yoko-at-home",
   lead: "microCMS, Twitter, GitHub apiでデータを取得しました",
