@@ -27,7 +27,7 @@ const AboutPage: NextPage = () => {
           ImageUrl={metaData.siteUrl + metaData.siteLogo}
           ogUrl={metaData.siteUrl + router.pathname}
         />
-        <div className="mx-auto max-w-6xl text-white">
+        <div className="w-screen text-white ">
           <Title>
             <span className="text-white">About</span>
           </Title>

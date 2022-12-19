@@ -12,10 +12,7 @@ import { data } from "./data";
 
 export const TimeLine = () => {
   return (
-    <div
-      className="sm:min-w-lg my-20  max-w-sm py-20"
-      style={{ fontFamily: "Trebuchet Ms" }}
-    >
+    <div className="my-20  max-w-fit rounded-full lg:bg-slate-200/50">
       <VerticalTimeline>
         {data.map((event) => {
           return (
