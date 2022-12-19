@@ -8,13 +8,12 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 
-// import { PageTitle } from "src/component/PageTitle";
 import { data } from "./data";
 
 export const TimeLine = () => {
   return (
     <div
-      className="my-20 max-w-sm  py-20 sm:w-screen"
+      className="my-20 max-w-sm  py-20 sm:min-w-full"
       style={{ fontFamily: "Trebuchet Ms" }}
     >
       <VerticalTimeline>
