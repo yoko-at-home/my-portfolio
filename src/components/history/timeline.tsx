@@ -13,7 +13,7 @@ import { data } from "./data";
 export const TimeLine = () => {
   return (
     <div
-      className="my-20 max-w-sm  py-20 sm:min-w-full"
+      className="sm:min-w-lg my-20  max-w-sm py-20"
       style={{ fontFamily: "Trebuchet Ms" }}
     >
       <VerticalTimeline>
