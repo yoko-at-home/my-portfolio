@@ -1,0 +1,1 @@
+export { FireworksComponent } from "./FireworksComponent";

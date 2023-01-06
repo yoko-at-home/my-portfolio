@@ -3,6 +3,7 @@ import { loadDefaultJapaneseParser } from "budoux";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { AppTitle } from "src/components/atom/appTitle";
+import { FireworksComponent } from "src/components/atom/fireworks";
 import { Title } from "src/components/atom/title";
 import { TimeLine } from "src/components/history";
 import { Layout } from "src/layout";
@@ -41,6 +42,9 @@ const AboutPage: NextPage = () => {
           </div>
         </div>
         <TimeLine />
+        <div className="opacity-50">
+          <FireworksComponent />
+        </div>
       </Layout>
       $
     </div>

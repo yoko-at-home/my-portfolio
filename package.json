@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fireworks-js/react": "^2.10.1",
     "@mantine/core": "4.2.8",
     "@mantine/form": "^5.2.3",
     "@mantine/hooks": "4.2.8",
