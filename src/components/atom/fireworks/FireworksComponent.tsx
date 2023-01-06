@@ -11,7 +11,7 @@ export const FireworksComponent = () => {
       }}
       style={{
         // background: "#23448f",
-        height: "100%",
+        height: "50%",
         left: 0,
         position: "fixed",
         top: 0,
