@@ -34,7 +34,7 @@ const PortfolioId: NextPage<Props> = (props) => {
 
         <div className="mx-auto w-full">
           <div className="relative mx-auto aspect-video object-cover">
-            <Link href={props.url!}>
+            <Link href={props.url!} passHref>
               <a target="_blank" rel="noreferrer">
                 <Image src={imageUrl} alt="画像" layout="fill" />
               </a>

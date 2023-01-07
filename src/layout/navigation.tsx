@@ -14,7 +14,7 @@ export const Navigation = () => {
     <div className="flex leading-6">
       {items.map(({ href, label }) => {
         return (
-          <Link key={href} href={href}>
+          <Link key={href} href={href} passHref>
             <a className="text-gradient-sub mr-2 whitespace-nowrap text-lg font-semibold">
               {label}
             </a>
@@ -53,7 +53,7 @@ export const NavMobile = () => {
         <div className="mt-6 flex flex-col">
           {items.map(({ href, label }) => {
             return (
-              <Link key={href} href={href}>
+              <Link key={href} href={href} passHref>
                 <a className="whitespace-nowrap text-2xl font-semibold leading-relaxed">
                   {label}
                 </a>

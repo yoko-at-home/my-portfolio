@@ -51,7 +51,7 @@ const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
             </Suspense>
           </ErrorWrapper>
           <div className="flex justify-center pb-10">
-            <Link href="/blog">
+            <Link href="/blog" passHref>
               <Button color="dark">View All</Button>
             </Link>
           </div>
@@ -73,7 +73,7 @@ const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
           </ErrorWrapper>
         </div>
         <div className="flex justify-center pb-10">
-          <Link href="/portfolio">
+          <Link href="/portfolio" passHref>
             <Button color="dark">View All</Button>
           </Link>
         </div>
