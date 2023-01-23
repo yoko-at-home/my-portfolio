@@ -13,7 +13,7 @@ const MyDocument: NextPage = () => {
         <meta property="og:url" content={metaData.siteUrl} />
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:title" content={metaData.title} />
-        <meta property="twitter:description" content={metaData.description_0} />
+        {/* <meta property="twitter:description" content={metaData.description_0} /> */}
         <meta property="twitter:image" content={ogImage} />
         <meta name="twitter:image:width" content="512" />
         <meta name="twitter:image:height" content="512" />

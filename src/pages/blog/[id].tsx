@@ -17,6 +17,7 @@ type Props = Blog & MicroCMSContentId & MicroCMSDate;
 const BlogId: NextPage<Props> = (props) => {
   const router = useRouter();
   const imageUrl = props.eyecatch?.url!;
+  const blogDesc = props.lead!;
 
   return (
     <div className="relative">
@@ -26,7 +27,7 @@ const BlogId: NextPage<Props> = (props) => {
       <Layout>
         <AppTitle
           title={props.title!}
-          description={props.lead!}
+          description={blogDesc}
           ImageUrl={imageUrl}
           ogUrl={metaData.siteUrl + router.pathname}
         />
