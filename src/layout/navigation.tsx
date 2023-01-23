@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const items = [
-  // { href: "/", label: "Home" },
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
   { href: "/portfolio", label: "Portfolio" },
