@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-title-in-document-head */
-import { Button, Center, Loader } from "@mantine/core";
+import { Button, Center } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -8,10 +8,7 @@ import Skeleton from "react-loading-skeleton";
 import { ErrorWrapper } from "src/components/atom/error";
 import { Hero } from "src/components/atom/hero";
 import { Title } from "src/components/atom/title";
-import { BlogCards } from "src/components/card/blogCards";
 import { PortfolioCardSlider } from "src/components/card/portfolioCardSlider";
-import { GitHubSection } from "src/components/gitHub";
-import { TwitterFeed } from "src/components/twitter";
 import { Layout } from "src/layout";
 import { useIsMobile } from "src/lib/useIsMobile";
 import { clientBlog } from "src/pages/api/blog";
@@ -36,27 +33,6 @@ const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
 
       <Hero />
       <div className="mx-auto max-w-7xl px-4">
-        <div>
-          <Title>Blog</Title>
-          <ErrorWrapper message="Failed to Fetch Blog Data.">
-            <Suspense
-              fallback={
-                <Center>
-                  <Skeleton height={50} />
-                  <Skeleton count={6} />
-                </Center>
-              }
-            >
-              <BlogCards items={filteredBlogData} />
-            </Suspense>
-          </ErrorWrapper>
-          <div className="flex justify-center pb-10">
-            <Link href="/blog" passHref>
-              <Button color="dark">View All</Button>
-            </Link>
-          </div>
-        </div>
-
         <div className="mx-auto max-w-7xl pb-10">
           <Title>Portfolio</Title>
           <ErrorWrapper message="Failed to Fetch portfolio Data.">
@@ -64,7 +40,7 @@ const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
               fallback={
                 <Center>
                   <Skeleton height={50} />
-                  <Skeleton count={6} />
+                  <Skeleton count={10} />
                 </Center>
               }
             >
@@ -77,7 +53,7 @@ const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
             <Button color="dark">View All</Button>
           </Link>
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <ErrorWrapper message="Failed to Fetch GitHub Data.">
             <Suspense
               fallback={
@@ -100,7 +76,7 @@ const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
               <TwitterFeed />
             </Suspense>
           </ErrorWrapper>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

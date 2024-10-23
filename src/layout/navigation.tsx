@@ -5,15 +5,31 @@ import { useState } from "react";
 const items = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/blog", label: "Blog" },
+  // { href: "/blog", label: "Blog" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/contact", label: "Contact" },
+  {
+    external: true, // 外部リンクの判定用に追加
+    href: "https://yoko-2021.vercel.app/",
+    label: "yoko-2021",
+  },
 ];
+
 export const Navigation = () => {
   return (
     <div className="flex leading-6">
-      {items.map(({ href, label }) => {
-        return (
+      {items.map(({ external, href, label }) => {
+        return external ? (
+          <a
+            key={href}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gradient-sub mr-2 whitespace-nowrap text-lg font-semibold"
+          >
+            {label}
+          </a>
+        ) : (
           <Link key={href} href={href} passHref>
             <a className="text-gradient-sub mr-2 whitespace-nowrap text-lg font-semibold">
               {label}
@@ -24,6 +40,7 @@ export const Navigation = () => {
     </div>
   );
 };
+
 export const NavMobile = () => {
   const [opened, setOpened] = useState(false);
   const title = opened ? "Close navigation" : "Open navigation";
@@ -51,8 +68,18 @@ export const NavMobile = () => {
           color="#fff"
         />
         <div className="mt-6 flex flex-col">
-          {items.map(({ href, label }) => {
-            return (
+          {items.map(({ external, href, label }) => {
+            return external ? (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whitespace-nowrap text-2xl font-semibold leading-relaxed"
+              >
+                {label}
+              </a>
+            ) : (
               <Link key={href} href={href} passHref>
                 <a className="whitespace-nowrap text-2xl font-semibold leading-relaxed">
                   {label}
