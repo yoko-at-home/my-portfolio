@@ -12,7 +12,7 @@ import { data } from "./data";
 
 export const TimeLine = () => {
   return (
-    <div className="my-20  max-w-fit rounded-full lg:bg-slate-200/50">
+    <div className="my-20 max-w-fit overflow-x-hidden rounded lg:bg-slate-200/50">
       <VerticalTimeline>
         {data.map((event) => {
           return (
