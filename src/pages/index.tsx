@@ -13,13 +13,13 @@ import { Layout } from "src/layout";
 import { useIsMobile } from "src/lib/useIsMobile";
 import { clientBlog } from "src/pages/api/blog";
 import { client } from "src/pages/api/portfolio/client";
-import { Blog, BlogPortfolioProps } from "src/types";
+import type { Blog, BlogPortfolioProps } from "src/types";
 
 const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
   const numberToShowBlogOnMobile = 4;
   const numberToShowOnPC = 6;
 
-  let filteredBlogData = blogData.contents.slice(
+  const filteredBlogData = blogData.contents.slice(
     0,
     useIsMobile() ? numberToShowBlogOnMobile : numberToShowOnPC
   );

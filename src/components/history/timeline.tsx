@@ -17,14 +17,12 @@ export const TimeLine = () => {
         {data.map((event) => {
           return (
             <VerticalTimelineElement
+              key={event.date}
               className="vertical-timeline-element--work"
               date={event.date}
               iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
             >
-              <h3
-                className="vertical-timeline-element-title"
-                dangerouslySetInnerHTML={{ __html: event.event }}
-              />
+              <h3 className="vertical-timeline-element-title">{event.event}</h3>
             </VerticalTimelineElement>
           );
         })}

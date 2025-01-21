@@ -1,6 +1,6 @@
 import { Text } from "@mantine/core";
 import { loadDefaultJapaneseParser } from "budoux";
-import { NextPage } from "next";
+import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { AppTitle } from "src/components/atom/appTitle";
 import { FireworksComponent } from "src/components/atom/fireworks";
