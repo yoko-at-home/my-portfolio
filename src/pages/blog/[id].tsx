@@ -1,5 +1,6 @@
 import { Button } from "@mantine/core";
 import dayjs from "dayjs";
+import parse from "html-react-parser";
 import type { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
@@ -45,10 +46,9 @@ const BlogId: NextPage<Props> = (props) => {
           >
             {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
           </time>
-          <article
-            className="text-gradient-sub mt-8 break-all"
-            dangerouslySetInnerHTML={{ __html: props.content! }}
-          />
+          <article className="text-gradient-sub mt-8 break-all">
+            {parse(props.content ?? "")}
+          </article>
         </div>
         <div className="flex justify-center py-10">
           <Button color="gray" onClick={() => router.back()}>
