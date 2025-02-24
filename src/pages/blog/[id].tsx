@@ -1,7 +1,7 @@
 import { Button } from "@mantine/core";
 import dayjs from "dayjs";
-import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import type { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { AppTitle } from "src/components/atom/appTitle";
@@ -10,14 +10,14 @@ import { Title } from "src/components/atom/title";
 import { Layout } from "src/layout";
 import { metaData } from "src/metadata";
 import { clientBlog } from "src/pages/api/blog";
-import { Blog, PropsPath } from "src/types";
+import type { Blog, PropsPath } from "src/types";
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
 const BlogId: NextPage<Props> = (props) => {
   const router = useRouter();
-  const imageUrl = props.eyecatch?.url!;
-  const blogDesc = props.lead!;
+  const imageUrl = props.eyecatch?.url ?? "";
+  const blogDesc = props.lead ?? "";
 
   return (
     <div className="relative">
@@ -26,7 +26,7 @@ const BlogId: NextPage<Props> = (props) => {
       <div className="translate-x-50 absolute top-7 right-[60%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
       <Layout>
         <AppTitle
-          title={props.title!}
+          title={props.title ?? ""}
           description={blogDesc}
           ImageUrl={imageUrl}
           ogUrl={metaData.siteUrl + router.pathname}
