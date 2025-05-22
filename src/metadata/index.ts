@@ -7,7 +7,7 @@ export const metaData = {
   //   "過去の活動や作品をまとめております。ごゆるりとご鑑賞くださいませ。",
   facebook: "",
   github: "https://github.com/yoko-at-home",
-  lead: "microCMS, Twitter apiでデータを取得しました",
+  lead: "ポートフォリオサイトです。",
   ogImage: "",
   siteLogo: "/assets/favicons/android-chrome-512x512.png",
   siteUrl: "https://yoko-portfolio.vercel.app",
