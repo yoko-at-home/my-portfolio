@@ -11,7 +11,7 @@ export const PortfolioCard: FC<Blog> = (props) => {
     <Link href={`/portfolio/${props.id}`} legacyBehavior key={props.id}>
       <span>
         <li
-          className="nm-list mx-auto list-none rounded bg-cover bg-top transition-transform delay-200 hover:scale-[98%]"
+          className="nm-list mx-auto cursor-pointer list-none rounded bg-cover bg-top transition-transform delay-200 hover:scale-[98%]"
           style={{
             backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.2), rgba(100,100,333,0.2)), url(${props.eyecatch?.url})`,
           }}

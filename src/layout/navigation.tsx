@@ -16,7 +16,7 @@ const items = [
 
 export const Navigation = () => {
   return (
-    <div className="flex leading-6">
+    <div className="flex cursor-pointer leading-6 ">
       {items.map(({ external, href, label }) => {
         return external ? (
           <a

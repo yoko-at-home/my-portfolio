@@ -6,7 +6,7 @@ import type { Blog } from "src/types";
 export const BlogCard: FC<Blog> = (props) => {
   return (
     <Link href={`/blog/${props.id}`} legacyBehavior key={props.id}>
-      <li className="nm-list mb-8 list-none rounded from-[#c2c5a7]/10 to-slate-400/10 p-3  hover:bg-gradient-to-r">
+      <li className="nm-list mb-8 cursor-pointer list-none rounded from-[#c2c5a7]/10 to-slate-400/10  p-3 hover:bg-gradient-to-r">
         <div className="mb-3 text-lg font-semibold">{props.title}</div>
         <div className="my-1 overflow-hidden text-ellipsis text-sm line-clamp-2">
           {props.lead}
