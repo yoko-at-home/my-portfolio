@@ -42,10 +42,10 @@ export const Pagination = ({ currentPageNum, maxPageNum }: Pagenation) => {
         <div
           className={currentPageNum !== 1 ? classes.button : classes.hideButton}
         >
-          <Link href={`/blog/page/${prevPage}`} passHref>
-            <a className="flex h-full w-full items-center justify-center font-bold">
+          <Link href={`/blog/page/${prevPage}`} legacyBehavior>
+            <span className="flex h-full w-full items-center justify-center font-bold">
               戻る
-            </a>
+            </span>
           </Link>
         </div>
         <div
@@ -53,10 +53,10 @@ export const Pagination = ({ currentPageNum, maxPageNum }: Pagenation) => {
             currentPageNum !== maxPageNum ? classes.button : classes.hideButton
           }
         >
-          <Link href={`/blog/page/${nextPage}`} passHref>
-            <a className="flex h-full w-full items-center justify-center font-bold">
+          <Link href={`/blog/page/${nextPage}`} legacyBehavior>
+            <span className="flex h-full w-full items-center justify-center font-bold">
               次へ
-            </a>
+            </span>
           </Link>
         </div>
       </div>

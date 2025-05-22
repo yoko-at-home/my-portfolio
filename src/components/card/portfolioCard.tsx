@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FC } from "react";
-import { Blog } from "src/types";
+import type { FC } from "react";
+import type { Blog } from "src/types";
 
 export const PortfolioCard: FC<Blog> = (props) => {
   const router = useRouter();
   const root = router.asPath === "/";
 
   return (
-    <Link href={`/portfolio/${props.id}`} passHref key={props.id}>
-      <a>
+    <Link href={`/portfolio/${props.id}`} legacyBehavior key={props.id}>
+      <span>
         <li
           className="nm-list mx-auto list-none rounded bg-cover bg-top transition-transform delay-200 hover:scale-[98%]"
           style={{
@@ -29,7 +29,7 @@ export const PortfolioCard: FC<Blog> = (props) => {
             </div>
           </div>
         </li>
-      </a>
+      </span>
     </Link>
   );
 };

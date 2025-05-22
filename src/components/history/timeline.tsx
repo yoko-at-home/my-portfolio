@@ -28,13 +28,13 @@ export const TimeLine = () => {
         })}
       </VerticalTimeline>
       <div className="my-20 mx-20 flex flex-col justify-between text-center sm:flex-row">
-        <Link href="/portfolio" passHref>
+        <Link href="/portfolio" legacyBehavior>
           <Button color="pink" size="lg" radius={"lg"}>
             実績・作品
           </Button>
         </Link>
         <div className="p-2" />
-        <Link href="/contact" passHref>
+        <Link href="/contact" legacyBehavior>
           <Button color="grape" size="lg" radius={"lg"}>
             お問い合わせ
           </Button>

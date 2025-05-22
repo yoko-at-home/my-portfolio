@@ -1,6 +1,7 @@
 import { Button } from "@mantine/core";
-import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import parse from "html-react-parser";
+import type { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -11,13 +12,13 @@ import { LinkButton } from "src/components/button";
 import { Layout } from "src/layout";
 import { metaData } from "src/metadata";
 import { client } from "src/pages/api/portfolio/client";
-import { Blog, PropsPath } from "src/types";
+import type { Blog, PropsPath } from "src/types";
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
 const PortfolioId: NextPage<Props> = (props) => {
   const router = useRouter();
-  const imageUrl = props.eyecatch?.url!;
+  const imageUrl = props.eyecatch?.url ?? "";
   return (
     <div className="relative z-0" id="page-top">
       <div className="translate-x-50 absolute top-7 right-[40%] hidden h-5 w-5 rounded-full bg-slate-400 sm:block" />
@@ -26,16 +27,16 @@ const PortfolioId: NextPage<Props> = (props) => {
 
       <Layout>
         <AppTitle
-          title={props.title!}
-          description={props.lead!}
+          title={props.title ?? ""}
+          description={props.lead ?? ""}
           ImageUrl={imageUrl}
           ogUrl={metaData.siteUrl + router.pathname}
         />
 
         <div className="mx-auto w-full">
           <div className="relative mx-auto aspect-video object-cover">
-            <Link href={props.url!} passHref>
-              <a target="_blank" rel="noreferrer">
+            <Link href={props.url ?? ""} legacyBehavior>
+              <a href={props.url ?? ""} target="_blank" rel="noreferrer">
                 <Image src={imageUrl} alt="画像" layout="fill" />
               </a>
             </Link>
@@ -43,13 +44,12 @@ const PortfolioId: NextPage<Props> = (props) => {
         </div>
         <div className="mx-auto w-screen max-w-md sm:max-w-full">
           <Title>{props.title}</Title>
-          <article
-            className="text-gradient-sub mt-8 whitespace-pre-line "
-            dangerouslySetInnerHTML={{ __html: props.content! }}
-          />
+          <article className="text-gradient-sub mt-8 whitespace-pre-line">
+            {parse(props.content ?? "")}
+          </article>
         </div>
         <div className="flex flex-col justify-around py-10 sm:flex-row">
-          <LinkButton href={props.url!} color="grape">
+          <LinkButton href={props.url ?? ""} color="grape">
             Visit {props.title} Website
           </LinkButton>
           <div className="text-center">

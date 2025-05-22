@@ -5,7 +5,6 @@ import { useState } from "react";
 const items = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  // { href: "/blog", label: "Blog" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/contact", label: "Contact" },
   {
@@ -30,10 +29,10 @@ export const Navigation = () => {
             {label}
           </a>
         ) : (
-          <Link key={href} href={href} passHref>
-            <a className="text-gradient-sub mr-2 whitespace-nowrap text-lg font-semibold">
+          <Link key={href} href={href} legacyBehavior>
+            <span className="text-gradient-sub mr-2 whitespace-nowrap text-lg font-semibold">
               {label}
-            </a>
+            </span>
           </Link>
         );
       })}
@@ -80,10 +79,10 @@ export const NavMobile = () => {
                 {label}
               </a>
             ) : (
-              <Link key={href} href={href} passHref>
-                <a className="whitespace-nowrap text-2xl font-semibold leading-relaxed">
+              <Link key={href} href={href} legacyBehavior>
+                <span className="cursor-pointer whitespace-nowrap text-2xl font-semibold leading-relaxed ">
                   {label}
-                </a>
+                </span>
               </Link>
             );
           })}

@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-title-in-document-head */
 import { Button, Center } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
 import Link from "next/link";
 import { Suspense } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -26,11 +25,6 @@ const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
 
   return (
     <Layout>
-      <Head>
-        <title>Welcome 🐈 | yoko&#39;s portfolio</title>
-        <meta name="description" content="Welcom to my portfolio site!" />
-      </Head>
-
       <Hero />
       <div className="mx-auto max-w-7xl px-4">
         <div className="mx-auto max-w-7xl pb-10">
@@ -49,34 +43,10 @@ const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
           </ErrorWrapper>
         </div>
         <div className="flex justify-center pb-10">
-          <Link href="/portfolio" passHref>
-            <Button color="dark">View All</Button>
-          </Link>
+          <Button component={Link} href="/portfolio" color="dark">
+            View All
+          </Button>
         </div>
-        {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <ErrorWrapper message="Failed to Fetch GitHub Data.">
-            <Suspense
-              fallback={
-                <Center>
-                  <Loader />
-                </Center>
-              }
-            >
-              <GitHubSection />
-            </Suspense>
-          </ErrorWrapper>
-          <ErrorWrapper message="Failed to Fetch Twitter Data.">
-            <Suspense
-              fallback={
-                <Center>
-                  <Loader />
-                </Center>
-              }
-            >
-              <TwitterFeed />
-            </Suspense>
-          </ErrorWrapper>
-        </div> */}
       </div>
     </Layout>
   );

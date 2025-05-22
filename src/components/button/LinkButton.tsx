@@ -1,6 +1,6 @@
 import { Button } from "@mantine/core";
 import Link from "next/link";
-import { FC } from "react";
+import type { FC } from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ type Props = {
 
 export const LinkButton: FC<Props> = (props) => {
   return (
-    <Link href={props.href} passHref>
+    <Link href={props.href} legacyBehavior>
       <Button
         color={props.color}
         component="a"

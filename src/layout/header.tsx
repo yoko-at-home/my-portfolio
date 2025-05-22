@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Text } from "@mantine/core";
 import Link from "next/link";
-import { CSSProperties } from "react";
+import type { CSSProperties } from "react";
 import { Navigation, NavMobile } from "src/layout/navigation";
 import { metaData } from "src/metadata";
 
@@ -21,10 +21,8 @@ export const HeaderPart = ({ inView }: Props) => {
         <NavMobile />
         <div className="pl-5">
           <Text size="lg" weight={700}>
-            <Link href="/" passHref>
-              <a>
-                <span className="text-gradient">{metaData.title}</span>
-              </a>
+            <Link href="/" legacyBehavior>
+              <span className="text-gradient">{metaData.title}</span>
             </Link>
           </Text>
         </div>
