@@ -2,7 +2,7 @@
 import { Button, Center } from "@mantine/core";
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { ErrorWrapper } from "src/components/atom/error";
 import { Hero } from "src/components/atom/hero";
@@ -15,12 +15,18 @@ import { client } from "src/pages/api/portfolio/client";
 import type { Blog, BlogPortfolioProps } from "src/types";
 
 const Home: NextPage<BlogPortfolioProps> = ({ blogData, portfolioData }) => {
+  const [isMounted, setIsMounted] = useState(false);
+  const isMobile = useIsMobile();
   const numberToShowBlogOnMobile = 4;
   const numberToShowOnPC = 6;
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const filteredBlogData = blogData.contents.slice(
     0,
-    useIsMobile() ? numberToShowBlogOnMobile : numberToShowOnPC
+    isMounted && isMobile ? numberToShowBlogOnMobile : numberToShowOnPC
   );
 
   return (
@@ -60,13 +66,23 @@ export const getStaticProps: GetStaticProps = async () => {
     });
     const portfolioData = await client.getList<Blog>({
       endpoint: "portfolio",
-      queries: { limit: 6, offset: 2 },
+      queries: { limit: 6, offset: 0 },
     });
+
+    // 新しい順（降順）にソート
+    const sortedPortfolioData = {
+      ...portfolioData,
+      contents: [...portfolioData.contents].sort(
+        (a, b) =>
+          new Date(b.publishedAt as string).getTime() -
+          new Date(a.publishedAt as string).getTime()
+      ),
+    };
 
     return {
       props: {
         blogData: blogData,
-        portfolioData: portfolioData,
+        portfolioData: sortedPortfolioData,
       },
     };
   } catch (err) {

@@ -2,8 +2,8 @@
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { MicroCMSListResponse } from "microcms-js-sdk";
-import { Blog } from "src/types";
+import type { MicroCMSListResponse } from "microcms-js-sdk";
+import type { Blog } from "src/types";
 // import required modules
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
