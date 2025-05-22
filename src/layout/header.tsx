@@ -22,7 +22,9 @@ export const HeaderPart = ({ inView }: Props) => {
         <div className="pl-5">
           <Text size="lg" weight={700}>
             <Link href="/" legacyBehavior>
-              <span className="text-gradient">{metaData.title}</span>
+              <span className="text-gradient cursor-pointer">
+                {metaData.title}
+              </span>
             </Link>
           </Text>
         </div>
@@ -31,7 +33,7 @@ export const HeaderPart = ({ inView }: Props) => {
             <Navigation />
           </div>
           <div className="border-1 border-gray-400 pr-4">
-            <img src="/assets/svgs/night.svg" alt="night mode" />
+            {/* <img src="/assets/svgs/night.svg" alt="night mode" /> */}
           </div>
         </div>
       </div>

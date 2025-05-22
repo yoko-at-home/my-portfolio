@@ -6,7 +6,8 @@ export const Hero = () => {
     <div
       className="w-screen bg-cover bg-center text-white"
       style={{
-        backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.9), rgba(207, 212, 220,0.8))`,
+        backgroundImage:
+          "linear-gradient(to right, rgba(0,0,0,0.9), rgba(207, 212, 220,0.8))",
       }}
     >
       <div className="flex h-[248px] max-w-7xl flex-col justify-around p-4 lg:pr-36 md:pr-20 sm:mx-auto sm:flex-row sm:items-center sm:justify-between">
@@ -24,12 +25,6 @@ export const Hero = () => {
               alt="twitter icon"
             />
           </a>
-          <img
-            className="mr-2"
-            src="/assets/svgs/facebook.svg"
-            alt="facebook icon"
-          />
-          <img className="" src="/assets/svgs/rss.svg" alt="rss icon" />
         </div>
       </div>
     </div>
