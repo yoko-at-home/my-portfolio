@@ -15,7 +15,7 @@ export const HeaderPart = ({ inView }: Props) => {
     <div className="sticky top-0 z-10 items-center">
       <div
         className={`mx-auto flex w-screen justify-between py-5 leading-6 ${
-          inView ? `` : "top-[0] flex bg-slate-50/60"
+          inView ? "" : "top-[0] flex bg-slate-50/60"
         }`}
       >
         <NavMobile />
