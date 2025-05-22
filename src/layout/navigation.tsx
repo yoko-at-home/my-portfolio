@@ -10,7 +10,7 @@ const items = [
   {
     external: true, // 外部リンクの判定用に追加
     href: "https://yoko-2021.vercel.app/",
-    label: "yoko-2021",
+    label: "yoko-2021 (外部リンク)",
   },
 ];
 
